@@ -6,13 +6,13 @@ For more information see:
 * https://github.com/ryanoasis/nerd-fonts/
 * https://github.com/ryanoasis/nerd-fonts/releases/latest/
 
-# Inconsolata
+# Iosevka
 
-Open-source monospace font for code listings, originally by [@raphlinus](https://github.com/raphlinus/)
+**Iosevka** is an *open-source*, *sans-serif* + *slab-serif*, *monospace* + *quasi‑proportional* typeface family, designed for *writing code*, using in *terminals*, and preparing *technical documents*.
 
-https://github.com/googlefonts/Inconsolata
+For more information have a look at the upstream website: https://github.com/be5invis/Iosevka
 
-Version: 3.000
+Version: 33.2.1
 
 ## Which font?
 
@@ -45,4 +45,3 @@ Once you narrow down your font choice of family (`Droid Sans`, `Inconsolata`, et
 For more information see: [The FAQ](https://github.com/ryanoasis/nerd-fonts/wiki/FAQ-and-Troubleshooting#which-font)
 
 [SIL-RFN]:http://scripts.sil.org/cms/scripts/page.php?item_id=OFL_web_fonts_and_RFNs#14cbfd4a
-

@@ -6,16 +6,13 @@ For more information see:
 * https://github.com/ryanoasis/nerd-fonts/
 * https://github.com/ryanoasis/nerd-fonts/releases/latest/
 
-# InconsolataGo
+# DaddyTimeMono
 
-[Inconsolata]( http://levien.com/type/myfonts/inconsolata.html) with straight
-quotes.
+A monospaced font for programmers and other terminal groupies.
 
-> I also have an experimental version (tentatively titled InconsolataGo) with
-> straight quotes in the [inconsolata](http://levien.com/type/myfonts/inconsolata)
-> directory here.
+For more information have a look at the upstream website: https://github.com/BourgeoisBear/DaddyTimeMono
 
-Version: 1.013
+Version: 1.2.3
 
 ## Which font?
 
@@ -48,4 +45,3 @@ Once you narrow down your font choice of family (`Droid Sans`, `Inconsolata`, et
 For more information see: [The FAQ](https://github.com/ryanoasis/nerd-fonts/wiki/FAQ-and-Troubleshooting#which-font)
 
 [SIL-RFN]:http://scripts.sil.org/cms/scripts/page.php?item_id=OFL_web_fonts_and_RFNs#14cbfd4a
-

@@ -6,19 +6,13 @@ For more information see:
 * https://github.com/ryanoasis/nerd-fonts/
 * https://github.com/ryanoasis/nerd-fonts/releases/latest/
 
-# Inconsolata LGC
+# Iosevka Term
 
-Inconsolata is one of the most suitable font for programmers created by Raph
-Levien. Since the original Inconsolata does not contain Cyrillic alphabet,
-it was slightly inconvenient for not a few programmers from Russia.
+**Iosevka Term** is an *open-source*, *sans-serif* + *slab-serif*, *monospace* + *quasi‑proportional* typeface family, designed for *writing code*, using in *terminals*, and preparing *technical documents*.
 
-Inconsolata LGC is a modified version of Inconsolata with added the Cyrillic
-alphabet which directly descends from Inconsolata Hellenic supporting modern
-Greek.
+For more information have a look at the upstream website: https://github.com/be5invis/Iosevka
 
-For more information have a look at the upstream website: https://github.com/DeLaGuardo/Inconsolata-LGC
-
-Version: 1.13
+Version: 33.2.1
 
 ## Which font?
 
@@ -51,4 +45,3 @@ Once you narrow down your font choice of family (`Droid Sans`, `Inconsolata`, et
 For more information see: [The FAQ](https://github.com/ryanoasis/nerd-fonts/wiki/FAQ-and-Troubleshooting#which-font)
 
 [SIL-RFN]:http://scripts.sil.org/cms/scripts/page.php?item_id=OFL_web_fonts_and_RFNs#14cbfd4a
-
