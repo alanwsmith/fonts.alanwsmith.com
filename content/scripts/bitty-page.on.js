@@ -29,7 +29,7 @@ export default class {
       }
       .font-${font[0]} {
         font-family: ${font[0]};
-        font-size: 3rem;
+        font-size: 5rem;
       }`
     });
      sheet.replaceSync(lines.join("\n"));
@@ -48,7 +48,6 @@ export default class {
       });
     }
   }
-
 
 
   display(_event, el) {

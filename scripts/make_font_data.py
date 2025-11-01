@@ -16,12 +16,13 @@ class Maker:
                 ext = file_path.suffix
                 if ext == ".ttf" or ext == ".otf":
                     file_list.append(file_path)
+        file_list.sort()
         return file_list
 
     def data(self):
         items = []
         for item in self.source_files():
-            items.append([item.parent.stem, item.name])
+            items.append([item.parent.stem, item.name, "", ""])
         result = { "fonts": items }
         return result 
 
@@ -32,8 +33,6 @@ class Maker:
 
 if __name__ == "__main__":
     m = Maker()
-    m.write_json_to_file(m.data(), "../content/data/fonts.json")
-
-
+    m.write_json_to_file(m.data(), "../content/data/fonts-input.json")
 
 
