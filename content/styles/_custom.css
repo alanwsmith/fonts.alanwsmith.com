@@ -21,3 +21,10 @@ hgroup {
   color: var(--default-faded);
   border-bottom: var(--accent-border);
 }
+
+.sample {
+  background-color: white;
+  color: black;
+  padding-inline: 3rem;
+  padding-block: 6rem;
+}

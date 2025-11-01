@@ -1,13 +1,24 @@
 [!- extends "_wrappers/wrapper.html" -!]
 [!- block main -!]
 
-<hgroup>
-  <h1>Font Stuff</h1>
-  <div class="page-subtitle">
-    a place to put the type shapes
-  </div>
-</hgroup>
+    <bitty-3-0 data-connect="/scripts/bitty-page.on.js" 
+      class="load-hider content-wrapper"
+      data-send="display"
+    >
+      <hgroup>
+        <h1>Font Stuff</h1>
+        <div class="page-subtitle">
+          a place to put the type shapes
+        </div>
+      </hgroup>
 
+  <p>This is a work-in-progress. The idea is to figure
+    out the relative width of monospaced fonts.
+    Everything is based of the capital 'M' from
+    the 'Hack' font. 
+  </p>
 
+      <div data-receive="display"></div>
 
+    </bitty-3-0>
 [!- endblock -!]
