@@ -22,9 +22,48 @@ hgroup {
   border-bottom: var(--accent-border);
 }
 
+/*
 .sample {
   background-color: white;
   color: black;
   padding-inline: 3rem;
   padding-block: 6rem;
 }
+
+.system-ui {
+  font-family: system-ui;
+  font-size: 16rem;
+}
+
+.trim {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic;
+}
+
+.outline-red {
+  margin: 0;
+  padding: 0;
+  background-color: red;
+}
+*/
+
+
+.regular {
+  background-color: red;
+  display: inline-block;
+}
+
+.trimmed {
+  background-color: blue;
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic;
+}
+
+
+

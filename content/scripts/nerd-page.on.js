@@ -2,76 +2,69 @@ const fonts = [@ json.data.fonts.fonts @]
 
 const tmpl = `
 <div>
-  <button data-send="capture" data-key="NAME">Capture NAME</button>
-  <div class="sample" data-receive="capture" data-key="NAME"> 
-    <div class="font-NAME">NAME</div>
-    <div>
-      <div class="font-NAME">abcdefghijklmnopqrstuvwxyz</div>
-      <div class="font-NAME">ABCDEFGHIJKLMNOPQRSTUVWXYZ</div>
-    </div>
+  <div>NAME: <span data-receive="showSize" data-name="NAME">-</span></div>
+  <div class="displayLine" style="font-size: 10rem; font-family: NAME;">
+    <div class="regular">X</div>
+    <div class="trimmed" data-receive="loadSize" data-name="NAME">M</div>
   </div>
-</div>
-`;
+</div>`
+
 
 function setProp(key, value) {
   document.documentElement.style.setProperty(key, value);
 }
 
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 export default class {
+  #heights = {};
+
   bittyInit() {
     setProp("--load-hider", "1");
-    // this.addFontStyles();
   }
 
-  initClick(_, el) {
-    el.click();
+  loadSize(_, el) {
+    const height = el.getBoundingClientRect().height;
+    this.#heights[el.dataset.name] = height ;
+    const data = window.getComputedStyle(el);
+    console.log(data);
   }
 
-  baseline(event, el) {
-    const value = event.target.getBoundingClientRect().height;
-    el.innerHTML = value;
+  async nerdInit(_, el) {
+    let uiSubs = [["NAME", "system-ui"]]
+    let sysEl = this.api.makeElement(tmpl, uiSubs);
+    await el.appendChild(sysEl);
+
+
+    for (let i = 0; i < fonts.length; i += 1) {
+      const details = fonts[i];
+      const url = `/nerd-fonts/${details[0]}/${details[1]}`;
+      const font = new FontFace(`${details[0]}`, `url("${url}")`);
+      document.fonts.add(font);
+      await font.load();
+      const subs = [["NAME", details[0]]];
+      const newEl = this.api.makeElement(tmpl, subs);
+      await el.appendChild(newEl);
+    }
+    this.api.forward(null, "loadSize");
+    this.api.forward(null, "showSize");
+    // this.api.forward(null, "output");
   }
 
-
-  // addFontStyles() {
-  //   const sheet = new CSSStyleSheet();
-  //   const lines = fonts.map((font) => {
-  //     return `@font-face {
-  //       font-family: ${font[0]};
-  //       src: url('/nerd-fonts/${font[0]}/${font[1]}');
-  //     }
-  //     .font-${font[0]} {
-  //       font-family: ${font[0]};
-  //       font-size: 5rem;
-  //     }`
-  //   });
-  //    sheet.replaceSync(lines.join("\n"));
-  //    document.adoptedStyleSheets.push(sheet);
-  // }
-
-  // capture(event, el) {
-  //   if (this.api.match(event, el, "key")) {
-  //     html2canvas(el).then(function(canvas) {
-  //       let url = canvas.toDataURL();
-  //       var a = document.createElement("a");
-  //       document.body.appendChild(a);
-  //       a.href = url;
-  //       a.download = `${el.dataset.key}.png`;
-  //       a.click();
-  //     });
-  //   }
-  // }
-
-  display(_event, el) {
-    fonts.forEach((font) => {
-      const subs = [["NAME", font[0]]];
-      const fontDivs = this.api.makeElements(tmpl, subs);
-      el.appendChild(fontDivs);
-    });
+  output(_, el) {
+    el.innerHTML = "asdf";
   }
+
+  showSize(_, el) {
+    const name = el.dataset.name;
+    console.log(name);
+    el.innerHTML = this.#heights[name];
+  }
+
 
 };
-
 
 // from: https://stackoverflow.com/questions/16816071/calculate-exact-character-string-height-in-javascript/16823769#16823769
 function measureTextHeight(fontSizeFace) {

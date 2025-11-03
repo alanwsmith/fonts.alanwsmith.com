@@ -1623,7 +1623,9 @@ blockquote {
 body {
   background-color: var(--background);
   color: var(--default);
+  /*
   font-family: system-ui;
+*/
   font-size: var(--default-font);
 }
 button {
@@ -1959,12 +1961,51 @@ hgroup {
   border-bottom: var(--accent-border);
 }
 
+/*
 .sample {
   background-color: white;
   color: black;
   padding-inline: 3rem;
   padding-block: 6rem;
 }
+
+.system-ui {
+  font-family: system-ui;
+  font-size: 16rem;
+}
+
+.trim {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic;
+}
+
+.outline-red {
+  margin: 0;
+  padding: 0;
+  background-color: red;
+}
+*/
+
+
+.regular {
+  background-color: red;
+  display: inline-block;
+}
+
+.trimmed {
+  background-color: blue;
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic;
+}
+
+
+
 </style><script>
   setTimeout(() => { 
     document.documentElement.style.setProperty("--load-hider", "1");
@@ -2003,7 +2044,11 @@ hgroup {
     }
   };
 
-</script>    <script src="/scripts/html2canvas.js"></script>
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!--
+    <script src="/scripts/html2canvas.js"></script>
+-->
   </head>
   <body>
 
@@ -2020,10 +2065,11 @@ hgroup {
     <a href="https://www.alanwsmith.com/feeds/posts.xml">rss</a>
   </div>
 </header>      <main class="default-wrapper default-flow">
-<bitty-3-0 data-connect="/scripts/bitty-page.on.js" 
-      class="load-hider content-wrapper"
-      data-send="display"
-    >
+<bitty-4-0 data-connect="/scripts/bitty-page.on.js" 
+      class="load-hider"
+>
+
+
       <hgroup>
         <h1>Font Stuff</h1>
         <div class="page-subtitle">
@@ -2031,15 +2077,72 @@ hgroup {
         </div>
       </hgroup>
 
+    <ul>
+      <li><a href="/nerd-font-sizes/">Nerd Font Sizes</a></li>
+    </ul>
+
+
+    <!--
+  <div>
+
+  <p>NOTE: The measurements on this page 
+    currently require features that are
+    in Chrome.</p>
+
+
+
+      <div class="outline-red trim system-ui"
+        data-receive="initClick"
+        data-send="baseline"
+      >M</div>
+
+      <div data-receive="baseline">waiting</div>
+
+  <div data-receive="display"></div>
+
+  </div>
+
+-->
+
+
+    </bitty-4-0>
+
+
+
+
+
+
+
+<!--
+  <div data-receive="display"></div>
+
+
+  <pre>
+    To look at: 
+    font-size-adjust,
+    size-adjust, ascent-override, descent-override, and line-gap-override.
+
+https://blog.sentry.io/web-fonts-and-the-dreaded-cumulative-layout-shift/
+
+https://codepen.io/simonjhearne/pen/rNMGJyr
+
+https://deploy-preview-15--upbeat-shirley-608546.netlify.app/perfect-ish-font-fallback/?font=Miltonian
+
+https://developer.mozilla.org/en-US/docs/Web/API/CSS_Font_Loading_API
+  </pre>
+-->
+
+<!--
   <p>This is a work-in-progress. The idea is to figure
-    out the relative width of monospaced fonts.
-    Everything is based of the capital 'M' from
-    the 'Hack' font. 
+    out the relative width of mono-space fonts.
+    All the fonts were rendered at 5rem. The resulting
+    images were blown up to 400% and the height of 
+    the capital 'M' character was measured. The goal
+    is to run the math to get them all the same
+    height to do a comparison of them at the 
+    same height. 
   </p>
-
-      <div data-receive="display"></div>
-
-    </bitty-3-0>      </main>
+-->      </main>
 <footer>
   <div class="small-font">
     <div data-receive="prodLink"></div>
@@ -2049,6 +2152,6 @@ hgroup {
     <a href="https://links.alanwsmith.com/">other projects</a> ~
     <a href="https://www.alanwsmith.com/feeds/posts.xml">rss</a>
   </div>
-</footer>    <script src="/components/bitty-3.0.0.min.js" type="module"></script>
+</footer>    <script src="/components/bitty-4.0.0-rc1.full.js" type="module"></script>
   </body>
 </html>
