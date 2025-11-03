@@ -1,0 +1,73 @@
+[!- extends "_wrappers/wrapper.html" -!]
+[!- block main -!]
+
+<style>
+  .start {
+    font-size: 20rem;
+  }
+  .adjusted {
+    font-size: 20rem;
+    font-size-adjust: 0.3;
+  }
+  .test-canvas {
+    width: 300;
+    height: 300;
+    font-size: 10rem;
+  }
+</style>
+
+
+<bitty-4-0 data-connect="/scripts/nerd-page.on.js" 
+  data-send=""
+  class="load-hider">
+    <div>
+      <span class="start">b</span>
+      <span class="adjusted">b</span>
+    </div>
+
+</bitty-4-0>
+
+
+
+
+
+<!--
+
+<style>
+:root {
+}
+  .f1 {
+    display: inline-block;
+    font-family: "MartianMono";
+    text-box-trim: trim-both;
+    text-box-edge: cap alphabetic;
+    font-size: 3rem;
+    border-block: 1px solid red;
+  }
+  .f2 {
+    display: inline-block;
+    font-family: "Inconsolata";
+    text-box-trim: trim-both;
+    text-box-edge: cap alphabetic;
+    font-size: 3rem;
+    border-block: 1px solid red;
+  }
+</style>
+
+
+<bitty-4-0 data-connect="/scripts/nerd-page.on.js" 
+  data-send="nerdInit"
+  class="load-hider">
+
+  <div data-receive="output">
+    <div class="f1">MartianMono</div>
+    <div class="f2">Inconsolata</div>
+  </div>
+
+  <div data-receive="nerdInit"></div>
+
+</bitty-4-0>
+
+-->
+
+[!- endblock -!]

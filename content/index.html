@@ -1,13 +1,22 @@
 [!- extends "_wrappers/wrapper.html" -!]
 [!- block main -!]
 
-<hgroup>
-  <h1>A New Site</h1>
-  <div class="page-subtitle">
-    With a subtitle
-  </div>
-</hgroup>
+<bitty-4-0 data-connect="/scripts/compare.on.js" 
+  data-send="initSize checkSize"
+  jclass="load-hider">
 
-<p>Hello, world</p>
+  <hgroup>
+    <h1>Font Stuff</h1>
+    <div class="page-subtitle">
+      a place to put the type shapes
+    </div>
+  </hgroup>
+
+  <div>
+    <div class="trimmed" data-receive="initSize">b</div>
+    <div class="trimmed" data-receive="checkSize">b</div>
+  </div>
+
+</bitty-4-0>
 
 [!- endblock -!]

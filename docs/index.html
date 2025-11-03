@@ -664,6 +664,7 @@ font-weight: bold;
 :root {
   color-scheme: light dark; /* Default: light */
   /* Color Base Variables */
+  /*
   --dark-mode__accent: oklch(64.00000% 0.03972 417.45600);
   --dark-mode__accent-faded: oklch(64.00000% 0.03972 417.45600 / 0.5);
   --dark-mode__accent-faded2: oklch(64.00000% 0.03972 417.45600 / 0.2);
@@ -696,10 +697,12 @@ font-weight: bold;
   --light-mode__warning: oklch(46.00000% 0.17763 369.25200);
   --light-mode__warning-faded: oklch(46.00000% 0.17763 369.25200 / 0.5);
   --light-mode__warning-faded2: oklch(46.00000% 0.17763 369.25200 / 0.2);
+*/
 }
 
 :root {
   /* Color Light Mode Variables */
+  /*
   --accent: var(--light-mode__accent);
   --accent-faded: var(--light-mode__accent-faded);
   --accent-faded2: var(--light-mode__accent-faded2);
@@ -716,6 +719,8 @@ font-weight: bold;
   --warning: var(--light-mode__warning);
   --warning-faded: var(--light-mode__warning-faded);
   --warning-faded2: var(--light-mode__warning-faded2);
+*/
+
 }
 
 
@@ -753,6 +758,7 @@ font-weight: bold;
 
 :root {
   /* B&W Base Variables */
+  /*
   --dark-mode__black: oklch(0% 0 0);
   --dark-mode__black-faded: oklch(0% 0 0 / 0.4);
   --dark-mode__black-faded2: oklch(0% 0 0 / 0.1);
@@ -765,6 +771,7 @@ font-weight: bold;
   --light-mode__white: oklch(100% 0 0);
   --light-mode__white-faded: oklch(100% 0 0 / 0.4);
   --light-mode__white-faded2: oklch(100% 0 0 / 0.1);
+*/
 }
 
 :root {
@@ -900,6 +907,7 @@ font-weight: bold;
 
 :root {
   /* reverse Base Variables */
+  /*
   --dark-mode__match: oklch(0% 0 0);
   --dark-mode__match-faded: oklch(0% 0 0 / 0.4);
   --dark-mode__match-faded2: oklch(0% 0 0 / 0.1);
@@ -912,6 +920,7 @@ font-weight: bold;
   --light-mode__reverse: oklch(0% 0 0);
   --light-mode__reverse-faded: oklch(0% 0 0 / 0.4);
   --light-mode__reverse-faded2: oklch(0% 0 0 / 0.1);
+*/
 }
 
 :root {
@@ -1614,7 +1623,9 @@ blockquote {
 body {
   background-color: var(--background);
   color: var(--default);
+  /*
   font-family: system-ui;
+*/
   font-size: var(--default-font);
 }
 button {
@@ -1625,7 +1636,9 @@ button {
   cursor: pointer;
 }
 canvas {
+/*
   max-width: 100%;
+*/
 }
 caption {
   caption-side: bottom;
@@ -1926,21 +1939,6 @@ video {
   max-width: 100%;
 }
 
-
-:root {
-  --svg-note-default-stroke-color: var(--primary-color);
-  --svg-note-default-fill-color: var(--primary-color);
-}
-
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --svg-note-default-stroke-color: var(--primary-color);
-    --svg-note-default-fill-color: var(--primary-color);
-  }
-}
-
-
 .content-wrapper {
   display: grid;
   grid-template-rows: auto 1fr auto;
@@ -1964,6 +1962,71 @@ hgroup {
   color: var(--default-faded);
   border-bottom: var(--accent-border);
 }
+
+/*
+.sample {
+  background-color: white;
+  color: black;
+  padding-inline: 3rem;
+  padding-block: 6rem;
+}
+
+.system-ui {
+  font-family: system-ui;
+  font-size: 16rem;
+}
+
+.trim {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic;
+}
+
+.outline-red {
+  margin: 0;
+  padding: 0;
+  background-color: red;
+}
+*/
+
+
+.regular {
+  background-color: red;
+  display: inline-block;
+}
+
+.trimmed {
+  background-color: blue;
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic;
+}
+
+:root {
+  --test-font-size: 30rem;
+}
+
+[data-receive=loadFont] {
+  font-size: var(--test-font-size);
+}
+
+[data-receive=checkSize] {
+  font-size: var(--test-font-size);
+  font-size-adjust: var(--adjust-value);
+}
+
+.test-font {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 420px;
+  border: 1px solid red;
+  font-family: var(--test-font);
+}
+
 </style><script>
   setTimeout(() => { 
     document.documentElement.style.setProperty("--load-hider", "1");
@@ -2002,7 +2065,12 @@ hgroup {
     }
   };
 
-</script>  </head>
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!--
+    <script src="/scripts/html2canvas.js"></script>
+-->
+  </head>
   <body>
 
 <noscript>
@@ -2011,27 +2079,30 @@ hgroup {
     Most content will be fine, but some things won't work.
   </p>
   <style>:root { --load-hider: 1; }</style>
-</noscript>
-    <bitty-3-0 data-connect="/scripts/bitty-page.js" 
-      class="load-hider content-wrapper">
-
-<header class="default-wrapper xlarge-bottom-margin">
+</noscript><header class="default-wrapper xlarge-bottom-margin">
   <div class="small-font">
     from <a href="https://www.alanwsmith.com/">alan w smith</a> ~ <a href="https:&#x2f;&#x2f;github.com&#x2f;alanwsmith&#x2f;">source</a> ~ <a href="https://socials.alanwsmith.com/">socials</a> ~
     <a href="https://links.alanwsmith.com/">other projects</a> ~
     <a href="https://www.alanwsmith.com/feeds/posts.xml">rss</a>
   </div>
-</header>
-      <main class="default-wrapper default-flow">
-<hgroup>
-  <h1>A New Site</h1>
-  <div class="page-subtitle">
-    With a subtitle
+</header>      <main class="default-wrapper default-flow">
+<bitty-4-0 data-connect="/scripts/compare.on.js" 
+  data-send="initSize checkSize"
+  jclass="load-hider">
+
+  <hgroup>
+    <h1>Font Stuff</h1>
+    <div class="page-subtitle">
+      a place to put the type shapes
+    </div>
+  </hgroup>
+
+  <div>
+    <div class="trimmed" data-receive="initSize">b</div>
+    <div class="trimmed" data-receive="checkSize">b</div>
   </div>
-</hgroup>
 
-<p>Hello, world</p>      </main>
-
+</bitty-4-0>      </main>
 <footer>
   <div class="small-font">
     <div data-receive="prodLink"></div>
@@ -2041,9 +2112,6 @@ hgroup {
     <a href="https://links.alanwsmith.com/">other projects</a> ~
     <a href="https://www.alanwsmith.com/feeds/posts.xml">rss</a>
   </div>
-</footer>
-    </bitty-3-0>
-
-    <script src="/components/bitty-3.0.0.min.js" type="module"></script>
+</footer>    <script src="/components/bitty-4.0.0-rc1.full.js" type="module"></script>
   </body>
 </html>
