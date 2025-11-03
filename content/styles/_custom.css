@@ -65,5 +65,24 @@ hgroup {
   text-box-edge: cap alphabetic;
 }
 
+:root {
+  --test-font-size: 30rem;
+}
 
+[data-receive=loadFont] {
+  font-size: var(--test-font-size);
+}
+
+[data-receive=checkSize] {
+  font-size: var(--test-font-size);
+  font-size-adjust: var(--adjust-value);
+}
+
+.test-font {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 420px;
+  border: 1px solid red;
+  font-family: var(--test-font);
+}
 

@@ -77,8 +77,8 @@ export default class {
 function measureTextHeight(fontSizeFace) {
 
     // create a temp canvas
-    var width=1000;
-    var height=60;
+    var width=300;
+    var height=300;
     var canvas=document.createElement("canvas");
     canvas.width=width;
     canvas.height=height;

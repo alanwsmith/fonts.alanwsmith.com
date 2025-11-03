@@ -1636,7 +1636,9 @@ button {
   cursor: pointer;
 }
 canvas {
+/*
   max-width: 100%;
+*/
 }
 caption {
   caption-side: bottom;
@@ -2004,7 +2006,26 @@ hgroup {
   text-box-edge: cap alphabetic;
 }
 
+:root {
+  --test-font-size: 30rem;
+}
 
+[data-receive=loadFont] {
+  font-size: var(--test-font-size);
+}
+
+[data-receive=checkSize] {
+  font-size: var(--test-font-size);
+  font-size-adjust: var(--adjust-value);
+}
+
+.test-font {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 420px;
+  border: 1px solid red;
+  font-family: var(--test-font);
+}
 
 </style><script>
   setTimeout(() => { 
@@ -2065,84 +2086,23 @@ hgroup {
     <a href="https://www.alanwsmith.com/feeds/posts.xml">rss</a>
   </div>
 </header>      <main class="default-wrapper default-flow">
-<bitty-4-0 data-connect="/scripts/bitty-page.on.js" 
-      class="load-hider"
->
+<bitty-4-0 data-connect="/scripts/compare.on.js" 
+  data-send="initSize checkSize"
+  jclass="load-hider">
 
+  <hgroup>
+    <h1>Font Stuff</h1>
+    <div class="page-subtitle">
+      a place to put the type shapes
+    </div>
+  </hgroup>
 
-      <hgroup>
-        <h1>Font Stuff</h1>
-        <div class="page-subtitle">
-          a place to put the type shapes
-        </div>
-      </hgroup>
-
-    <ul>
-      <li><a href="/nerd-font-sizes/">Nerd Font Sizes</a></li>
-    </ul>
-
-
-    <!--
   <div>
-
-  <p>NOTE: The measurements on this page 
-    currently require features that are
-    in Chrome.</p>
-
-
-
-      <div class="outline-red trim system-ui"
-        data-receive="initClick"
-        data-send="baseline"
-      >M</div>
-
-      <div data-receive="baseline">waiting</div>
-
-  <div data-receive="display"></div>
-
+    <div class="trimmed" data-receive="initSize">b</div>
+    <div class="trimmed" data-receive="checkSize">b</div>
   </div>
 
--->
-
-
-    </bitty-4-0>
-
-
-
-
-
-
-
-<!--
-  <div data-receive="display"></div>
-
-
-  <pre>
-    To look at: 
-    font-size-adjust,
-    size-adjust, ascent-override, descent-override, and line-gap-override.
-
-https://blog.sentry.io/web-fonts-and-the-dreaded-cumulative-layout-shift/
-
-https://codepen.io/simonjhearne/pen/rNMGJyr
-
-https://deploy-preview-15--upbeat-shirley-608546.netlify.app/perfect-ish-font-fallback/?font=Miltonian
-
-https://developer.mozilla.org/en-US/docs/Web/API/CSS_Font_Loading_API
-  </pre>
--->
-
-<!--
-  <p>This is a work-in-progress. The idea is to figure
-    out the relative width of mono-space fonts.
-    All the fonts were rendered at 5rem. The resulting
-    images were blown up to 400% and the height of 
-    the capital 'M' character was measured. The goal
-    is to run the math to get them all the same
-    height to do a comparison of them at the 
-    same height. 
-  </p>
--->      </main>
+</bitty-4-0>      </main>
 <footer>
   <div class="small-font">
     <div data-receive="prodLink"></div>

@@ -1636,7 +1636,9 @@ button {
   cursor: pointer;
 }
 canvas {
+/*
   max-width: 100%;
+*/
 }
 caption {
   caption-side: bottom;
@@ -2004,7 +2006,26 @@ hgroup {
   text-box-edge: cap alphabetic;
 }
 
+:root {
+  --test-font-size: 30rem;
+}
 
+[data-receive=loadFont] {
+  font-size: var(--test-font-size);
+}
+
+[data-receive=checkSize] {
+  font-size: var(--test-font-size);
+  font-size-adjust: var(--adjust-value);
+}
+
+.test-font {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 420px;
+  border: 1px solid red;
+  font-family: var(--test-font);
+}
 
 </style><script>
   setTimeout(() => { 
@@ -2065,7 +2086,6 @@ hgroup {
     <a href="https://www.alanwsmith.com/feeds/posts.xml">rss</a>
   </div>
 </header>      <main class="default-wrapper default-flow">
-<!--
 <style>
   .start {
     font-size: 20rem;
@@ -2074,16 +2094,29 @@ hgroup {
     font-size: 20rem;
     font-size-adjust: 0.3;
   }
+  .test-canvas {
+    width: 300;
+    height: 300;
+    font-size: 10rem;
+  }
 </style>
 
 
-<div>
-  <span class="start">b</span>
-  <span class="adjusted">b</span>
-</div>
+<bitty-4-0 data-connect="/scripts/nerd-page.on.js" 
+  data-send=""
+  class="load-hider">
+    <div>
+      <span class="start">b</span>
+      <span class="adjusted">b</span>
+    </div>
 
--->
+</bitty-4-0>
 
+
+
+
+
+<!--
 
 <style>
 :root {
@@ -2118,7 +2151,9 @@ hgroup {
 
   <div data-receive="nerdInit"></div>
 
-</bitty-4-0>      </main>
+</bitty-4-0>
+
+-->      </main>
 <footer>
   <div class="small-font">
     <div data-receive="prodLink"></div>

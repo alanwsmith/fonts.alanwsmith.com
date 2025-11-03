@@ -1,0 +1,24 @@
+[!- extends "_wrappers/wrapper.html" -!]
+[!- block main -!]
+
+<bitty-4-0 data-connect="/scripts/calculate-nerd-fonts.on.js" 
+  data-send="loadFont"
+  class="load-hider">
+
+  <div class="test-font">
+    <div>
+      <div class="trimmed" data-receive="loadFont">b</div>
+    </div>
+    <div>
+      <div class="trimmed" data-receive="checkSize">b</div>
+    </div>
+  </div>
+
+  <div>
+    <pre data-receive="display"></pre>
+  </div>
+
+</bitty-4-0>
+
+[!- endblock -!]
+

@@ -1,7 +1,6 @@
 [!- extends "_wrappers/wrapper.html" -!]
 [!- block main -!]
 
-<!--
 <style>
   .start {
     font-size: 20rem;
@@ -10,16 +9,29 @@
     font-size: 20rem;
     font-size-adjust: 0.3;
   }
+  .test-canvas {
+    width: 300;
+    height: 300;
+    font-size: 10rem;
+  }
 </style>
 
 
-<div>
-  <span class="start">b</span>
-  <span class="adjusted">b</span>
-</div>
+<bitty-4-0 data-connect="/scripts/nerd-page.on.js" 
+  data-send=""
+  class="load-hider">
+    <div>
+      <span class="start">b</span>
+      <span class="adjusted">b</span>
+    </div>
 
--->
+</bitty-4-0>
 
+
+
+
+
+<!--
 
 <style>
 :root {
@@ -56,5 +68,6 @@
 
 </bitty-4-0>
 
+-->
 
 [!- endblock -!]

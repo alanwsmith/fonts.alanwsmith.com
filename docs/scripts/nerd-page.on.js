@@ -37,7 +37,6 @@ export default class {
     let sysEl = this.api.makeElement(tmpl, uiSubs);
     await el.appendChild(sysEl);
 
-
     for (let i = 0; i < fonts.length; i += 1) {
       const details = fonts[i];
       const url = `/nerd-fonts/${details[0]}/${details[1]}`;
@@ -61,6 +60,16 @@ export default class {
     const name = el.dataset.name;
     console.log(name);
     el.innerHTML = this.#heights[name];
+  }
+
+  check(_, el) {
+    var ctx = el.getContext("2d");
+    var text = "b";
+    ctx.save();
+//     ctx.font = "Arial Black";
+    ctx.clearRect(0,0,300,300);
+    ctx.fillText(text, 0, 20);
+    ctx.restore();
   }
 
 
