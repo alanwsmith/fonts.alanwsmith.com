@@ -13,7 +13,7 @@ function setProp(key, value) {
 }
 
 function trimNum(num) {
-  return Math.floor(num * 1000) / 1000;
+  return Math.floor(num * 10000) / 10000;
 }
 
 export default class {
@@ -40,17 +40,17 @@ export default class {
 
   async loadFont(_, el) {
     this.#fontIndex += 1;
-    if (this.#fontIndex < (fonts.length - 1)) {
+    if (this.#fontIndex < fonts.length) {
       this.resetVars();
       setProp("--adjust-value", this.#adjustment)
       const i = this.#fontIndex;
       const details = fonts[i];
       console.log(`Checking: ${details[0]}`);
       const url = `/nerd-fonts/${details[0]}/${details[1]}`;
-      const font = new FontFace(`${details[0]}`, `url("${url}")`);
+      const font = new FontFace(`font-${details[0]}`, `url("${url}")`);
       document.fonts.add(font);
       await font.load();
-      setProp("--test-font", details[0]);
+      setProp("--test-font", `font-${details[0]}`);
       await sleep(200);
       this.#paddedTarget = pad(el.getBoundingClientRect().height);
       this.api.forward(null, "checkSize");
@@ -81,6 +81,7 @@ export default class {
     } else {
       this.#data[fonts[this.#fontIndex][0]] = trimNum(this.#adjustment);
       this.api.forward(null, "display");
+      this.api.forward(null, "loadFont");
     }
   }
 

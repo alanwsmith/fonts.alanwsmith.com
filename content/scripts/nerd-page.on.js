@@ -72,7 +72,6 @@ export default class {
     ctx.restore();
   }
 
-
 };
 
 // from: https://stackoverflow.com/questions/16816071/calculate-exact-character-string-height-in-javascript/16823769#16823769
