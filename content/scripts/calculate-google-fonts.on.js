@@ -1,4 +1,4 @@
-const fontObject = [@ json.data.googlefontstest @]
+const fontObject = [@ json.data.googlefonts @]
 const fonts = [];
 
 Object.entries(fontObject).forEach((item) => {
@@ -30,13 +30,13 @@ export default class {
   #increment = null;
   #paddedTarget = null;
   #fontIndex = -1;
-
   #data = {};
+
+  #localStorageName = "googleFontsV3";
 
   bittyInit() {
     setProp("--load-hider", "1");
-   localStorage.setItem("googleFonts", "{}");
-    const savedData = localStorage.getItem("googleFonts");
+    const savedData = localStorage.getItem(this.#localStorageName);
     if (savedData) {
       this.#data = JSON.parse(savedData);
     }
@@ -71,14 +71,12 @@ export default class {
 
   async checkSize(_, el) {
     const currentPadded = pad(el.getBoundingClientRect().height);
-    //console.log(this.#increment);
     if (currentPadded < this.#paddedTarget) {
       if (this.#direction === "down") {
         this.#direction = "up";
         this.#increment =  this.#increment / 10;
       }
       this.#adjustment += this.#increment;
-      //console.log(`Update: ${this.#adjustment}`);
       setProp("--adjust-value", this.#adjustment);
       window.requestAnimationFrame((t) => { this.api.forward(null, "checkSize"); });
     } else if (currentPadded > this.#paddedTarget) {
@@ -88,7 +86,6 @@ export default class {
       }
       this.#adjustment -= this.#increment;
       setProp("--adjust-value", this.#adjustment);
-      //console.log(`Update: ${this.#adjustment}`);
       window.requestAnimationFrame((t) => { this.api.forward(null, "checkSize"); });
     } else {
       const i = this.#fontIndex;
@@ -98,7 +95,7 @@ export default class {
           url: details.url,
           value: trimNum(this.#adjustment)
         };
-      localStorage.setItem("googleFonts", JSON.stringify(this.#data));
+      // localStorage.setItem(this.#localStorageName, JSON.stringify(this.#data));
       this.api.forward(null, "display");
       this.api.forward(null, "rawFont");
     }
@@ -115,6 +112,18 @@ export default class {
     this.#direction = "up";
     this.#increment = 0.1;
     this.#paddedTarget = null;
+  }
+
+  async showData(_, el) {
+    const jsonString =  JSON.stringify(this.#data, null, 2);
+    try {
+      await navigator.clipboard.writeText(
+        jsonString
+      )
+    } catch (err) {
+      console.error("Could not copy to clipboard")
+    }
+    el.innerHTML = "copied to clipboard";
   }
 
 }

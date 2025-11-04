@@ -1,5 +1,15 @@
 const fonts = [@ json.data.googlefontstest @];
 
+const googleSizes = [@ json.data.googlevalues @];
+
+const t = {
+  font: `
+<div class="fontFamily">
+  <div>NAME</div>
+</div>
+`
+}
+
 function pad(input) {
   return Math.floor(input * 1000); 
 }
@@ -92,4 +102,11 @@ export default class {
     el.innerHTML = trimNum(this.#adjustment);
   }
 
+  picker(_, el) {
+    Object.entries(googleSizes).forEach((gs) => {
+      const subs = [["NAME", gs[0]]]
+      const fontEl = this.api.makeElement(t.font, subs);
+      el.appendChild(fontEl);
+    });
+  }
 }
