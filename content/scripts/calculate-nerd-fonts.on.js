@@ -38,7 +38,7 @@ export default class {
     this.#paddedTarget = null;
   }
 
-  async loadFont(_, el) {
+  async rawFont(_, el) {
     this.#fontIndex += 1;
     if (this.#fontIndex < fonts.length) {
       this.resetVars();
@@ -81,7 +81,7 @@ export default class {
     } else {
       this.#data[fonts[this.#fontIndex][0]] = trimNum(this.#adjustment);
       this.api.forward(null, "display");
-      this.api.forward(null, "loadFont");
+      this.api.forward(null, "rawFont");
     }
   }
 

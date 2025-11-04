@@ -11,6 +11,16 @@ and API key from my keyring. You'll
 need to dig into getting
 your own if you want to use it. 
 
+- The pages to generate the data are:
+
+    /calculate-nerd-fonts/
+
+    /calculate-google-fonts/
+
+    They are offline when not in dev since
+    the values only need to be calculated once. 
+
+
 ## Links
 
 - https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/font-size-adjust
