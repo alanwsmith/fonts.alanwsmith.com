@@ -1,6 +1,6 @@
-const fonts = [@ json.data.googlefontstest @];
+const fonts = [@ json.data.googleFontsTest @];
 
-const googleSizes = [@ json.data.googlevalues @];
+const googleSizes = [@ json.data.googleFontValues @];
 
 const t = {
   font: `
