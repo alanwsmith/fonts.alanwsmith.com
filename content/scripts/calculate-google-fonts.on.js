@@ -2,8 +2,8 @@ const fontObject = [@ json.data.googlefontstest @]
 const fonts = [];
 
 Object.entries(fontObject).forEach((item) => {
-  Object.values(item[1]['files']).forEach((v) => {
-    fonts.push([item[0], v]);
+  Object.entries(item[1]['files']).forEach((data) => {
+    fonts.push({ name: item[0], key: data[0], url: data[1]});
   });
 });
 
@@ -35,6 +35,12 @@ export default class {
 
   bittyInit() {
     setProp("--load-hider", "1");
+   localStorage.setItem("googleFonts", "{}");
+    const savedData = localStorage.getItem("googleFonts");
+    if (savedData) {
+      this.#data = JSON.parse(savedData);
+    }
+     console.log(this.#data);
     this.resetVars();
   }
 
@@ -45,21 +51,21 @@ export default class {
       setProp("--adjust-value", this.#adjustment)
       const i = this.#fontIndex;
       const details = fonts[i];
-      console.log(`Checking: ${details[0]} - ${details[1]}`);
-      if (!this.#data[details[0]]) {
-        this.#data[details[0]] = {};
+      console.log(`Checking: ${details.name} - ${details.key}`);
+      if (!this.#data[details.name]) {
+        this.#data[details.name] = {};
       }
-      if (!this.#data[details[0]][details[1]]) {
-        const font = new FontFace(details[0], `url("${details[1]}")`);
+      if (!this.#data[details.name][details.key]) {
+        const font = new FontFace(details.name, `url("${details.url}")`);
         document.fonts.add(font);
         await font.load();
-        setProp("--test-font", details[0]);
+        setProp("--test-font", details.name);
         await sleep(200);
         this.#paddedTarget = pad(el.getBoundingClientRect().height);
         this.api.forward(null, "checkSize");
-       } else {
-         this.api.forward(null, "rawFont");
-       }
+      } else {
+        this.api.forward(null, "rawFont");
+      }
     }
   }
 
@@ -87,14 +93,21 @@ export default class {
     } else {
       const i = this.#fontIndex;
       const details = fonts[i];
-      this.#data[details[0]][details[1]] = trimNum(this.#adjustment);
+      this.#data[details.name][details.key] = 
+        {
+          url: details.url,
+          value: trimNum(this.#adjustment)
+        };
+      localStorage.setItem("googleFonts", JSON.stringify(this.#data));
       this.api.forward(null, "display");
       this.api.forward(null, "rawFont");
     }
   }
 
   display(_, el) {
-    el.innerHTML = JSON.stringify(this.#data, null, 2);
+    const i = this.#fontIndex;
+    const details = fonts[i];
+    el.innerHTML = `${trimNum(this.#adjustment)} - ${details.name}`;
   }
 
   resetVars() {

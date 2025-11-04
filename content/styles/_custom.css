@@ -65,7 +65,7 @@ hgroup {
 }
 
 :root {
-  --test-font-size: 30rem;
+  --test-font-size: 50rem;
   --adjust-value: 0.1;
 }
 
@@ -92,6 +92,15 @@ hgroup {
   gap: 1rem;
   grid-template-columns: 1fr 1fr;
   font-family: var(--test-font);
+}
+
+.test-font-google {
+  postion: absolute;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr 1fr;
+  font-family: var(--test-font);
+  padding-top: 4rem;
 }
 
 .two-column {

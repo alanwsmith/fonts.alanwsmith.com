@@ -1997,7 +1997,7 @@ hgroup {
 }
 
 :root {
-  --test-font-size: 30rem;
+  --test-font-size: 50rem;
   --adjust-value: 0.1;
 }
 
@@ -2026,6 +2026,15 @@ hgroup {
   font-family: var(--test-font);
 }
 
+.test-font-google {
+  postion: absolute;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr 1fr;
+  font-family: var(--test-font);
+  padding-top: 4rem;
+}
+
 .two-column {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -2038,19 +2047,21 @@ input {
 </style>  </head>
   <body>
 
+
 <noscript>
   <p>
     NOTE: This site use JavaScript which appears to be turned off. 
     Most content will be fine, but some things won't work.
   </p>
   <style>:root { --load-hider: 1; }</style>
-</noscript><header class="default-wrapper xlarge-bottom-margin">
+</noscript>    <div class="content-wrapper">
+<header class="default-wrapper xlarge-bottom-margin">
   <div class="small-font">
     from <a href="https://www.alanwsmith.com/">alan w smith</a> ~ <a href="https:&#x2f;&#x2f;github.com&#x2f;alanwsmith&#x2f;">source</a> ~ <a href="https://socials.alanwsmith.com/">socials</a> ~
     <a href="https://links.alanwsmith.com/">other projects</a> ~
     <a href="https://www.alanwsmith.com/feeds/posts.xml">rss</a>
   </div>
-</header>      <main class="default-wrapper default-flow">
+</header>      <main class="xlarge-wrapper default-flow">
 <!--
 <p>Note: this page is offline since the values
   have already been calculated. If you want
@@ -2064,17 +2075,17 @@ input {
   data-send="rawFont"
   class="load-hider">
 
-  <div class="test-font">
+  <div>
+    <pre data-receive="display">-</pre>
+  </div>
+
+  <div class="test-font-google">
     <div>
       <div class="trimmed" data-receive="rawFont">b</div>
     </div>
     <div>
       <div class="trimmed" data-receive="checkSize">b</div>
     </div>
-  </div>
-
-  <div>
-    <pre data-receive="display"></pre>
   </div>
 
 </bitty-4-0>      </main>
@@ -2087,6 +2098,7 @@ input {
     <a href="https://links.alanwsmith.com/">other projects</a> ~
     <a href="https://www.alanwsmith.com/feeds/posts.xml">rss</a>
   </div>
-</footer>    <script src="/components/bitty-4.0.0-rc1.full.js" type="module"></script>
+</footer>    </div>
+    <script src="/components/bitty-4.0.0-rc1.full.js" type="module"></script>
   </body>
 </html>
