@@ -1,20 +1,24 @@
 [!- extends "_wrappers/wrapper.html" -!]
 [!- block main -!]
 
-
+<!--
 <p>Note: this page is offline since the values
   have already been calculated. If you want
   to run the process yourself you can 
   <a href="https://github.com/alanwsmith/fonts.alanwsmith.com">clone the repo</a>
   and run it yourself
 </p>
+-->
 
-  <!--
-<bitty-4-0 data-connect="/scripts/calculate-nerd-fonts.on.js" 
+<bitty-4-0 data-connect="/scripts/calculate-google-fonts.on.js" 
   data-send="rawFont"
   class="load-hider">
 
-  <div class="test-font">
+  <div>
+    <pre data-receive="display">-</pre>
+  </div>
+
+  <div class="test-font-google">
     <div>
       <div class="trimmed" data-receive="rawFont">b</div>
     </div>
@@ -23,13 +27,21 @@
     </div>
   </div>
 
+
   <div>
-    <pre data-receive="display"></pre>
+    <button data-send="showData">Show Data</button>
   </div>
+
+  <pre data-receive="showData">
+
+  </pre>
+
+
+
+
 
 </bitty-4-0>
 
--->
-
 [!- endblock -!]
+
 

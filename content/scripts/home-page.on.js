@@ -1,4 +1,14 @@
-const fonts = [@ json.data.fonts.fonts @];
+const fonts = [@ json.data.googleFontsTest @];
+
+const googleSizes = [@ json.data.googleFontValues @];
+
+const t = {
+  font: `
+<div class="fontFamily">
+  <div>NAME</div>
+</div>
+`
+}
 
 function pad(input) {
   return Math.floor(input * 1000); 
@@ -16,58 +26,48 @@ function trimNum(num) {
   return Math.floor(num * 10000) / 10000;
 }
 
+
 export default class {
+  #fontURL = null;
   #adjustment = null;
   #direction = null;
   #increment = null;
   #paddedTarget = null;
-  #fontIndex = -1;
-
-  #data = {};
-
+  #status = "asdf";
 
   bittyInit() {
     setProp("--load-hider", "1");
-    this.resetVars();
   }
 
-  resetVars() {
-    this.#adjustment = 0.1;
-    this.#direction = "up";
-    this.#increment = 0.1;
-    this.#paddedTarget = null;
-  }
-
-  async rawFont(_, el) {
-    this.#fontIndex += 1;
-    if (this.#fontIndex < fonts.length) {
+  async calculate(_event, _el) {
+    // console.log("Calculating");
+    if (this.#fontURL !== null) {
+      const name = `font-${self.crypto.randomUUID()}`;
       this.resetVars();
       setProp("--adjust-value", this.#adjustment)
-      const i = this.#fontIndex;
-      const details = fonts[i];
-      console.log(`Checking: ${details[0]}`);
-      const url = `/nerd-fonts/${details[0]}/${details[1]}`;
-      const font = new FontFace(`font-${details[0]}`, `url("${url}")`);
+      const font = new FontFace(name, `url("${this.#fontURL}")`);
       document.fonts.add(font);
       await font.load();
-      setProp("--test-font", `font-${details[0]}`);
+      setProp("--test-font", name);
       await sleep(200);
-      this.#paddedTarget = pad(el.getBoundingClientRect().height);
+      this.api.forward(null, "rawFont");
       this.api.forward(null, "checkSize");
+    } else {
+      this.#status = "must have a name and a URL";
     }
+    this.api.forward(null, "status");
   }
 
   async checkSize(_, el) {
     const currentPadded = pad(el.getBoundingClientRect().height);
-    console.log(this.#increment);
     if (currentPadded < this.#paddedTarget) {
       if (this.#direction === "down") {
         this.#direction = "up";
         this.#increment =  this.#increment / 10;
       }
       this.#adjustment += this.#increment;
-      console.log(`Update: ${this.#adjustment}`);
       setProp("--adjust-value", this.#adjustment);
+      this.api.forward(null, "status");
       window.requestAnimationFrame((t) => { this.api.forward(null, "checkSize"); });
     } else if (currentPadded > this.#paddedTarget) {
       if (this.#direction === "up") {
@@ -76,17 +76,37 @@ export default class {
       }
       this.#adjustment -= this.#increment;
       setProp("--adjust-value", this.#adjustment);
-      console.log(`Update: ${this.#adjustment}`);
+      this.api.forward(null, "status");
       window.requestAnimationFrame((t) => { this.api.forward(null, "checkSize"); });
     } else {
-      this.#data[fonts[this.#fontIndex][0]] = trimNum(this.#adjustment);
-      this.api.forward(null, "display");
-      this.api.forward(null, "rawFont");
+      this.api.forward(null, "status");
     }
   }
 
-  display(_, el) {
-    el.innerHTML = JSON.stringify(this.#data, null, 2);
+  fontURL(event, _) {
+    this.#fontURL = event.target.value;
   }
 
+  rawFont(_, el) {
+    this.#paddedTarget = pad(el.getBoundingClientRect().height);
+  }
+
+  resetVars() {
+    this.#adjustment = 0.01;
+    this.#direction = "up";
+    this.#increment = 0.01;
+    this.#paddedTarget = null;
+  }
+
+  status(_, el) {
+    el.innerHTML = trimNum(this.#adjustment);
+  }
+
+  picker(_, el) {
+    Object.entries(googleSizes).forEach((gs) => {
+      const subs = [["NAME", gs[0]]]
+      const fontEl = this.api.makeElement(t.font, subs);
+      el.appendChild(fontEl);
+    });
+  }
 }

@@ -50,7 +50,6 @@ hgroup {
 }
 */
 
-
 .regular {
   background-color: red;
   display: inline-block;
@@ -66,10 +65,11 @@ hgroup {
 }
 
 :root {
-  --test-font-size: 30rem;
+  --test-font-size: 50rem;
+  --adjust-value: 0.1;
 }
 
-[data-receive=loadFont] {
+[data-receive=rawFont] {
   font-size: var(--test-font-size);
 }
 
@@ -78,11 +78,37 @@ hgroup {
   font-size-adjust: var(--adjust-value);
 }
 
+.test-wrapper {
+  position: relative;
+  height: 420px;
+  border: 1px solid red;
+  z-index: -1;
+  padding-block: 4rem;
+}
+
 .test-font {
+  postion: absolute;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr 1fr;
+  font-family: var(--test-font);
+}
+
+.test-font-google {
+  postion: absolute;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr 1fr;
+  font-family: var(--test-font);
+  padding-top: 4rem;
+}
+
+.two-column {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  min-height: 420px;
-  border: 1px solid red;
-  font-family: var(--test-font);
+}
+
+input {
+  width: 40ch;
 }
 

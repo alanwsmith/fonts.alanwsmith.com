@@ -640,7 +640,6 @@ font-weight: bold;
 :root {
   color-scheme: light dark; /* Default: light */
   /* Color Base Variables */
-  /*
   --dark-mode__accent: oklch(64.00000% 0.03972 417.45600);
   --dark-mode__accent-faded: oklch(64.00000% 0.03972 417.45600 / 0.5);
   --dark-mode__accent-faded2: oklch(64.00000% 0.03972 417.45600 / 0.2);
@@ -673,12 +672,10 @@ font-weight: bold;
   --light-mode__warning: oklch(46.00000% 0.17763 369.25200);
   --light-mode__warning-faded: oklch(46.00000% 0.17763 369.25200 / 0.5);
   --light-mode__warning-faded2: oklch(46.00000% 0.17763 369.25200 / 0.2);
-*/
 }
 
 :root {
   /* Color Light Mode Variables */
-  /*
   --accent: var(--light-mode__accent);
   --accent-faded: var(--light-mode__accent-faded);
   --accent-faded2: var(--light-mode__accent-faded2);
@@ -695,8 +692,6 @@ font-weight: bold;
   --warning: var(--light-mode__warning);
   --warning-faded: var(--light-mode__warning-faded);
   --warning-faded2: var(--light-mode__warning-faded2);
-*/
-
 }
 
 
@@ -734,7 +729,6 @@ font-weight: bold;
 
 :root {
   /* B&W Base Variables */
-  /*
   --dark-mode__black: oklch(0% 0 0);
   --dark-mode__black-faded: oklch(0% 0 0 / 0.4);
   --dark-mode__black-faded2: oklch(0% 0 0 / 0.1);
@@ -747,7 +741,6 @@ font-weight: bold;
   --light-mode__white: oklch(100% 0 0);
   --light-mode__white-faded: oklch(100% 0 0 / 0.4);
   --light-mode__white-faded2: oklch(100% 0 0 / 0.1);
-*/
 }
 
 :root {
@@ -1599,9 +1592,7 @@ blockquote {
 body {
   background-color: var(--background);
   color: var(--default);
-  /*
   font-family: system-ui;
-*/
   font-size: var(--default-font);
 }
 button {
