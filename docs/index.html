@@ -664,7 +664,6 @@ font-weight: bold;
 :root {
   color-scheme: light dark; /* Default: light */
   /* Color Base Variables */
-  /*
   --dark-mode__accent: oklch(64.00000% 0.03972 417.45600);
   --dark-mode__accent-faded: oklch(64.00000% 0.03972 417.45600 / 0.5);
   --dark-mode__accent-faded2: oklch(64.00000% 0.03972 417.45600 / 0.2);
@@ -697,12 +696,10 @@ font-weight: bold;
   --light-mode__warning: oklch(46.00000% 0.17763 369.25200);
   --light-mode__warning-faded: oklch(46.00000% 0.17763 369.25200 / 0.5);
   --light-mode__warning-faded2: oklch(46.00000% 0.17763 369.25200 / 0.2);
-*/
 }
 
 :root {
   /* Color Light Mode Variables */
-  /*
   --accent: var(--light-mode__accent);
   --accent-faded: var(--light-mode__accent-faded);
   --accent-faded2: var(--light-mode__accent-faded2);
@@ -719,8 +716,6 @@ font-weight: bold;
   --warning: var(--light-mode__warning);
   --warning-faded: var(--light-mode__warning-faded);
   --warning-faded2: var(--light-mode__warning-faded2);
-*/
-
 }
 
 
@@ -758,7 +753,6 @@ font-weight: bold;
 
 :root {
   /* B&W Base Variables */
-  /*
   --dark-mode__black: oklch(0% 0 0);
   --dark-mode__black-faded: oklch(0% 0 0 / 0.4);
   --dark-mode__black-faded2: oklch(0% 0 0 / 0.1);
@@ -771,7 +765,6 @@ font-weight: bold;
   --light-mode__white: oklch(100% 0 0);
   --light-mode__white-faded: oklch(100% 0 0 / 0.4);
   --light-mode__white-faded2: oklch(100% 0 0 / 0.1);
-*/
 }
 
 :root {
@@ -1623,9 +1616,7 @@ blockquote {
 body {
   background-color: var(--background);
   color: var(--default);
-  /*
   font-family: system-ui;
-*/
   font-size: var(--default-font);
 }
 button {
@@ -1991,7 +1982,6 @@ hgroup {
 }
 */
 
-
 .regular {
   background-color: red;
   display: inline-block;
@@ -2008,9 +1998,10 @@ hgroup {
 
 :root {
   --test-font-size: 30rem;
+  --adjust-value: 0.1;
 }
 
-[data-receive=loadFont] {
+[data-receive=rawFont] {
   font-size: var(--test-font-size);
 }
 
@@ -2019,58 +2010,32 @@ hgroup {
   font-size-adjust: var(--adjust-value);
 }
 
-.test-font {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  min-height: 420px;
+.test-wrapper {
+  position: relative;
+  height: 420px;
   border: 1px solid red;
+  z-index: -1;
+  padding-block: 4rem;
+}
+
+.test-font {
+  postion: absolute;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr 1fr;
   font-family: var(--test-font);
 }
 
-</style><script>
-  setTimeout(() => { 
-    document.documentElement.style.setProperty("--load-hider", "1");
-  }, 1100);
+.two-column {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
 
-  window.bittyFunctions = {
-    randomFloat: function (min, max) {
-      return (Math.random() * (max - min)) + min;
-    },
-    randomInt: function (min, max) {
-      return Math.floor(Math.random() * (max - min + 1)) + min;
-    },
-    sleep: function (ms) {
-      return new Promise((resolve) => setTimeout(resolve, ms));
-    },
-    setProp: function (key, value) {
-      document.documentElement.style.setProperty(key, value);
-    },
-    setPx: function (key, value) {
-      document.documentElement.style.setProperty(key, `${value}px`);
-    },
-    shuffleArray: function (array) {
-      let currentIndex = array.length;
-      let randomIndex;
-      while (currentIndex != 0) {
-        randomIndex = Math.floor(Math.random() * currentIndex);
-        currentIndex--;
-        [array[currentIndex], array[randomIndex]] = [
-          array[randomIndex],
-          array[currentIndex],
-        ];
-      }
-    },
-    url: function () {
-      return new URL(window.location.href);
-    }
-  };
+input {
+  width: 40ch;
+}
 
-</script><link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!--
-    <script src="/scripts/html2canvas.js"></script>
--->
-  </head>
+</style>  </head>
   <body>
 
 <noscript>
@@ -2086,20 +2051,46 @@ hgroup {
     <a href="https://www.alanwsmith.com/feeds/posts.xml">rss</a>
   </div>
 </header>      <main class="default-wrapper default-flow">
-<bitty-4-0 data-connect="/scripts/compare.on.js" 
-  data-send="initSize checkSize"
-  jclass="load-hider">
+<bitty-4-0 data-connect="/scripts/home-page.on.js" class="load-hider">
 
   <hgroup>
-    <h1>Font Stuff</h1>
-    <div class="page-subtitle">
-      a place to put the type shapes
-    </div>
+    <h1>Font Notes</h1>
   </hgroup>
 
-  <div>
-    <div class="trimmed" data-receive="initSize">b</div>
-    <div class="trimmed" data-receive="checkSize">b</div>
+  <p>
+    This page contains the 'aspect values' for 
+    fonts available from Google Fonts and Nerd Fonts.
+    The aspect values can be used with `font-size-adjust`.
+  </p>
+
+  <p>Get a new aspect value for a web font:</p>
+
+  <div class="two-column">
+    <div>
+      <div>
+        <label>Font File URL<br />
+          <input type="text" data-send="fontURL" />
+        </label>
+      </div>
+    </div>
+
+    <div>
+      <div>
+        <button data-send="calculate">Calculate</button>
+      </div>
+      <div data-receive="status"></div>
+    </div>
+  </div>
+
+  <div class="test-wrapper">
+    <div class="test-font">
+      <div>
+        <div class="trimmed" data-receive="rawFont">b</div>
+      </div>
+      <div>
+        <div class="trimmed" data-receive="checkSize">b</div>
+      </div>
+    </div>
   </div>
 
 </bitty-4-0>      </main>

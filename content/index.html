@@ -1,22 +1,50 @@
 [!- extends "_wrappers/wrapper.html" -!]
 [!- block main -!]
 
-<bitty-4-0 data-connect="/scripts/compare.on.js" 
-  data-send="initSize checkSize"
-  jclass="load-hider">
+<bitty-4-0 data-connect="/scripts/home-page.on.js" class="load-hider">
 
   <hgroup>
-    <h1>Font Stuff</h1>
-    <div class="page-subtitle">
-      a place to put the type shapes
-    </div>
+    <h1>Font Notes</h1>
   </hgroup>
 
-  <div>
-    <div class="trimmed" data-receive="initSize">b</div>
-    <div class="trimmed" data-receive="checkSize">b</div>
+  <p>
+    This page contains the 'aspect values' for 
+    fonts available from Google Fonts and Nerd Fonts.
+    The aspect values can be used with `font-size-adjust`.
+  </p>
+
+  <p>Get a new aspect value for a web font:</p>
+
+  <div class="two-column">
+    <div>
+      <div>
+        <label>Font File URL<br />
+          <input type="text" data-send="fontURL" />
+        </label>
+      </div>
+    </div>
+
+    <div>
+      <div>
+        <button data-send="calculate">Calculate</button>
+      </div>
+      <div data-receive="status"></div>
+    </div>
+  </div>
+
+  <div class="test-wrapper">
+    <div class="test-font">
+      <div>
+        <div class="trimmed" data-receive="rawFont">b</div>
+      </div>
+      <div>
+        <div class="trimmed" data-receive="checkSize">b</div>
+      </div>
+    </div>
   </div>
 
 </bitty-4-0>
 
 [!- endblock -!]
+
+
