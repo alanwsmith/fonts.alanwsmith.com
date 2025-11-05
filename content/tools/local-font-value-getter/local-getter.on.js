@@ -122,6 +122,49 @@ export default class {
     this.resetVars();
   }
 
+  async checkSize(_, el) {
+    const currentPadded = pad(el.getBoundingClientRect().height);
+    if (currentPadded < this.#paddedTarget) {
+      if (this.#direction === "down") {
+        this.#direction = "up";
+        this.#increment =  this.#increment / 10;
+      }
+      this.#adjustment += this.#increment;
+      setProp("--adjust-value", this.#adjustment);
+      window.requestAnimationFrame((t) => { this.api.forward(null, "checkSize"); });
+    } else if (currentPadded > this.#paddedTarget) {
+      if (this.#direction === "up") {
+        this.#direction = "down";
+        this.#increment =  this.#increment / 10;
+      }
+      this.#adjustment -= this.#increment;
+      setProp("--adjust-value", this.#adjustment);
+      window.requestAnimationFrame((t) => { this.api.forward(null, "checkSize"); });
+    } else {
+      const i = this.#fontIndex;
+      const fontName = fonts[i];
+      this.#data[fontName] = 
+        {
+          value: trimNum(this.#adjustment)
+        };
+      localStorage.setItem(this.#localStorageName, JSON.stringify(this.#data));
+      this.api.forward(null, "display");
+      this.api.forward(null, "rawFont");
+    }
+  }
+
+  async copyData(_, el) {
+    const jsonString =  JSON.stringify(this.#data, null, 2);
+    try {
+      await navigator.clipboard.writeText(
+        jsonString
+      )
+    } catch (err) {
+      console.error("Could not copy to clipboard")
+    }
+    el.innerHTML = "copied to clipboard";
+  }
+
   async rawFont(_, el) {
     this.#fontIndex += 1;
     if (this.#fontIndex < fonts.length) {
@@ -130,15 +173,18 @@ export default class {
       setProp("--adjust-value", this.#adjustment)
       console.log(`Checking: ${fontName}`);
       const isAvailable = await isFontAvailable(fontName);
-      if (isAvailable.value)  {
+      if (isAvailable.value && !this.#data[fontName])  {
         console.log(`Found: ${fontName}`);
         setProp("--test-font", fontName);
+        await sleep(200);
+        this.#paddedTarget = pad(el.getBoundingClientRect().height);
         this.api.forward(null, "checkSize");
       } else {
         this.api.forward(null, "rawFont");
       }
     }
   }
+
 
   resetVars() {
     this.#adjustment = 0.1;
