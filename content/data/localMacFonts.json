@@ -1,0 +1,71 @@
+{
+  "Arial": {
+    "value": 0.5185
+  },
+  "Arial Black": {
+    "value": 0.5185
+  },
+  "Arial Rounded MT Bold": {
+    "value": 0.5297
+  },
+  "Avenir": {
+    "value": 0.468
+  },
+  "Bradley Hand": {
+    "value": 0.4339
+  },
+  "Charter": {
+    "value": 0.4809
+  },
+  "Courier New": {
+    "value": 0.4228
+  },
+  "Didot": {
+    "value": 0.4289
+  },
+  "DIN Alternate": {
+    "value": 0.5068
+  },
+  "Georgia": {
+    "value": 0.4814
+  },
+  "Helvetica Neue": {
+    "value": 0.5169
+  },
+  "Hiragino Maru Gothic ProN": {
+    "value": 0.5539
+  },
+  "Inter": {
+    "value": 0.5454
+  },
+  "Iowan Old Style": {
+    "value": 0.479
+  },
+  "Menlo": {
+    "value": 0.5468
+  },
+  "Optima": {
+    "value": 0.473
+  },
+  "Rockwell": {
+    "value": 0.5131
+  },
+  "Seravek": {
+    "value": 0.48
+  },
+  "Superclarendon": {
+    "value": 0.5089
+  },
+  "Tahoma": {
+    "value": 0.5454
+  },
+  "Times New Roman": {
+    "value": 0.4472
+  },
+  "Trebuchet MS": {
+    "value": 0.5229
+  },
+  "Verdana": {
+    "value": 0.5454
+  }
+}

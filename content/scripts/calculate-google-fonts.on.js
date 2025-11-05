@@ -31,8 +31,7 @@ export default class {
   #paddedTarget = null;
   #fontIndex = -1;
   #data = {};
-
-  #localStorageName = "googleFontsV3";
+  #localStorageName = "googleFontsV4";
 
   bittyInit() {
     setProp("--load-hider", "1");
@@ -40,7 +39,6 @@ export default class {
     if (savedData) {
       this.#data = JSON.parse(savedData);
     }
-     console.log(this.#data);
     this.resetVars();
   }
 
@@ -95,7 +93,7 @@ export default class {
           url: details.url,
           value: trimNum(this.#adjustment)
         };
-      // localStorage.setItem(this.#localStorageName, JSON.stringify(this.#data));
+      localStorage.setItem(this.#localStorageName, JSON.stringify(this.#data));
       this.api.forward(null, "display");
       this.api.forward(null, "rawFont");
     }
