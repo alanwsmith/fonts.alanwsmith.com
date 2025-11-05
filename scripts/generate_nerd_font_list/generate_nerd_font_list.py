@@ -6,7 +6,7 @@ import pathlib
 
 class Maker:
     def __init__(self):
-        self.source_path = "../content/nerd-fonts"
+        self.source_path = "../../content/nerd-fonts"
 
     def source_files(self):
         file_list = []
@@ -30,9 +30,9 @@ class Maker:
         with open(file, 'w', encoding='utf-8') as _out:
             json.dump(data, _out, sort_keys=True, indent=4)
 
-
 if __name__ == "__main__":
     m = Maker()
-    m.write_json_to_file(m.data(), "../content/data/fonts-input.json")
+    m.write_json_to_file(m.data(), "../../content/data/nerdFontsInitialList.json")
+
 
 

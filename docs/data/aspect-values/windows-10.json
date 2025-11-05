@@ -1,0 +1,62 @@
+{
+  "Arial": {
+    "value": 0.5185
+  },
+  "Arial Black": {
+    "value": 0.5185
+  },
+  "Bahnschrift": {
+    "value": 0.5068
+  },
+  "Calibri": {
+    "value": 0.4643
+  },
+  "Cambria": {
+    "value": 0.4668
+  },
+  "Candara": {
+    "value": 0.4638
+  },
+  "Consolas": {
+    "value": 0.4902
+  },
+  "Corbel": {
+    "value": 0.4638
+  },
+  "Courier New": {
+    "value": 0.4228
+  },
+  "Franklin Gothic Medium": {
+    "value": 0.4931
+  },
+  "Georgia": {
+    "value": 0.4814
+  },
+  "Palatino Linotype": {
+    "value": 0.5185
+  },
+  "Segoe Print": {
+    "value": 0.498
+  },
+  "Sitka Small": {
+    "value": 0.5036
+  },
+  "Sitka Text": {
+    "value": 0.4782
+  },
+  "Sylfaen": {
+    "value": 0.434
+  },
+  "Tahoma": {
+    "value": 0.5454
+  },
+  "Times New Roman": {
+    "value": 0.4472
+  },
+  "Trebuchet MS": {
+    "value": 0.5229
+  },
+  "Verdana": {
+    "value": 0.5454
+  }
+}
