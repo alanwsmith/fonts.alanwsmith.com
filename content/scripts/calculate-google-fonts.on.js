@@ -31,7 +31,6 @@ export default class {
   #paddedTarget = null;
   #fontIndex = -1;
   #data = {};
-
   #localStorageName = "googleFontsV3";
 
   bittyInit() {
@@ -40,7 +39,7 @@ export default class {
     if (savedData) {
       this.#data = JSON.parse(savedData);
     }
-     console.log(this.#data);
+    // console.log(this.#data);
     this.resetVars();
   }
 

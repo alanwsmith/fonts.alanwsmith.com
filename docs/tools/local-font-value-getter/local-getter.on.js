@@ -1,6 +1,6 @@
 const fonts = [
 "Arial",
-"Arial Nova",
+"Arial Black",
 "Arial Rounded MT",
 "Arial Rounded MT Bold",
 "Avenir",
@@ -13,14 +13,12 @@ const fonts = [
 "Cambria",
 "Candara",
 "Cascadia Code",
-"casual",
 "Charter",
 "Chilanka",
 "Comfortaa",
 "Consolas",
 "Corbel",
 "Courier New",
-"cursive",
 "DejaVu Sans",
 "DejaVu Sans Mono",
 "DejaVu Serif",
@@ -36,7 +34,6 @@ const fonts = [
 "Iowan Old Style",
 "Manjari",
 "Menlo",
-"monospace",
 "Montserrat",
 "Nimbus Mono PS",
 "Nimbus Sans",
@@ -51,27 +48,43 @@ const fonts = [
 "Roboto Slab",
 "Rockwell",
 "Rockwell Nova",
-"sans-serif",
-"sans-serif-condensed",
 "Segoe Print",
 "Seravek",
-"serif",
 "Sitka Small",
 "Sitka Text",
 "Source Code Pro",
-"source-sans-pro",
 "Superclarendon",
 "Sylfaen",
-"system-ui",
+"Tahoma",
+"Times New Roman",
+"Trebuchet MS",
 "TSCu_Comic",
 "Ubuntu",
-"ui-monospace",
-"ui-rounded",
 "URW Bookman",
 "URW Bookman L",
 "URW Gothic",
-"URW Palladio L"
+"URW Palladio L",
+"Verdana"
 ];
+
+async function isFontAvailable(fontName) {
+  try {
+    const base = `position:absolute;top:0;left:0;opacity:0;`;
+    const checker = document.createElement("div");
+    const s = new Set();
+    checker.style = `${base}font-family:cursive;`;
+    checker.innerHTML = self.crypto.randomUUID();
+    await document.body.appendChild(checker);
+    s.add(checker.getBoundingClientRect().width);
+    checker.style = `${base}font-family:"${fontName}", cursive;`;
+    await document.fonts.ready;
+    s.add(checker.getBoundingClientRect().width);
+    checker.remove();
+    return { value: s.size === 2 };
+  } catch (error) {
+    return { error: error };
+  }
+}
 
 function pad(input) {
   return Math.floor(input * 1000); 
@@ -92,6 +105,46 @@ function trimNum(num) {
 
 
 export default class {
+  #adjustment = null;
+  #direction = null;
+  #increment = null;
+  #paddedTarget = null;
+  #fontIndex = -1;
+  #data = {};
+  #localStorageName = "localFontsV1";
 
+  bittyInit() {
+    const savedData = localStorage.getItem(this.#localStorageName);
+    if (savedData) {
+      this.#data = JSON.parse(savedData);
+    }
+    console.log(this.#data);
+    this.resetVars();
+  }
+
+  async rawFont(_, el) {
+    this.#fontIndex += 1;
+    if (this.#fontIndex < fonts.length) {
+      this.resetVars();
+      const fontName = fonts[this.#fontIndex];
+      setProp("--adjust-value", this.#adjustment)
+      console.log(`Checking: ${fontName}`);
+      const isAvailable = await isFontAvailable(fontName);
+      if (isAvailable.value)  {
+        console.log(`Found: ${fontName}`);
+        setProp("--test-font", fontName);
+        this.api.forward(null, "checkSize");
+      } else {
+        this.api.forward(null, "rawFont");
+      }
+    }
+  }
+
+  resetVars() {
+    this.#adjustment = 0.1;
+    this.#direction = "up";
+    this.#increment = 0.1;
+    this.#paddedTarget = null;
+  }
 
 }

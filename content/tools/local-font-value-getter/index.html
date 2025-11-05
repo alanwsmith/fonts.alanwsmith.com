@@ -3,9 +3,27 @@
 
 <bitty-4-0 
   data-connect="/tools/local-font-value-getter/local-getter.on.js" 
-  class="load-hider default-flow"">
+  data-send="rawFont"
+  class="default-flow"">
 
+  <div>
+    <pre data-receive="display">-</pre>
+  </div>
 
+  <div class="test-font-google">
+    <div>
+      <div class="trimmed" data-receive="rawFont">b</div>
+    </div>
+    <div>
+      <div class="trimmed" data-receive="checkSize">b</div>
+    </div>
+  </div>
+
+  <div>
+    <button data-send="showData">Show Data</button>
+  </div>
+
+  <pre data-receive="showData"></pre>
 
 </bitty-4-0>
 
