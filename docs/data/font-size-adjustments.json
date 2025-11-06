@@ -65430,7 +65430,330 @@
             ]
         }
     ],
-    "macos_15": {},
+    "macos_15": [
+        {
+            "category": "macOS Fonts",
+            "key": "Arial",
+            "name": "Arial",
+            "styles": [
+                {
+                    "adjust": 96.432,
+                    "aspect": 0.5185,
+                    "path_string": "Arial",
+                    "path_type": "local",
+                    "style": "default"
+                }
+            ]
+        },
+        {
+            "category": "macOS Fonts",
+            "key": "Arial_Black",
+            "name": "Arial Black",
+            "styles": [
+                {
+                    "adjust": 96.432,
+                    "aspect": 0.5185,
+                    "path_string": "Arial Black",
+                    "path_type": "local",
+                    "style": "default"
+                }
+            ]
+        },
+        {
+            "category": "macOS Fonts",
+            "key": "Arial_Rounded_MT_Bold",
+            "name": "Arial Rounded MT Bold",
+            "styles": [
+                {
+                    "adjust": 94.3931,
+                    "aspect": 0.5297,
+                    "path_string": "Arial Rounded MT Bold",
+                    "path_type": "local",
+                    "style": "default"
+                }
+            ]
+        },
+        {
+            "category": "macOS Fonts",
+            "key": "Avenir",
+            "name": "Avenir",
+            "styles": [
+                {
+                    "adjust": 106.8376,
+                    "aspect": 0.468,
+                    "path_string": "Avenir",
+                    "path_type": "local",
+                    "style": "default"
+                }
+            ]
+        },
+        {
+            "category": "macOS Fonts",
+            "key": "Bradley_Hand",
+            "name": "Bradley Hand",
+            "styles": [
+                {
+                    "adjust": 115.2339,
+                    "aspect": 0.4339,
+                    "path_string": "Bradley Hand",
+                    "path_type": "local",
+                    "style": "default"
+                }
+            ]
+        },
+        {
+            "category": "macOS Fonts",
+            "key": "Charter",
+            "name": "Charter",
+            "styles": [
+                {
+                    "adjust": 103.9717,
+                    "aspect": 0.4809,
+                    "path_string": "Charter",
+                    "path_type": "local",
+                    "style": "default"
+                }
+            ]
+        },
+        {
+            "category": "macOS Fonts",
+            "key": "Courier_New",
+            "name": "Courier New",
+            "styles": [
+                {
+                    "adjust": 118.2592,
+                    "aspect": 0.4228,
+                    "path_string": "Courier New",
+                    "path_type": "local",
+                    "style": "default"
+                }
+            ]
+        },
+        {
+            "category": "macOS Fonts",
+            "key": "Didot",
+            "name": "Didot",
+            "styles": [
+                {
+                    "adjust": 116.5773,
+                    "aspect": 0.4289,
+                    "path_string": "Didot",
+                    "path_type": "local",
+                    "style": "default"
+                }
+            ]
+        },
+        {
+            "category": "macOS Fonts",
+            "key": "DIN_Alternate",
+            "name": "DIN Alternate",
+            "styles": [
+                {
+                    "adjust": 98.6582,
+                    "aspect": 0.5068,
+                    "path_string": "DIN Alternate",
+                    "path_type": "local",
+                    "style": "default"
+                }
+            ]
+        },
+        {
+            "category": "macOS Fonts",
+            "key": "Georgia",
+            "name": "Georgia",
+            "styles": [
+                {
+                    "adjust": 103.8637,
+                    "aspect": 0.4814,
+                    "path_string": "Georgia",
+                    "path_type": "local",
+                    "style": "default"
+                }
+            ]
+        },
+        {
+            "category": "macOS Fonts",
+            "key": "Helvetica_Neue",
+            "name": "Helvetica Neue",
+            "styles": [
+                {
+                    "adjust": 96.7305,
+                    "aspect": 0.5169,
+                    "path_string": "Helvetica Neue",
+                    "path_type": "local",
+                    "style": "default"
+                }
+            ]
+        },
+        {
+            "category": "macOS Fonts",
+            "key": "Hiragino_Maru_Gothic_ProN",
+            "name": "Hiragino Maru Gothic ProN",
+            "styles": [
+                {
+                    "adjust": 90.269,
+                    "aspect": 0.5539,
+                    "path_string": "Hiragino Maru Gothic ProN",
+                    "path_type": "local",
+                    "style": "default"
+                }
+            ]
+        },
+        {
+            "category": "macOS Fonts",
+            "key": "Inter",
+            "name": "Inter",
+            "styles": [
+                {
+                    "adjust": 91.6758,
+                    "aspect": 0.5454,
+                    "path_string": "Inter",
+                    "path_type": "local",
+                    "style": "default"
+                }
+            ]
+        },
+        {
+            "category": "macOS Fonts",
+            "key": "Iowan_Old_Style",
+            "name": "Iowan Old Style",
+            "styles": [
+                {
+                    "adjust": 104.3841,
+                    "aspect": 0.479,
+                    "path_string": "Iowan Old Style",
+                    "path_type": "local",
+                    "style": "default"
+                }
+            ]
+        },
+        {
+            "category": "macOS Fonts",
+            "key": "Menlo",
+            "name": "Menlo",
+            "styles": [
+                {
+                    "adjust": 91.4411,
+                    "aspect": 0.5468,
+                    "path_string": "Menlo",
+                    "path_type": "local",
+                    "style": "default"
+                }
+            ]
+        },
+        {
+            "category": "macOS Fonts",
+            "key": "Optima",
+            "name": "Optima",
+            "styles": [
+                {
+                    "adjust": 105.7082,
+                    "aspect": 0.473,
+                    "path_string": "Optima",
+                    "path_type": "local",
+                    "style": "default"
+                }
+            ]
+        },
+        {
+            "category": "macOS Fonts",
+            "key": "Rockwell",
+            "name": "Rockwell",
+            "styles": [
+                {
+                    "adjust": 97.4469,
+                    "aspect": 0.5131,
+                    "path_string": "Rockwell",
+                    "path_type": "local",
+                    "style": "default"
+                }
+            ]
+        },
+        {
+            "category": "macOS Fonts",
+            "key": "Seravek",
+            "name": "Seravek",
+            "styles": [
+                {
+                    "adjust": 104.1667,
+                    "aspect": 0.48,
+                    "path_string": "Seravek",
+                    "path_type": "local",
+                    "style": "default"
+                }
+            ]
+        },
+        {
+            "category": "macOS Fonts",
+            "key": "Superclarendon",
+            "name": "Superclarendon",
+            "styles": [
+                {
+                    "adjust": 98.2511,
+                    "aspect": 0.5089,
+                    "path_string": "Superclarendon",
+                    "path_type": "local",
+                    "style": "default"
+                }
+            ]
+        },
+        {
+            "category": "macOS Fonts",
+            "key": "Tahoma",
+            "name": "Tahoma",
+            "styles": [
+                {
+                    "adjust": 91.6758,
+                    "aspect": 0.5454,
+                    "path_string": "Tahoma",
+                    "path_type": "local",
+                    "style": "default"
+                }
+            ]
+        },
+        {
+            "category": "macOS Fonts",
+            "key": "Times_New_Roman",
+            "name": "Times New Roman",
+            "styles": [
+                {
+                    "adjust": 111.8068,
+                    "aspect": 0.4472,
+                    "path_string": "Times New Roman",
+                    "path_type": "local",
+                    "style": "default"
+                }
+            ]
+        },
+        {
+            "category": "macOS Fonts",
+            "key": "Trebuchet_MS",
+            "name": "Trebuchet MS",
+            "styles": [
+                {
+                    "adjust": 95.6206,
+                    "aspect": 0.5229,
+                    "path_string": "Trebuchet MS",
+                    "path_type": "local",
+                    "style": "default"
+                }
+            ]
+        },
+        {
+            "category": "macOS Fonts",
+            "key": "Verdana",
+            "name": "Verdana",
+            "styles": [
+                {
+                    "adjust": 91.6758,
+                    "aspect": 0.5454,
+                    "path_string": "Verdana",
+                    "path_type": "local",
+                    "style": "default"
+                }
+            ]
+        }
+    ],
     "nerd": [
         {
             "category": "Nerd Fonts",
@@ -65442,7 +65765,7 @@
                     "aspect": 0.476,
                     "path_string": "https://www.nerdfonts.com/font-downloads",
                     "path_type": "download",
-                    "style": "regular"
+                    "style": "default"
                 }
             ]
         },
@@ -65456,7 +65779,7 @@
                     "aspect": 0.5199,
                     "path_string": "https://www.nerdfonts.com/font-downloads",
                     "path_type": "download",
-                    "style": "regular"
+                    "style": "default"
                 }
             ]
         },
@@ -65470,7 +65793,7 @@
                     "aspect": 0.5,
                     "path_string": "https://www.nerdfonts.com/font-downloads",
                     "path_type": "download",
-                    "style": "regular"
+                    "style": "default"
                 }
             ]
         },
@@ -65484,7 +65807,7 @@
                     "aspect": 0.455,
                     "path_string": "https://www.nerdfonts.com/font-downloads",
                     "path_type": "download",
-                    "style": "regular"
+                    "style": "default"
                 }
             ]
         },
@@ -65498,7 +65821,7 @@
                     "aspect": 0.496,
                     "path_string": "https://www.nerdfonts.com/font-downloads",
                     "path_type": "download",
-                    "style": "regular"
+                    "style": "default"
                 }
             ]
         },
@@ -65512,7 +65835,7 @@
                     "aspect": 0.5299,
                     "path_string": "https://www.nerdfonts.com/font-downloads",
                     "path_type": "download",
-                    "style": "regular"
+                    "style": "default"
                 }
             ]
         },
@@ -65526,7 +65849,7 @@
                     "aspect": 0.5,
                     "path_string": "https://www.nerdfonts.com/font-downloads",
                     "path_type": "download",
-                    "style": "regular"
+                    "style": "default"
                 }
             ]
         },
@@ -65540,7 +65863,7 @@
                     "aspect": 0.5468,
                     "path_string": "https://www.nerdfonts.com/font-downloads",
                     "path_type": "download",
-                    "style": "regular"
+                    "style": "default"
                 }
             ]
         },
@@ -65554,7 +65877,7 @@
                     "aspect": 0.5175,
                     "path_string": "https://www.nerdfonts.com/font-downloads",
                     "path_type": "download",
-                    "style": "regular"
+                    "style": "default"
                 }
             ]
         },
@@ -65568,7 +65891,7 @@
                     "aspect": 0.5175,
                     "path_string": "https://www.nerdfonts.com/font-downloads",
                     "path_type": "download",
-                    "style": "regular"
+                    "style": "default"
                 }
             ]
         },
@@ -65582,7 +65905,7 @@
                     "aspect": 0.474,
                     "path_string": "https://www.nerdfonts.com/font-downloads",
                     "path_type": "download",
-                    "style": "regular"
+                    "style": "default"
                 }
             ]
         },
@@ -65596,7 +65919,7 @@
                     "aspect": 0.5399,
                     "path_string": "https://www.nerdfonts.com/font-downloads",
                     "path_type": "download",
-                    "style": "regular"
+                    "style": "default"
                 }
             ]
         },
@@ -65610,7 +65933,7 @@
                     "aspect": 0.5283,
                     "path_string": "https://www.nerdfonts.com/font-downloads",
                     "path_type": "download",
-                    "style": "regular"
+                    "style": "default"
                 }
             ]
         },
@@ -65624,7 +65947,7 @@
                     "aspect": 0.5259,
                     "path_string": "https://www.nerdfonts.com/font-downloads",
                     "path_type": "download",
-                    "style": "regular"
+                    "style": "default"
                 }
             ]
         },
@@ -65638,7 +65961,7 @@
                     "aspect": 0.489,
                     "path_string": "https://www.nerdfonts.com/font-downloads",
                     "path_type": "download",
-                    "style": "regular"
+                    "style": "default"
                 }
             ]
         },
@@ -65652,7 +65975,7 @@
                     "aspect": 0.5468,
                     "path_string": "https://www.nerdfonts.com/font-downloads",
                     "path_type": "download",
-                    "style": "regular"
+                    "style": "default"
                 }
             ]
         },
@@ -65666,7 +65989,7 @@
                     "aspect": 0.5454,
                     "path_string": "https://www.nerdfonts.com/font-downloads",
                     "path_type": "download",
-                    "style": "regular"
+                    "style": "default"
                 }
             ]
         },
@@ -65680,7 +66003,7 @@
                     "aspect": 0.5361,
                     "path_string": "https://www.nerdfonts.com/font-downloads",
                     "path_type": "download",
-                    "style": "regular"
+                    "style": "default"
                 }
             ]
         },
@@ -65694,7 +66017,7 @@
                     "aspect": 0.54,
                     "path_string": "https://www.nerdfonts.com/font-downloads",
                     "path_type": "download",
-                    "style": "regular"
+                    "style": "default"
                 }
             ]
         },
@@ -65708,7 +66031,7 @@
                     "aspect": 0.518,
                     "path_string": "https://www.nerdfonts.com/font-downloads",
                     "path_type": "download",
-                    "style": "regular"
+                    "style": "default"
                 }
             ]
         },
@@ -65722,7 +66045,7 @@
                     "aspect": 0.5399,
                     "path_string": "https://www.nerdfonts.com/font-downloads",
                     "path_type": "download",
-                    "style": "regular"
+                    "style": "default"
                 }
             ]
         },
@@ -65736,7 +66059,7 @@
                     "aspect": 0.5269,
                     "path_string": "https://www.nerdfonts.com/font-downloads",
                     "path_type": "download",
-                    "style": "regular"
+                    "style": "default"
                 }
             ]
         },
@@ -65750,7 +66073,7 @@
                     "aspect": 0.5299,
                     "path_string": "https://www.nerdfonts.com/font-downloads",
                     "path_type": "download",
-                    "style": "regular"
+                    "style": "default"
                 }
             ]
         },
@@ -65764,7 +66087,7 @@
                     "aspect": 0.5302,
                     "path_string": "https://www.nerdfonts.com/font-downloads",
                     "path_type": "download",
-                    "style": "regular"
+                    "style": "default"
                 }
             ]
         },
@@ -65778,7 +66101,7 @@
                     "aspect": 0.4555,
                     "path_string": "https://www.nerdfonts.com/font-downloads",
                     "path_type": "download",
-                    "style": "regular"
+                    "style": "default"
                 }
             ]
         },
@@ -65792,7 +66115,7 @@
                     "aspect": 0.5468,
                     "path_string": "https://www.nerdfonts.com/font-downloads",
                     "path_type": "download",
-                    "style": "regular"
+                    "style": "default"
                 }
             ]
         },
@@ -65806,7 +66129,7 @@
                     "aspect": 0.486,
                     "path_string": "https://www.nerdfonts.com/font-downloads",
                     "path_type": "download",
-                    "style": "regular"
+                    "style": "default"
                 }
             ]
         },
@@ -65820,7 +66143,7 @@
                     "aspect": 0.5903,
                     "path_string": "https://www.nerdfonts.com/font-downloads",
                     "path_type": "download",
-                    "style": "regular"
+                    "style": "default"
                 }
             ]
         },
@@ -65834,7 +66157,7 @@
                     "aspect": 0.5,
                     "path_string": "https://www.nerdfonts.com/font-downloads",
                     "path_type": "download",
-                    "style": "regular"
+                    "style": "default"
                 }
             ]
         },
@@ -65848,7 +66171,7 @@
                     "aspect": 0.5159,
                     "path_string": "https://www.nerdfonts.com/font-downloads",
                     "path_type": "download",
-                    "style": "regular"
+                    "style": "default"
                 }
             ]
         },
@@ -65862,7 +66185,7 @@
                     "aspect": 0.5159,
                     "path_string": "https://www.nerdfonts.com/font-downloads",
                     "path_type": "download",
-                    "style": "regular"
+                    "style": "default"
                 }
             ]
         },
@@ -65876,7 +66199,7 @@
                     "aspect": 0.457,
                     "path_string": "https://www.nerdfonts.com/font-downloads",
                     "path_type": "download",
-                    "style": "regular"
+                    "style": "default"
                 }
             ]
         },
@@ -65890,7 +66213,7 @@
                     "aspect": 0.457,
                     "path_string": "https://www.nerdfonts.com/font-downloads",
                     "path_type": "download",
-                    "style": "regular"
+                    "style": "default"
                 }
             ]
         },
@@ -65904,7 +66227,7 @@
                     "aspect": 0.5302,
                     "path_string": "https://www.nerdfonts.com/font-downloads",
                     "path_type": "download",
-                    "style": "regular"
+                    "style": "default"
                 }
             ]
         },
@@ -65918,7 +66241,7 @@
                     "aspect": 0.465,
                     "path_string": "https://www.nerdfonts.com/font-downloads",
                     "path_type": "download",
-                    "style": "regular"
+                    "style": "default"
                 }
             ]
         },
@@ -65932,7 +66255,7 @@
                     "aspect": 0.5199,
                     "path_string": "https://www.nerdfonts.com/font-downloads",
                     "path_type": "download",
-                    "style": "regular"
+                    "style": "default"
                 }
             ]
         },
@@ -65946,7 +66269,7 @@
                     "aspect": 0.5199,
                     "path_string": "https://www.nerdfonts.com/font-downloads",
                     "path_type": "download",
-                    "style": "regular"
+                    "style": "default"
                 }
             ]
         },
@@ -65960,7 +66283,7 @@
                     "aspect": 0.5199,
                     "path_string": "https://www.nerdfonts.com/font-downloads",
                     "path_type": "download",
-                    "style": "regular"
+                    "style": "default"
                 }
             ]
         },
@@ -65974,7 +66297,7 @@
                     "aspect": 0.5499,
                     "path_string": "https://www.nerdfonts.com/font-downloads",
                     "path_type": "download",
-                    "style": "regular"
+                    "style": "default"
                 }
             ]
         },
@@ -65988,7 +66311,7 @@
                     "aspect": 0.475,
                     "path_string": "https://www.nerdfonts.com/font-downloads",
                     "path_type": "download",
-                    "style": "regular"
+                    "style": "default"
                 }
             ]
         },
@@ -66002,7 +66325,7 @@
                     "aspect": 0.5283,
                     "path_string": "https://www.nerdfonts.com/font-downloads",
                     "path_type": "download",
-                    "style": "regular"
+                    "style": "default"
                 }
             ]
         },
@@ -66016,7 +66339,7 @@
                     "aspect": 0.5159,
                     "path_string": "https://www.nerdfonts.com/font-downloads",
                     "path_type": "download",
-                    "style": "regular"
+                    "style": "default"
                 }
             ]
         },
@@ -66030,7 +66353,7 @@
                     "aspect": 0.5199,
                     "path_string": "https://www.nerdfonts.com/font-downloads",
                     "path_type": "download",
-                    "style": "regular"
+                    "style": "default"
                 }
             ]
         },
@@ -66044,7 +66367,7 @@
                     "aspect": 0.6,
                     "path_string": "https://www.nerdfonts.com/font-downloads",
                     "path_type": "download",
-                    "style": "regular"
+                    "style": "default"
                 }
             ]
         },
@@ -66058,7 +66381,7 @@
                     "aspect": 0.5468,
                     "path_string": "https://www.nerdfonts.com/font-downloads",
                     "path_type": "download",
-                    "style": "regular"
+                    "style": "default"
                 }
             ]
         },
@@ -66072,7 +66395,7 @@
                     "aspect": 0.5369,
                     "path_string": "https://www.nerdfonts.com/font-downloads",
                     "path_type": "download",
-                    "style": "regular"
+                    "style": "default"
                 }
             ]
         },
@@ -66086,7 +66409,7 @@
                     "aspect": 0.4379,
                     "path_string": "https://www.nerdfonts.com/font-downloads",
                     "path_type": "download",
-                    "style": "regular"
+                    "style": "default"
                 }
             ]
         },
@@ -66100,7 +66423,7 @@
                     "aspect": 0.6666,
                     "path_string": "https://www.nerdfonts.com/font-downloads",
                     "path_type": "download",
-                    "style": "regular"
+                    "style": "default"
                 }
             ]
         },
@@ -66114,7 +66437,7 @@
                     "aspect": 0.4882,
                     "path_string": "https://www.nerdfonts.com/font-downloads",
                     "path_type": "download",
-                    "style": "regular"
+                    "style": "default"
                 }
             ]
         },
@@ -66128,7 +66451,7 @@
                     "aspect": 0.5359,
                     "path_string": "https://www.nerdfonts.com/font-downloads",
                     "path_type": "download",
-                    "style": "regular"
+                    "style": "default"
                 }
             ]
         },
@@ -66142,7 +66465,7 @@
                     "aspect": 0.5109,
                     "path_string": "https://www.nerdfonts.com/font-downloads",
                     "path_type": "download",
-                    "style": "regular"
+                    "style": "default"
                 }
             ]
         },
@@ -66156,7 +66479,7 @@
                     "aspect": 0.4166,
                     "path_string": "https://www.nerdfonts.com/font-downloads",
                     "path_type": "download",
-                    "style": "regular"
+                    "style": "default"
                 }
             ]
         },
@@ -66170,7 +66493,7 @@
                     "aspect": 0.375,
                     "path_string": "https://www.nerdfonts.com/font-downloads",
                     "path_type": "download",
-                    "style": "regular"
+                    "style": "default"
                 }
             ]
         },
@@ -66184,7 +66507,7 @@
                     "aspect": 0.5319,
                     "path_string": "https://www.nerdfonts.com/font-downloads",
                     "path_type": "download",
-                    "style": "regular"
+                    "style": "default"
                 }
             ]
         },
@@ -66198,7 +66521,7 @@
                     "aspect": 0.5283,
                     "path_string": "https://www.nerdfonts.com/font-downloads",
                     "path_type": "download",
-                    "style": "regular"
+                    "style": "default"
                 }
             ]
         },
@@ -66212,7 +66535,7 @@
                     "aspect": 0.5,
                     "path_string": "https://www.nerdfonts.com/font-downloads",
                     "path_type": "download",
-                    "style": "regular"
+                    "style": "default"
                 }
             ]
         },
@@ -66226,7 +66549,7 @@
                     "aspect": 0.486,
                     "path_string": "https://www.nerdfonts.com/font-downloads",
                     "path_type": "download",
-                    "style": "regular"
+                    "style": "default"
                 }
             ]
         },
@@ -66240,7 +66563,7 @@
                     "aspect": 0.496,
                     "path_string": "https://www.nerdfonts.com/font-downloads",
                     "path_type": "download",
-                    "style": "regular"
+                    "style": "default"
                 }
             ]
         },
@@ -66254,7 +66577,7 @@
                     "aspect": 0.458,
                     "path_string": "https://www.nerdfonts.com/font-downloads",
                     "path_type": "download",
-                    "style": "regular"
+                    "style": "default"
                 }
             ]
         },
@@ -66268,7 +66591,7 @@
                     "aspect": 0.464,
                     "path_string": "https://www.nerdfonts.com/font-downloads",
                     "path_type": "download",
-                    "style": "regular"
+                    "style": "default"
                 }
             ]
         },
@@ -66282,7 +66605,7 @@
                     "aspect": 0.5179,
                     "path_string": "https://www.nerdfonts.com/font-downloads",
                     "path_type": "download",
-                    "style": "regular"
+                    "style": "default"
                 }
             ]
         },
@@ -66296,7 +66619,7 @@
                     "aspect": 0.5618,
                     "path_string": "https://www.nerdfonts.com/font-downloads",
                     "path_type": "download",
-                    "style": "regular"
+                    "style": "default"
                 }
             ]
         },
@@ -66310,7 +66633,7 @@
                     "aspect": 0.5199,
                     "path_string": "https://www.nerdfonts.com/font-downloads",
                     "path_type": "download",
-                    "style": "regular"
+                    "style": "default"
                 }
             ]
         },
@@ -66324,10 +66647,291 @@
                     "aspect": 0.5499,
                     "path_string": "https://www.nerdfonts.com/font-downloads",
                     "path_type": "download",
-                    "style": "regular"
+                    "style": "default"
                 }
             ]
         }
     ],
-    "window_10": {}
+    "window_10": [
+        {
+            "category": "Windows Fonts",
+            "key": "Arial",
+            "name": "Arial",
+            "styles": [
+                {
+                    "adjust": 96.432,
+                    "aspect": 0.5185,
+                    "path_string": "Arial",
+                    "path_type": "local",
+                    "style": "default"
+                }
+            ]
+        },
+        {
+            "category": "Windows Fonts",
+            "key": "Arial_Black",
+            "name": "Arial Black",
+            "styles": [
+                {
+                    "adjust": 96.432,
+                    "aspect": 0.5185,
+                    "path_string": "Arial Black",
+                    "path_type": "local",
+                    "style": "default"
+                }
+            ]
+        },
+        {
+            "category": "Windows Fonts",
+            "key": "Bahnschrift",
+            "name": "Bahnschrift",
+            "styles": [
+                {
+                    "adjust": 98.6582,
+                    "aspect": 0.5068,
+                    "path_string": "Bahnschrift",
+                    "path_type": "local",
+                    "style": "default"
+                }
+            ]
+        },
+        {
+            "category": "Windows Fonts",
+            "key": "Calibri",
+            "name": "Calibri",
+            "styles": [
+                {
+                    "adjust": 107.689,
+                    "aspect": 0.4643,
+                    "path_string": "Calibri",
+                    "path_type": "local",
+                    "style": "default"
+                }
+            ]
+        },
+        {
+            "category": "Windows Fonts",
+            "key": "Cambria",
+            "name": "Cambria",
+            "styles": [
+                {
+                    "adjust": 107.1123,
+                    "aspect": 0.4668,
+                    "path_string": "Cambria",
+                    "path_type": "local",
+                    "style": "default"
+                }
+            ]
+        },
+        {
+            "category": "Windows Fonts",
+            "key": "Candara",
+            "name": "Candara",
+            "styles": [
+                {
+                    "adjust": 107.8051,
+                    "aspect": 0.4638,
+                    "path_string": "Candara",
+                    "path_type": "local",
+                    "style": "default"
+                }
+            ]
+        },
+        {
+            "category": "Windows Fonts",
+            "key": "Consolas",
+            "name": "Consolas",
+            "styles": [
+                {
+                    "adjust": 101.9992,
+                    "aspect": 0.4902,
+                    "path_string": "Consolas",
+                    "path_type": "local",
+                    "style": "default"
+                }
+            ]
+        },
+        {
+            "category": "Windows Fonts",
+            "key": "Corbel",
+            "name": "Corbel",
+            "styles": [
+                {
+                    "adjust": 107.8051,
+                    "aspect": 0.4638,
+                    "path_string": "Corbel",
+                    "path_type": "local",
+                    "style": "default"
+                }
+            ]
+        },
+        {
+            "category": "Windows Fonts",
+            "key": "Courier_New",
+            "name": "Courier New",
+            "styles": [
+                {
+                    "adjust": 118.2592,
+                    "aspect": 0.4228,
+                    "path_string": "Courier New",
+                    "path_type": "local",
+                    "style": "default"
+                }
+            ]
+        },
+        {
+            "category": "Windows Fonts",
+            "key": "Franklin_Gothic_Medium",
+            "name": "Franklin Gothic Medium",
+            "styles": [
+                {
+                    "adjust": 101.3993,
+                    "aspect": 0.4931,
+                    "path_string": "Franklin Gothic Medium",
+                    "path_type": "local",
+                    "style": "default"
+                }
+            ]
+        },
+        {
+            "category": "Windows Fonts",
+            "key": "Georgia",
+            "name": "Georgia",
+            "styles": [
+                {
+                    "adjust": 103.8637,
+                    "aspect": 0.4814,
+                    "path_string": "Georgia",
+                    "path_type": "local",
+                    "style": "default"
+                }
+            ]
+        },
+        {
+            "category": "Windows Fonts",
+            "key": "Palatino_Linotype",
+            "name": "Palatino Linotype",
+            "styles": [
+                {
+                    "adjust": 96.432,
+                    "aspect": 0.5185,
+                    "path_string": "Palatino Linotype",
+                    "path_type": "local",
+                    "style": "default"
+                }
+            ]
+        },
+        {
+            "category": "Windows Fonts",
+            "key": "Segoe_Print",
+            "name": "Segoe Print",
+            "styles": [
+                {
+                    "adjust": 100.4016,
+                    "aspect": 0.498,
+                    "path_string": "Segoe Print",
+                    "path_type": "local",
+                    "style": "default"
+                }
+            ]
+        },
+        {
+            "category": "Windows Fonts",
+            "key": "Sitka_Small",
+            "name": "Sitka Small",
+            "styles": [
+                {
+                    "adjust": 99.2851,
+                    "aspect": 0.5036,
+                    "path_string": "Sitka Small",
+                    "path_type": "local",
+                    "style": "default"
+                }
+            ]
+        },
+        {
+            "category": "Windows Fonts",
+            "key": "Sitka_Text",
+            "name": "Sitka Text",
+            "styles": [
+                {
+                    "adjust": 104.5588,
+                    "aspect": 0.4782,
+                    "path_string": "Sitka Text",
+                    "path_type": "local",
+                    "style": "default"
+                }
+            ]
+        },
+        {
+            "category": "Windows Fonts",
+            "key": "Sylfaen",
+            "name": "Sylfaen",
+            "styles": [
+                {
+                    "adjust": 115.2074,
+                    "aspect": 0.434,
+                    "path_string": "Sylfaen",
+                    "path_type": "local",
+                    "style": "default"
+                }
+            ]
+        },
+        {
+            "category": "Windows Fonts",
+            "key": "Tahoma",
+            "name": "Tahoma",
+            "styles": [
+                {
+                    "adjust": 91.6758,
+                    "aspect": 0.5454,
+                    "path_string": "Tahoma",
+                    "path_type": "local",
+                    "style": "default"
+                }
+            ]
+        },
+        {
+            "category": "Windows Fonts",
+            "key": "Times_New_Roman",
+            "name": "Times New Roman",
+            "styles": [
+                {
+                    "adjust": 111.8068,
+                    "aspect": 0.4472,
+                    "path_string": "Times New Roman",
+                    "path_type": "local",
+                    "style": "default"
+                }
+            ]
+        },
+        {
+            "category": "Windows Fonts",
+            "key": "Trebuchet_MS",
+            "name": "Trebuchet MS",
+            "styles": [
+                {
+                    "adjust": 95.6206,
+                    "aspect": 0.5229,
+                    "path_string": "Trebuchet MS",
+                    "path_type": "local",
+                    "style": "default"
+                }
+            ]
+        },
+        {
+            "category": "Windows Fonts",
+            "key": "Verdana",
+            "name": "Verdana",
+            "styles": [
+                {
+                    "adjust": 91.6758,
+                    "aspect": 0.5454,
+                    "path_string": "Verdana",
+                    "path_type": "local",
+                    "style": "default"
+                }
+            ]
+        }
+    ]
 }
