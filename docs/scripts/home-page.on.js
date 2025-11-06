@@ -9,8 +9,29 @@ const t = {
   font-family: "NAME-STYLE";
   src: url("URL");
   size-adjust: ADJUST%;
-}
-`,
+}`,
+
+  macFont: `@font-face { 
+  font-family: "NAME-STYLE";
+  src: local("NAME");
+  size-adjust: ADJUST%;
+}`,
+
+  nerdFont: `@font-face { 
+  /* download from: 
+  LINK 
+  font-family: "NAME-STYLE";
+  src: url("/YOUR_PATH");
+  size-adjust: ADJUST%;
+  */
+}`,
+
+  windowsFont: `@font-face { 
+  font-family: "NAME-STYLE";
+  src: local("NAME");
+  size-adjust: ADJUST%;
+}`,
+
 }
 
 
@@ -71,6 +92,10 @@ export default class {
       const font = fonts.find((font) => font.name === this.#currentMatch);
       if (font.category === "Google Fonts") {
         el.replaceChildren(this.getGoogleFont(font));
+      } else if (font.category === "Nerd Fonts") {
+        el.replaceChildren(this.getNerdFont(font));
+      } else if (font.category === "macOS Fonts") {
+        el.replaceChildren(this.getMacFont(font));
       }
     } else {
       el.replaceChildren();
@@ -84,6 +109,38 @@ export default class {
         .replace("ADJUST", style.adjust)
         .replace("STYLE", style.style)
         .replace("URL", style.path_string)
+        ;
+    }).join("\n");
+  }
+
+  getNerdFont(font) {
+    return font.styles.map((style) => {
+      return t.nerdFont
+        .replaceAll("NAME", font.name)
+        .replaceAll("ADJUST", style.adjust)
+        .replaceAll("STYLE", style.style)
+        .replaceAll("LINK", style.path_string)
+        ;
+    }).join("\n");
+
+  }
+
+  getMacFont(font) {
+    return font.styles.map((style) => {
+      return t.macFont
+        .replaceAll("NAME", font.name)
+        .replaceAll("ADJUST", style.adjust)
+        .replaceAll("STYLE", style.style)
+        ;
+    }).join("\n");
+  }
+
+  getWindowsFont(font) {
+    return font.styles.map((style) => {
+      return t.windowsFont
+        .replaceAll("NAME", font.name)
+        .replaceAll("ADJUST", style.adjust)
+        .replaceAll("STYLE", style.style)
         ;
     }).join("\n");
   }
