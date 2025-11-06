@@ -1,9 +1,3 @@
-// import {matchSorter} from '/scripts/match-sorter.js'
-
-// const adjustmentData = [@ json.data["font-size-adjustments"] @]
-
-// const fonts = [@ json.data.googleFontsTest @];
-
 const googleSizes = [@ json.data["aspect-values"]["google-fonts"] @];
 
 const t = {
@@ -117,3 +111,4 @@ export default class {
     });
   }
 }
+
