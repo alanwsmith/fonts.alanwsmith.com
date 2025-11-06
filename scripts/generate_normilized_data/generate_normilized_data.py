@@ -18,7 +18,7 @@ class Maker:
                     "fontid": str(uuid.uuid4()),
                     "category": "Google Fonts",
                     "name": font_name,
-                    "key": font_name.replace(" ", "_"),
+                    "key": font_name.replace(" ", "-"),
                     "styles": []
                     }
             for style in self.input["google_fonts"][font_name]:
@@ -44,7 +44,7 @@ class Maker:
                     "fontid": str(uuid.uuid4()),
                     "category": "System Fonts",
                     "name": font_name,
-                    "key": font_name.replace(" ", "_"),
+                    "key": font_name.replace(" ", "-"),
                     "styles": [
                         {
                             "adjust": self.calc_adjust(
@@ -67,7 +67,7 @@ class Maker:
                     "fontid": str(uuid.uuid4()),
                     "category": "Nerd Fonts",
                     "name": font_name,
-                    "key": font_name.replace(" ", "_"),
+                    "key": font_name.replace(" ", "-"),
                     "styles": [
                         {
                             "adjust": self.calc_adjust(
@@ -91,7 +91,7 @@ class Maker:
                     "fontid": str(uuid.uuid4()),
                     "category": "System Fonts",
                     "name": font_name,
-                    "key": font_name.replace(" ", "_"),
+                    "key": font_name.replace(" ", "-"),
                     "styles": [
                         {
                             "adjust": self.calc_adjust(
