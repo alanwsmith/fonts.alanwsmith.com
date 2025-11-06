@@ -1596,11 +1596,14 @@ body {
   font-size: var(--default-font);
 }
 button {
+  cursor: pointer;
+/*
   background-color: var(--match-faded);
   border: var(--reverse-border);
   border-radius: var(--xsmall-radius);
   color: var(--reverse);
-  cursor: pointer;
+*/
+
 }
 canvas {
 /*

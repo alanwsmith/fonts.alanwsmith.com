@@ -3,17 +3,16 @@ import {matchSorter} from '/scripts/match-sorter.js'
 const fonts = [@ json.data["font-size-adjustments"] @].fonts
 
 const t = {
-  font: `<div><button data-send="pick" data-fontid="FONTID">NAME (CATEGORY)</button></div>`,
+  font: `<div>
+  <button 
+    class="NAME-regular"
+    data-send="pick" 
+    data-fontid="FONTID">NAME (CATEGORY)</button>
+</div>`,
   noMatches: `<div>No Matches</div>`,
   googleFont: `@font-face { 
   font-family: "NAME-STYLE";
   src: url("URL");
-  size-adjust: ADJUST%;
-}`,
-
-  macFont: `@font-face { 
-  font-family: "NAME-STYLE";
-  src: local("NAME");
   size-adjust: ADJUST%;
 }`,
 
@@ -26,9 +25,8 @@ const t = {
   */
 }`,
 
-  windowsFont: `@font-face { 
-/* */
-  font-family: "NAME-STYLE";
+  systemFont: `@font-face { 
+  font-family: "NAME-regular";
   src: local("NAME");
   size-adjust: ADJUST%;
 }`,
@@ -93,10 +91,8 @@ export default class {
         el.replaceChildren(this.getGoogleFont(font));
       } else if (font.category === "Nerd Fonts") {
         el.replaceChildren(this.getNerdFont(font));
-      } else if (font.category === "macOS Fonts") {
-        el.replaceChildren(this.getMacFont(font));
-      } else if (font.category === "Windows Fonts") {
-        el.replaceChildren(this.getWindowsFont(font));
+      } else if (font.category === "System Fonts") {
+        el.replaceChildren(this.getSystemFont(font));
       }
     } else {
       el.replaceChildren();
@@ -125,22 +121,11 @@ export default class {
     }).join("\n");
   }
 
-  getMacFont(font) {
+  getSystemFont(font) {
     return font.styles.map((style) => {
-      return t.macFont
+      return t.systemFont
         .replaceAll("NAME", font.name)
         .replaceAll("ADJUST", style.adjust)
-        .replaceAll("STYLE", style.style)
-        ;
-    }).join("\n");
-  }
-
-  getWindowsFont(font) {
-    return font.styles.map((style) => {
-      return t.windowsFont
-        .replaceAll("NAME", font.name)
-        .replaceAll("ADJUST", style.adjust)
-        .replaceAll("STYLE", style.style)
         ;
     }).join("\n");
   }
