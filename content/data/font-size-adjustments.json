@@ -1,5 +1,5 @@
 {
-    "google": [
+    "fonts": [
         {
             "category": "Google Fonts",
             "key": "ABeeZee",
@@ -65428,333 +65428,7 @@
                     "style": "regular"
                 }
             ]
-        }
-    ],
-    "macos_15": [
-        {
-            "category": "macOS Fonts",
-            "key": "Arial",
-            "name": "Arial",
-            "styles": [
-                {
-                    "adjust": 96.432,
-                    "aspect": 0.5185,
-                    "path_string": "Arial",
-                    "path_type": "local",
-                    "style": "default"
-                }
-            ]
         },
-        {
-            "category": "macOS Fonts",
-            "key": "Arial_Black",
-            "name": "Arial Black",
-            "styles": [
-                {
-                    "adjust": 96.432,
-                    "aspect": 0.5185,
-                    "path_string": "Arial Black",
-                    "path_type": "local",
-                    "style": "default"
-                }
-            ]
-        },
-        {
-            "category": "macOS Fonts",
-            "key": "Arial_Rounded_MT_Bold",
-            "name": "Arial Rounded MT Bold",
-            "styles": [
-                {
-                    "adjust": 94.3931,
-                    "aspect": 0.5297,
-                    "path_string": "Arial Rounded MT Bold",
-                    "path_type": "local",
-                    "style": "default"
-                }
-            ]
-        },
-        {
-            "category": "macOS Fonts",
-            "key": "Avenir",
-            "name": "Avenir",
-            "styles": [
-                {
-                    "adjust": 106.8376,
-                    "aspect": 0.468,
-                    "path_string": "Avenir",
-                    "path_type": "local",
-                    "style": "default"
-                }
-            ]
-        },
-        {
-            "category": "macOS Fonts",
-            "key": "Bradley_Hand",
-            "name": "Bradley Hand",
-            "styles": [
-                {
-                    "adjust": 115.2339,
-                    "aspect": 0.4339,
-                    "path_string": "Bradley Hand",
-                    "path_type": "local",
-                    "style": "default"
-                }
-            ]
-        },
-        {
-            "category": "macOS Fonts",
-            "key": "Charter",
-            "name": "Charter",
-            "styles": [
-                {
-                    "adjust": 103.9717,
-                    "aspect": 0.4809,
-                    "path_string": "Charter",
-                    "path_type": "local",
-                    "style": "default"
-                }
-            ]
-        },
-        {
-            "category": "macOS Fonts",
-            "key": "Courier_New",
-            "name": "Courier New",
-            "styles": [
-                {
-                    "adjust": 118.2592,
-                    "aspect": 0.4228,
-                    "path_string": "Courier New",
-                    "path_type": "local",
-                    "style": "default"
-                }
-            ]
-        },
-        {
-            "category": "macOS Fonts",
-            "key": "Didot",
-            "name": "Didot",
-            "styles": [
-                {
-                    "adjust": 116.5773,
-                    "aspect": 0.4289,
-                    "path_string": "Didot",
-                    "path_type": "local",
-                    "style": "default"
-                }
-            ]
-        },
-        {
-            "category": "macOS Fonts",
-            "key": "DIN_Alternate",
-            "name": "DIN Alternate",
-            "styles": [
-                {
-                    "adjust": 98.6582,
-                    "aspect": 0.5068,
-                    "path_string": "DIN Alternate",
-                    "path_type": "local",
-                    "style": "default"
-                }
-            ]
-        },
-        {
-            "category": "macOS Fonts",
-            "key": "Georgia",
-            "name": "Georgia",
-            "styles": [
-                {
-                    "adjust": 103.8637,
-                    "aspect": 0.4814,
-                    "path_string": "Georgia",
-                    "path_type": "local",
-                    "style": "default"
-                }
-            ]
-        },
-        {
-            "category": "macOS Fonts",
-            "key": "Helvetica_Neue",
-            "name": "Helvetica Neue",
-            "styles": [
-                {
-                    "adjust": 96.7305,
-                    "aspect": 0.5169,
-                    "path_string": "Helvetica Neue",
-                    "path_type": "local",
-                    "style": "default"
-                }
-            ]
-        },
-        {
-            "category": "macOS Fonts",
-            "key": "Hiragino_Maru_Gothic_ProN",
-            "name": "Hiragino Maru Gothic ProN",
-            "styles": [
-                {
-                    "adjust": 90.269,
-                    "aspect": 0.5539,
-                    "path_string": "Hiragino Maru Gothic ProN",
-                    "path_type": "local",
-                    "style": "default"
-                }
-            ]
-        },
-        {
-            "category": "macOS Fonts",
-            "key": "Inter",
-            "name": "Inter",
-            "styles": [
-                {
-                    "adjust": 91.6758,
-                    "aspect": 0.5454,
-                    "path_string": "Inter",
-                    "path_type": "local",
-                    "style": "default"
-                }
-            ]
-        },
-        {
-            "category": "macOS Fonts",
-            "key": "Iowan_Old_Style",
-            "name": "Iowan Old Style",
-            "styles": [
-                {
-                    "adjust": 104.3841,
-                    "aspect": 0.479,
-                    "path_string": "Iowan Old Style",
-                    "path_type": "local",
-                    "style": "default"
-                }
-            ]
-        },
-        {
-            "category": "macOS Fonts",
-            "key": "Menlo",
-            "name": "Menlo",
-            "styles": [
-                {
-                    "adjust": 91.4411,
-                    "aspect": 0.5468,
-                    "path_string": "Menlo",
-                    "path_type": "local",
-                    "style": "default"
-                }
-            ]
-        },
-        {
-            "category": "macOS Fonts",
-            "key": "Optima",
-            "name": "Optima",
-            "styles": [
-                {
-                    "adjust": 105.7082,
-                    "aspect": 0.473,
-                    "path_string": "Optima",
-                    "path_type": "local",
-                    "style": "default"
-                }
-            ]
-        },
-        {
-            "category": "macOS Fonts",
-            "key": "Rockwell",
-            "name": "Rockwell",
-            "styles": [
-                {
-                    "adjust": 97.4469,
-                    "aspect": 0.5131,
-                    "path_string": "Rockwell",
-                    "path_type": "local",
-                    "style": "default"
-                }
-            ]
-        },
-        {
-            "category": "macOS Fonts",
-            "key": "Seravek",
-            "name": "Seravek",
-            "styles": [
-                {
-                    "adjust": 104.1667,
-                    "aspect": 0.48,
-                    "path_string": "Seravek",
-                    "path_type": "local",
-                    "style": "default"
-                }
-            ]
-        },
-        {
-            "category": "macOS Fonts",
-            "key": "Superclarendon",
-            "name": "Superclarendon",
-            "styles": [
-                {
-                    "adjust": 98.2511,
-                    "aspect": 0.5089,
-                    "path_string": "Superclarendon",
-                    "path_type": "local",
-                    "style": "default"
-                }
-            ]
-        },
-        {
-            "category": "macOS Fonts",
-            "key": "Tahoma",
-            "name": "Tahoma",
-            "styles": [
-                {
-                    "adjust": 91.6758,
-                    "aspect": 0.5454,
-                    "path_string": "Tahoma",
-                    "path_type": "local",
-                    "style": "default"
-                }
-            ]
-        },
-        {
-            "category": "macOS Fonts",
-            "key": "Times_New_Roman",
-            "name": "Times New Roman",
-            "styles": [
-                {
-                    "adjust": 111.8068,
-                    "aspect": 0.4472,
-                    "path_string": "Times New Roman",
-                    "path_type": "local",
-                    "style": "default"
-                }
-            ]
-        },
-        {
-            "category": "macOS Fonts",
-            "key": "Trebuchet_MS",
-            "name": "Trebuchet MS",
-            "styles": [
-                {
-                    "adjust": 95.6206,
-                    "aspect": 0.5229,
-                    "path_string": "Trebuchet MS",
-                    "path_type": "local",
-                    "style": "default"
-                }
-            ]
-        },
-        {
-            "category": "macOS Fonts",
-            "key": "Verdana",
-            "name": "Verdana",
-            "styles": [
-                {
-                    "adjust": 91.6758,
-                    "aspect": 0.5454,
-                    "path_string": "Verdana",
-                    "path_type": "local",
-                    "style": "default"
-                }
-            ]
-        }
-    ],
-    "nerd": [
         {
             "category": "Nerd Fonts",
             "key": "3270",
@@ -66650,9 +66324,329 @@
                     "style": "default"
                 }
             ]
-        }
-    ],
-    "window_10": [
+        },
+        {
+            "category": "macOS Fonts",
+            "key": "Arial",
+            "name": "Arial",
+            "styles": [
+                {
+                    "adjust": 96.432,
+                    "aspect": 0.5185,
+                    "path_string": "Arial",
+                    "path_type": "local",
+                    "style": "default"
+                }
+            ]
+        },
+        {
+            "category": "macOS Fonts",
+            "key": "Arial_Black",
+            "name": "Arial Black",
+            "styles": [
+                {
+                    "adjust": 96.432,
+                    "aspect": 0.5185,
+                    "path_string": "Arial Black",
+                    "path_type": "local",
+                    "style": "default"
+                }
+            ]
+        },
+        {
+            "category": "macOS Fonts",
+            "key": "Arial_Rounded_MT_Bold",
+            "name": "Arial Rounded MT Bold",
+            "styles": [
+                {
+                    "adjust": 94.3931,
+                    "aspect": 0.5297,
+                    "path_string": "Arial Rounded MT Bold",
+                    "path_type": "local",
+                    "style": "default"
+                }
+            ]
+        },
+        {
+            "category": "macOS Fonts",
+            "key": "Avenir",
+            "name": "Avenir",
+            "styles": [
+                {
+                    "adjust": 106.8376,
+                    "aspect": 0.468,
+                    "path_string": "Avenir",
+                    "path_type": "local",
+                    "style": "default"
+                }
+            ]
+        },
+        {
+            "category": "macOS Fonts",
+            "key": "Bradley_Hand",
+            "name": "Bradley Hand",
+            "styles": [
+                {
+                    "adjust": 115.2339,
+                    "aspect": 0.4339,
+                    "path_string": "Bradley Hand",
+                    "path_type": "local",
+                    "style": "default"
+                }
+            ]
+        },
+        {
+            "category": "macOS Fonts",
+            "key": "Charter",
+            "name": "Charter",
+            "styles": [
+                {
+                    "adjust": 103.9717,
+                    "aspect": 0.4809,
+                    "path_string": "Charter",
+                    "path_type": "local",
+                    "style": "default"
+                }
+            ]
+        },
+        {
+            "category": "macOS Fonts",
+            "key": "Courier_New",
+            "name": "Courier New",
+            "styles": [
+                {
+                    "adjust": 118.2592,
+                    "aspect": 0.4228,
+                    "path_string": "Courier New",
+                    "path_type": "local",
+                    "style": "default"
+                }
+            ]
+        },
+        {
+            "category": "macOS Fonts",
+            "key": "Didot",
+            "name": "Didot",
+            "styles": [
+                {
+                    "adjust": 116.5773,
+                    "aspect": 0.4289,
+                    "path_string": "Didot",
+                    "path_type": "local",
+                    "style": "default"
+                }
+            ]
+        },
+        {
+            "category": "macOS Fonts",
+            "key": "DIN_Alternate",
+            "name": "DIN Alternate",
+            "styles": [
+                {
+                    "adjust": 98.6582,
+                    "aspect": 0.5068,
+                    "path_string": "DIN Alternate",
+                    "path_type": "local",
+                    "style": "default"
+                }
+            ]
+        },
+        {
+            "category": "macOS Fonts",
+            "key": "Georgia",
+            "name": "Georgia",
+            "styles": [
+                {
+                    "adjust": 103.8637,
+                    "aspect": 0.4814,
+                    "path_string": "Georgia",
+                    "path_type": "local",
+                    "style": "default"
+                }
+            ]
+        },
+        {
+            "category": "macOS Fonts",
+            "key": "Helvetica_Neue",
+            "name": "Helvetica Neue",
+            "styles": [
+                {
+                    "adjust": 96.7305,
+                    "aspect": 0.5169,
+                    "path_string": "Helvetica Neue",
+                    "path_type": "local",
+                    "style": "default"
+                }
+            ]
+        },
+        {
+            "category": "macOS Fonts",
+            "key": "Hiragino_Maru_Gothic_ProN",
+            "name": "Hiragino Maru Gothic ProN",
+            "styles": [
+                {
+                    "adjust": 90.269,
+                    "aspect": 0.5539,
+                    "path_string": "Hiragino Maru Gothic ProN",
+                    "path_type": "local",
+                    "style": "default"
+                }
+            ]
+        },
+        {
+            "category": "macOS Fonts",
+            "key": "Inter",
+            "name": "Inter",
+            "styles": [
+                {
+                    "adjust": 91.6758,
+                    "aspect": 0.5454,
+                    "path_string": "Inter",
+                    "path_type": "local",
+                    "style": "default"
+                }
+            ]
+        },
+        {
+            "category": "macOS Fonts",
+            "key": "Iowan_Old_Style",
+            "name": "Iowan Old Style",
+            "styles": [
+                {
+                    "adjust": 104.3841,
+                    "aspect": 0.479,
+                    "path_string": "Iowan Old Style",
+                    "path_type": "local",
+                    "style": "default"
+                }
+            ]
+        },
+        {
+            "category": "macOS Fonts",
+            "key": "Menlo",
+            "name": "Menlo",
+            "styles": [
+                {
+                    "adjust": 91.4411,
+                    "aspect": 0.5468,
+                    "path_string": "Menlo",
+                    "path_type": "local",
+                    "style": "default"
+                }
+            ]
+        },
+        {
+            "category": "macOS Fonts",
+            "key": "Optima",
+            "name": "Optima",
+            "styles": [
+                {
+                    "adjust": 105.7082,
+                    "aspect": 0.473,
+                    "path_string": "Optima",
+                    "path_type": "local",
+                    "style": "default"
+                }
+            ]
+        },
+        {
+            "category": "macOS Fonts",
+            "key": "Rockwell",
+            "name": "Rockwell",
+            "styles": [
+                {
+                    "adjust": 97.4469,
+                    "aspect": 0.5131,
+                    "path_string": "Rockwell",
+                    "path_type": "local",
+                    "style": "default"
+                }
+            ]
+        },
+        {
+            "category": "macOS Fonts",
+            "key": "Seravek",
+            "name": "Seravek",
+            "styles": [
+                {
+                    "adjust": 104.1667,
+                    "aspect": 0.48,
+                    "path_string": "Seravek",
+                    "path_type": "local",
+                    "style": "default"
+                }
+            ]
+        },
+        {
+            "category": "macOS Fonts",
+            "key": "Superclarendon",
+            "name": "Superclarendon",
+            "styles": [
+                {
+                    "adjust": 98.2511,
+                    "aspect": 0.5089,
+                    "path_string": "Superclarendon",
+                    "path_type": "local",
+                    "style": "default"
+                }
+            ]
+        },
+        {
+            "category": "macOS Fonts",
+            "key": "Tahoma",
+            "name": "Tahoma",
+            "styles": [
+                {
+                    "adjust": 91.6758,
+                    "aspect": 0.5454,
+                    "path_string": "Tahoma",
+                    "path_type": "local",
+                    "style": "default"
+                }
+            ]
+        },
+        {
+            "category": "macOS Fonts",
+            "key": "Times_New_Roman",
+            "name": "Times New Roman",
+            "styles": [
+                {
+                    "adjust": 111.8068,
+                    "aspect": 0.4472,
+                    "path_string": "Times New Roman",
+                    "path_type": "local",
+                    "style": "default"
+                }
+            ]
+        },
+        {
+            "category": "macOS Fonts",
+            "key": "Trebuchet_MS",
+            "name": "Trebuchet MS",
+            "styles": [
+                {
+                    "adjust": 95.6206,
+                    "aspect": 0.5229,
+                    "path_string": "Trebuchet MS",
+                    "path_type": "local",
+                    "style": "default"
+                }
+            ]
+        },
+        {
+            "category": "macOS Fonts",
+            "key": "Verdana",
+            "name": "Verdana",
+            "styles": [
+                {
+                    "adjust": 91.6758,
+                    "aspect": 0.5454,
+                    "path_string": "Verdana",
+                    "path_type": "local",
+                    "style": "default"
+                }
+            ]
+        },
         {
             "category": "Windows Fonts",
             "key": "Arial",

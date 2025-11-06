@@ -107,11 +107,18 @@ class Maker:
             self.input[key] = json.load(_in) 
 
     def output(self):
+        fonts = []
+        fonts.extend(self.get_google_values())
+        fonts.extend(self.get_nerd_values())
+        fonts.extend(self.get_macos_15())
+        fonts.extend(self.get_windows_10())
+
         return {
-            "google": self.get_google_values(),
-            "nerd": self.get_nerd_values(),
-            "macos_15": self.get_macos_15(),
-            "window_10": self.get_windows_10(),
+                "fonts": fonts 
+            # "google": self.get_google_values(),
+            # "nerd": self.get_nerd_values(),
+            # "macos_15": self.get_macos_15(),
+            # "window_10": self.get_windows_10(),
         }
 
 if __name__ == "__main__":
