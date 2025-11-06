@@ -2043,6 +2043,24 @@ hgroup {
   grid-template-columns: 1fr 1fr;
 }
 
+.search-area {
+  border: var(--accent-border-faded);
+  border-radius: var(--default-radius);
+  font-size: var(--small-font);
+  padding: var(--default-padding);
+  min-height: 16rem;
+}
+
+.style-results {
+  background-color: var(--accent-faded2);
+  padding: var(--small-padding);
+  font-size: var(--xxsmall-font);
+  border: var(--accent-border-faded);
+  border-radius: var(--default-radius);
+  height: 14rem;
+  overflow-y: scroll;
+  overflow-x: scroll;
+}
 </style>  </head>
   <body>
 <noscript>
@@ -2067,20 +2085,31 @@ hgroup {
   data-connect="/scripts/home-page.on.js" 
   class="load-hider default-flow"">
 
-  <div class="two-column">
-    <div>
-      <label>Search:
-        <input type="search" data-send="search" />
-      </label>
-      <div data-receive="search"></div>
+  <div class="search-area">
+    <div class="two-column">
+      <div>
+        <label>
+          <strong>Search Google Fonts and Nerd Fonts</strong> 
+          <div>
+            <input type="search" data-send="search" />
+          </div>
+        </label>
+        <div data-receive="search"></div>
+      </div>
+      <div>
+        <pre data-receive="styles copyStyles" class="style-results"></pre>
+        <div>
+          <button data-send="copyStyles">Copy</button>
+        </div>
+      </div>
     </div>
-    <div>
-      <pre data-receive="styles"></pre>
+    <div class="default-top-padding">
+      <details><summary>Search Details</summary>
+      </details>
     </div>
   </div>
 
 </bitty-4-0>
-
 
 
 <!--

@@ -9,20 +9,31 @@
   data-connect="/scripts/home-page.on.js" 
   class="load-hider default-flow"">
 
-  <div class="two-column">
-    <div>
-      <label>Search:
-        <input type="search" data-send="search" />
-      </label>
-      <div data-receive="search"></div>
+  <div class="search-area">
+    <div class="two-column">
+      <div>
+        <label>
+          <strong>Search Google Fonts and Nerd Fonts</strong> 
+          <div>
+            <input type="search" data-send="search" />
+          </div>
+        </label>
+        <div data-receive="search"></div>
+      </div>
+      <div>
+        <pre data-receive="styles copyStyles" class="style-results"></pre>
+        <div>
+          <button data-send="copyStyles">Copy</button>
+        </div>
+      </div>
     </div>
-    <div>
-      <pre data-receive="styles"></pre>
+    <div class="default-top-padding">
+      <details><summary>Search Details</summary>
+      </details>
     </div>
   </div>
 
 </bitty-4-0>
-
 
 
 <!--

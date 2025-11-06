@@ -43,9 +43,58 @@ function setProp(key, value) {
 
 export default class {
   #currentMatch = "";
+  #copyTimeout = null;
+  #added = [];
 
   bittyInit() {
     setProp("--load-hider", "1");
+  }
+
+  async copyStyles(event, el) {
+    try {
+      await navigator.clipboard.writeText(el.innerText);
+      event.target.innerHTML = "Copied";
+      if (this.#copyTimeout !== null) {
+        clearTimeout(this.#copyTimeout);
+      } 
+      this.#copyTimeout = setTimeout(() => {
+        event.target.innerHTML = "Copy";
+      }, 1500);
+    } catch (error) {
+      event.target.innerHTML = "Could not copy";
+      console.error(`Could not copy selection to clipboard: ${error}`)
+    }
+  }
+
+  getGoogleFont(font) {
+    return font.styles.map((style) => {
+      return t.googleFont
+        .replace("NAME", font.name)
+        .replace("ADJUST", style.adjust)
+        .replace("STYLE", style.style)
+        .replace("URL", style.path_string)
+        ;
+    }).join("\n");
+  }
+
+  getNerdFont(font) {
+    return font.styles.map((style) => {
+      return t.nerdFont
+        .replaceAll("NAME", font.name)
+        .replaceAll("ADJUST", style.adjust)
+        .replaceAll("STYLE", style.style)
+        .replaceAll("LINK", style.path_string)
+        ;
+    }).join("\n");
+  }
+
+  getSystemFont(font) {
+    return font.styles.map((style) => {
+      return t.systemFont
+        .replaceAll("NAME", font.name)
+        .replaceAll("ADJUST", style.adjust)
+        ;
+    }).join("\n");
   }
 
   pick(event, el) {
@@ -97,36 +146,5 @@ export default class {
     } else {
       el.replaceChildren();
     }
-  }
-
-  getGoogleFont(font) {
-    return font.styles.map((style) => {
-      return t.googleFont
-        .replace("NAME", font.name)
-        .replace("ADJUST", style.adjust)
-        .replace("STYLE", style.style)
-        .replace("URL", style.path_string)
-        ;
-    }).join("\n");
-  }
-
-  getNerdFont(font) {
-    return font.styles.map((style) => {
-      return t.nerdFont
-        .replaceAll("NAME", font.name)
-        .replaceAll("ADJUST", style.adjust)
-        .replaceAll("STYLE", style.style)
-        .replaceAll("LINK", style.path_string)
-        ;
-    }).join("\n");
-  }
-
-  getSystemFont(font) {
-    return font.styles.map((style) => {
-      return t.systemFont
-        .replaceAll("NAME", font.name)
-        .replaceAll("ADJUST", style.adjust)
-        ;
-    }).join("\n");
   }
 }
