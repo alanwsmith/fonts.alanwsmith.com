@@ -3,7 +3,7 @@ import {matchSorter} from '/scripts/match-sorter.js'
 const fonts = [@ json.data["font-size-adjustments"] @].fonts
 
 const t = {
-  font: `<div>NAME (CATEGORY)</div>`,
+  font: `<div><button data-send="pick" data-fontid="FONTID">NAME (CATEGORY)</button></div>`,
   noMatches: `<div>No Matches</div>`,
   googleFont: `@font-face { 
   font-family: "NAME-STYLE";
@@ -27,13 +27,13 @@ const t = {
 }`,
 
   windowsFont: `@font-face { 
+/* */
   font-family: "NAME-STYLE";
   src: local("NAME");
   size-adjust: ADJUST%;
 }`,
 
 }
-
 
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
@@ -48,14 +48,12 @@ export default class {
 
   bittyInit() {
     setProp("--load-hider", "1");
-    this.dev();
   }
 
-  dev() {
-    this.#currentMatch = "Roboto";
+  pick(event, el) {
+    this.#currentMatch = event.target.dataset.fontid;
     this.api.forward(null, "styles");
   }
-
 
   search(event, el) {
     el.replaceChildren();
@@ -72,11 +70,12 @@ export default class {
       } else {
         results.forEach((result, resultIndex) => {
           if (resultIndex === 0) {
-            this.#currentMatch = result.name;
+            this.#currentMatch = result.fontid;
           }
           const subs = [
             ["NAME", result.name],
-            ["CATEGORY", result.category]
+            ["CATEGORY", result.category],
+            ["FONTID", result.fontid],
           ];
           el.appendChild(this.api.makeElement(t.font, subs));
         });
@@ -89,13 +88,15 @@ export default class {
 
   styles(_event, el) {
     if (this.#currentMatch !== "") {
-      const font = fonts.find((font) => font.name === this.#currentMatch);
+      const font = fonts.find((font) => font.fontid === this.#currentMatch);
       if (font.category === "Google Fonts") {
         el.replaceChildren(this.getGoogleFont(font));
       } else if (font.category === "Nerd Fonts") {
         el.replaceChildren(this.getNerdFont(font));
       } else if (font.category === "macOS Fonts") {
         el.replaceChildren(this.getMacFont(font));
+      } else if (font.category === "Windows Fonts") {
+        el.replaceChildren(this.getWindowsFont(font));
       }
     } else {
       el.replaceChildren();
@@ -122,7 +123,6 @@ export default class {
         .replaceAll("LINK", style.path_string)
         ;
     }).join("\n");
-
   }
 
   getMacFont(font) {

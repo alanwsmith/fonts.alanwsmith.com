@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import json
+import uuid
 
 class Maker:
     def __init__(self):
@@ -14,6 +15,7 @@ class Maker:
         results = []
         for font_name in self.input["google_fonts"]:
             obj = {
+                    "fontid": str(uuid.uuid4()),
                     "category": "Google Fonts",
                     "name": font_name,
                     "key": font_name.replace(" ", "_"),
@@ -39,7 +41,8 @@ class Maker:
         fonts = self.input["macos_15"]
         for font_name in fonts:
             obj = {
-                    "category": "macOS Fonts",
+                    "fontid": str(uuid.uuid4()),
+                    "category": "System Fonts",
                     "name": font_name,
                     "key": font_name.replace(" ", "_"),
                     "styles": [
@@ -61,6 +64,7 @@ class Maker:
         results = []
         for font_name in self.input["nerd_fonts"]:
             obj = {
+                    "fontid": str(uuid.uuid4()),
                     "category": "Nerd Fonts",
                     "name": font_name,
                     "key": font_name.replace(" ", "_"),
@@ -84,7 +88,8 @@ class Maker:
         fonts = self.input["windows_10"]
         for font_name in fonts:
             obj = {
-                    "category": "Windows Fonts",
+                    "fontid": str(uuid.uuid4()),
+                    "category": "System Fonts",
                     "name": font_name,
                     "key": font_name.replace(" ", "_"),
                     "styles": [
@@ -106,19 +111,33 @@ class Maker:
         with open(path) as _in:
             self.input[key] = json.load(_in) 
 
+    def local_fonts(self): 
+        results = []
+        tmp_windows_fonts = self.get_windows_10()
+        tmp_mac_fonts = self.get_macos_15()
+        check = {}
+        for tw in tmp_windows_fonts:
+            check[tw["name"]] = tw["styles"][0]["adjust"]
+            results.append(tw)
+        for tm in tmp_mac_fonts:
+            if tm["name"] in check:
+                mac_adjust = tm["styles"][0]["adjust"] 
+                win_adjust = check[tm["name"]]
+                if mac_adjust != win_adjust:
+                    print(f"ERROR: {tm["name"]} is different size between mac and windows")
+            else:
+                check[tm["name"]] = tm["styles"][0]["adjust"]
+                results.append(tm)
+        return results
+
     def output(self):
         fonts = []
         fonts.extend(self.get_google_values())
         fonts.extend(self.get_nerd_values())
-        fonts.extend(self.get_macos_15())
-        fonts.extend(self.get_windows_10())
+        fonts.extend(self.local_fonts())
 
         return {
                 "fonts": fonts 
-            # "google": self.get_google_values(),
-            # "nerd": self.get_nerd_values(),
-            # "macos_15": self.get_macos_15(),
-            # "window_10": self.get_windows_10(),
         }
 
 if __name__ == "__main__":
