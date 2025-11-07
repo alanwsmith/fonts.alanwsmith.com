@@ -3,21 +3,21 @@
   <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title></title>
-<meta property="og:title" content="" />
+<title>Font Normilization Data</title>
+<meta property="og:title" content="Font Normilization Data" />
 <link rel="shortcut icon" href="/favicon.ico" />
-<meta name="description" content="" />
-<meta property="og:description" content="" />
+<meta name="description" content="a set of adjustments to normalize font sizes" />
+<meta property="og:description" content="a set of adjustments to normalize font sizes" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.alanwsmith.com/" />
-<meta property="og:image" content="https://www.alanwsmith.com&#x2f;images&#x2f;og-image.jpg" />
+<meta property="og:url" content="https://fonts.alanwsmith.com/" />
+<meta property="og:image" content="https://fonts.alanwsmith.com&#x2f;images&#x2f;og-image.jpg" />
 <link rel="apple-touch-icon" sizes="180x180" href="&#x2f;favicons/apple-touch-icon.png" />
 <link rel="icon" type="image/png" sizes="16x16" href="&#x2f;favicons/favicon-16x16.png" />
 <link rel="icon" type="image/png" sizes="32x32" href="&#x2f;favicons/favicon-32x32.png" />
 <link rel="manifest" href="&#x2f;favicons/site.webmanifest" />
 <link rel="mask-icon" href="&#x2f;favicons/safari-pinned-tab.svg" color="#5bbad5" />
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://www.alanwsmith.com&#x2f;images&#x2f;og-image.jpg">
+<meta name="twitter:image" content="https://fonts.alanwsmith.com&#x2f;images&#x2f;og-image.jpg">
 <style>
 :root { --load-hider: 0; }
 .load-hider { opacity: var(--load-hider); }
@@ -1620,11 +1620,14 @@ body {
   font-size: var(--default-font);
 }
 button {
+  cursor: pointer;
+/*
   background-color: var(--match-faded);
   border: var(--reverse-border);
   border-radius: var(--xsmall-radius);
   color: var(--reverse);
-  cursor: pointer;
+*/
+
 }
 canvas {
 /*
@@ -1930,6 +1933,12 @@ video {
   max-width: 100%;
 }
 
+:root {
+  --test-font-size: 50rem;
+  --adjust-value: 0.1;
+  --hp-calculator-opacity: 0;
+}
+
 .content-wrapper {
   display: grid;
   grid-template-rows: auto 1fr auto;
@@ -1938,10 +1947,13 @@ video {
 }
 
 .code-block {
-  background: var(--match-faded);
-  border-radius: var(--default-radius);
+  font-size: var(--small-font);
   margin: var(--default-margin);
   padding: var(--default-padding);
+}
+
+.hp-input {
+  width: 34ch;
 }
 
 hgroup {
@@ -1988,7 +2000,6 @@ hgroup {
 }
 
 .trimmed {
-  background-color: blue;
   display: inline-block;
   padding: 0;
   margin: 0;
@@ -1996,10 +2007,6 @@ hgroup {
   text-box-edge: cap alphabetic;
 }
 
-:root {
-  --test-font-size: 50rem;
-  --adjust-value: 0.1;
-}
 
 [data-receive=rawFont] {
   font-size: var(--test-font-size);
@@ -2019,34 +2026,134 @@ hgroup {
 }
 
 .test-font {
-  postion: absolute;
   display: grid;
   gap: 1rem;
   grid-template-columns: 1fr 1fr;
   font-family: var(--test-font);
 }
 
+.test-font-family {
+  font-family: var(--test-font-family);
+}
+
 .test-font-google {
-  postion: absolute;
+  position: relative;
   display: grid;
   gap: 1rem;
   grid-template-columns: 1fr 1fr;
   font-family: var(--test-font);
   padding-top: 4rem;
+  height: 52rem;
+  z-index: -2;
 }
 
 .two-column {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  gap: 1rem;
 }
 
-input {
-  width: 40ch;
+.search-area {
+  border: var(--accent-border-faded);
+  border-radius: var(--default-radius);
+  font-size: var(--small-font);
+  padding: var(--default-padding);
+  min-height: 16rem;
 }
 
+.calculator-area {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 1200px;
+  gap: 1rem;
+  font-family: "font-to-calculate";
+}
+
+.calculator-line {
+  opacity: var(--hp-calculator-opacity);
+  position: relative;
+  z-index: -2;
+}
+
+.calculator-wrapper {
+  position: relative;
+  border: var(--accent-border-faded);
+  border-radius: var(--default-radius);
+  font-size: var(--small-font);
+  padding: var(--default-padding);
+  min-height: 16rem;
+}
+
+.calculator-target {
+  font-size: var(--test-font-size);
+  background-color: blue;
+  font-family: "font-to-calculate";
+}
+
+.calculator-check {
+  font-size: var(--test-font-size);
+  font-size-adjust: var(--adjust-value);
+  background-color: red;
+  font-family: "font-to-calculate";
+}
+
+.calculator-b {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.style-results {
+  background-color: var(--accent-faded2);
+  padding: var(--small-padding);
+  font-size: var(--xxsmall-font);
+  border: var(--accent-border-faded);
+  border-radius: var(--default-radius);
+  height: 14rem;
+  overflow-y: scroll;
+  overflow-x: scroll;
+}
+
+.example-wrapper {
+  margin: var(--default-margin);
+  padding: var(--default-padding);
+  background-color: var(--accent-faded2);
+  border-radius: var(--default-radius);
+}
+
+footer {
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+}
+
+.test-google-font-target {
+  position: absolute;
+  top: 4rem;
+  left: 0;
+}
+
+.test-google-font-active {
+  position: absolute;
+  top: 4rem;
+  left: 0;
+}
+
+.highlight-top {
+  display: inline-block;
+  background-color: blue;
+  border-top: 1px solid red;
+  margin: 0;
+  padding: 0;
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic;
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic;
+}
 </style>  </head>
   <body>
-
 <noscript>
   <p>
     NOTE: This site use JavaScript which appears to be turned off. 
@@ -2056,11 +2163,12 @@ input {
 </noscript>    <div class="content-wrapper">
 <header class="default-wrapper xlarge-bottom-margin">
   <div class="small-font">
-    from <a href="https://www.alanwsmith.com/">alan w smith</a> ~ <a href="https:&#x2f;&#x2f;github.com&#x2f;alanwsmith&#x2f;">source</a> ~ <a href="https://socials.alanwsmith.com/">socials</a> ~
+    <a href="/">fonts</a> ~
+    from <a href="https://www.alanwsmith.com/">alan w smith</a> ~ <a href="https:&#x2f;&#x2f;github.com&#x2f;alanwsmith&#x2f;fonts.alanwsmith.com">source</a> ~ <a href="https://socials.alanwsmith.com/">socials</a> ~
     <a href="https://links.alanwsmith.com/">other projects</a> ~
     <a href="https://www.alanwsmith.com/feeds/posts.xml">rss</a>
   </div>
-</header>      <main class="xxlarge-wrapper default-flow">
+</header>      <main class="default-wrapper default-flow">
 <bitty-4-0 data-connect="/scripts/bitty-page.on.js" 
       class="load-hider"
 >
@@ -2144,11 +2252,11 @@ https://developer.mozilla.org/en-US/docs/Web/API/CSS_Font_Loading_API
     <div data-receive="prodLink"></div>
     <div>
     from <a href="https://www.alanwsmith.com/">alan w smith</a>
-    </div><a href="https:&#x2f;&#x2f;github.com&#x2f;alanwsmith&#x2f;">source</a> ~ <a href="https://socials.alanwsmith.com/">socials</a> ~
+    </div><a href="https:&#x2f;&#x2f;github.com&#x2f;alanwsmith&#x2f;fonts.alanwsmith.com">source</a> ~ <a href="https://socials.alanwsmith.com/">socials</a> ~
     <a href="https://links.alanwsmith.com/">other projects</a> ~
     <a href="https://www.alanwsmith.com/feeds/posts.xml">rss</a>
   </div>
 </footer>    </div>
-    <script src="/components/bitty-4.0.0-rc1.full.js" type="module"></script>
+    <script src="/components/bitty-4.0.0.min.js" type="module"></script>
   </body>
 </html>

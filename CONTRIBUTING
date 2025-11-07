@@ -1,1 +1,11 @@
-TODO: Contribution guidelines TBD
+# Contributing
+
+- Contributions Aspect Value numbers for 
+system fonts beyond mac and windows are welcome. 
+
+- Don't submit PRs without opening an issue 
+for discussion first. 
+
+Note that this site is built with my personal 
+static site generator. You won't be able to 
+build previews. 

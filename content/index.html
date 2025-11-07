@@ -1,168 +1,263 @@
 [!- extends "_wrappers/wrapper.html" -!]
 [!- block main -!]
 
-
   <hgroup>
-    <h1>fonts.alanwsmith.com</h1>
+    <h1>Font Size Adjustments</h1>
   </hgroup>
 
-  <p>This page is under construction.</p>
 
-  <!--
+
 <bitty-4-0 
   data-connect="/scripts/home-page.on.js" 
-  data-send="picker"
-  class="load-hider default-flow"">
-
-
-  <h2>Tools</h2>
-  <ul>
-    <li><a href="/tools/local-font-value-getter/">Local Font Value Getter</a></li>
-  </ul>
-
+  class="load-hider default-flow" >
 
   <p>
-    This page contains the 'aspect values' for 
-    fonts available from Google Fonts and Nerd Fonts.
-    The aspect values can be used with `font-size-adjust`.
+    This page provides values to use for font face <em>size-adjust</em>
+    values to normalize sizes across fonts. See The Details section 
+    below for more info. 
   </p>
 
-<style>
-  
-@font-face {
-  /* value: 0.4399*/
-  font-family: "Teachers";
-  src: url("https://fonts.gstatic.com/s/teachers/v6/H4c5BXKVncXVmUGsgTwx4E9oHx2xfjBr3powY55O4AS32A.ttf");
-  /*
-  size-adjust: 56%;
-*/
-  /*
-  font-display: block;
-  */
-}
+  <details class="default-flow">
+    <summary>TL;DR</summary>
+    <p>
+      This page provides <em>@font-face</em> styles that normalize
+      font heights. When you use them you can set two fonts
+      to the same rem value and you'll get this:
+    </p>
+    <div class="accent-background-faded2 default-radius default-left-padding">
+      <span class="tauri-adjusted">xxxxx</span>
+      <span class="teachers-adjusted">xxxxx</span>
+    </div>
+    <p>Instead of this, where the first set of x characters
+      is taller than the second:
+    </p>
 
-@font-face {
-  /* "value": 0.482 */
-  font-family: "Ruluko";
-  src: url("https://fonts.gstatic.com/s/ruluko/v22/xMQVuFNZVaODtm0pC6WzKX_QmA.ttf");
-  font-display: block;
-  /*
-  size-adjust: 52%
-  */
-  /*
-  size-adjust: 91%
-  */
-}
+    <div class="accent-background-faded2 default-radius default-left-padding">
+      <span class="tauri-base">xxxxx</span>
+      <span class="teachers-base">xxxxx</span>
+    </div>
 
-@font-face {
-  /* value: 0.5542 */
-  font-family: "Tauri";
-  src: url("https://fonts.gstatic.com/s/tauri/v20/TwMA-IISS0AM3IpVWHU_TBqO.ttf");
-  font-display: block;
-  /*
-  size-adjust: 45%;
-  */
-
-  /*
-  size-adjust: 79%
-  */
-}
-
-@font-face {
-  /* value: 0.58 */
-  font-family: "Titan One";
-  src: url("https://fonts.gstatic.com/s/titanone/v17/mFTzWbsGxbbS_J5cQcjykzIn2Etikg.ttf");
-  font-display: block;
-  /*
-  size-adjust: 42%;
-  */
-
-  /*
-  size-adjust: 75.8%
-  */
-}
-
-.alfa {
-  display: inline-block;
-  font-family: "Teachers";
-  font-size: 4rem;
-}
-
-.bravo {
-  display: inline-block;
-  font-family: "Ruluko";
-  font-size: 4rem;
-}
-
-.charlie {
-  display: inline-block;
-  font-size: 4rem;
-  font-family: "Tauri";
-}
-
-.delta {
-  display: inline-block;
-  font-size: 4rem;
-  font-family: "Titan One";
-}
-
-
-.do-flex {
-  display: flex;
-}
-
-  </style>
-
-  <div>
-    <div class="bravo">xxx</div>
-    <div class="charlie">xxx</div>
-    <div class="delta">xxx</div>
-    <div class="alfa">xxx</div> 
-  </div>
-
-  <hr />
-
-  <div data-receive="picker">
-  </div>
+  </details>
 
 
 
-  <hr />
+  <h2>The Search</h2>
+  <p>
+    Pre-calculated <em>size-adjust</em> values 
+    for Google, Nerd, and Local System fonts.
+  </p>
 
-  <p>Get a new aspect value for a web font:</p>
-
-  <div class="two-column">
-    <div>
+  <div class="search-area">
+    <div class="two-column">
       <div>
-        <label>Font File URL<br />
-          <input type="text" data-send="fontURL" />
+        <label>
+          <strong>Search</strong> 
+          <div>
+            <input class="hp-input" type="search" data-send="search" placeholder="e.g. Roboto" />
+          </div>
         </label>
+        <div data-receive="search"></div>
+      </div>
+      <div>
+        <pre data-receive="styles copyStyles" class="style-results"></pre>
+        <div>
+          <button data-send="copyStyles">Copy</button>
+        </div>
       </div>
     </div>
 
-    <div>
-      <div>
-        <button data-send="calculate">Calculate</button>
-      </div>
-      <div data-receive="status"></div>
+    <div class="default-top-padding">
+      <details class="default-flow"><summary>Search Details</summary>
+[! filter markdown|safe !]
+- The search includes fonts from [Google Fonts](https://fonts.google.com/), 
+        [Nerd Fonts](https://www.nerdfonts.com/), and the fonts
+        that are on my Mac (using macOS 15.x) and Windows 10 machines
+        that match those listed on [Modern Font Stacks](https://modernfontstacks.com/).
+
+- [Pull requests are welcome](https://github.com/alanwsmith/fonts.alanwsmith.com)
+        for the other fonts listed on Modern Font Stacks. 
+
+- All the `@font-face` name include a name and a style modifier 
+    (i.e. `NAME-STYLE`).
+    For example, `Roboto-regular` is the regular version
+    of `Roboto` and `Roboto-900italic` is the boldest italic
+    version of the font. 
+
+    You can use them like:
+
+        .my-style {
+          font-family: "Roboto-900italic";
+        }
+
+- System and Nerf Fonts only include a single file. Their
+    style modifier is always `-default`. Google Fonts 
+    are often split to multiple files. Their individual 
+    style modifiers match the keys that come from
+    the Google feed. 
+
+    You can remove any variations you don't need
+    after copying the `@font-face` styles. 
+
+- The Google Font `@font-face` styles call live font files. 
+  They can be copy/pasted directly if you want 
+  to use Google directly. You can also download and host
+  fonts yourself by changing the URLs to point to
+  your sources. 
+
+- The `font-family` names for the System Fonts is the 
+  font's name followed by `-regular`. The source
+  is the local version of the file from the name. 
+  The `-regular` name is necessary to avoid
+  collisions with the name from the system. 
+
+- The Nerd Font styles are commented out by default. 
+  You'll need to get a copy of any font
+  files you want to use set up in a place that
+  can serve them and update the `src: url()` value. 
+
+[! endfilter !]
+      </details>
     </div>
+  </div>
+</bitty-4-0>
+
+
+<h2>The Calculator</h2>
+
+<p>
+  Fetch remote font files and calculate their
+  <em>size-adjust</em> values.
+</p>
+
+
+<bitty-4-0 
+  data-connect="/scripts/home-page-calculator.on.js" 
+  class="load-hider default-flow">
+
+  <div class="calculator-line">
+    <div><span data-receive="rawFont" class="calculator-target trimmed calculator-b">b</span></div>
+    <div><span data-receive="checkSize" class="calculator-check trimmed calculator-b">b</span></div>
   </div>
 
-  <div class="test-wrapper">
-    <div class="test-font">
+  <div class="calculator-wrapper large-wrapper">
+    <div class="two-column">
       <div>
-        <div class="trimmed" data-receive="rawFont">b</div>
+        <div>
+          <strong>Remote Font File Calculator</strong> 
+        </div>
+        <div>
+          <label>Font Name
+            <div>
+              <input class="hp-input" type="input" data-send="fontName" placeholder="e.g. Custom Name"/>
+            </div>
+          </label>
+        </div>
+        <div>
+          <label>Remote Font File URL 
+            <div>
+              <input class="hp-input" type="input" data-send="fontURL" placeholder="e.g. https://example.com/font.ttf" />
+            </div>
+          </label>
+        </div>
+        <div>
+          <button data-send="calculate">Calculate</button>
+        </div>
       </div>
+
       <div>
-        <div class="trimmed" data-receive="checkSize">b</div>
+        <pre data-receive="newStyle copyNewStyle" class="style-results"></pre>
+        <div>
+          <button data-send="copyNewStyle">Copy</button>
+        </div>
       </div>
     </div>
+
+    <div class="default-top-padding">
+    <details class="default-flow">
+      <summary>Calculator Details</summary>
+      <ul>
+        <li>
+          The calculator pulls in an external font
+          file and does the math to determine the
+          aspect value and corresponding <em>size-adjust</em>
+          value for a font. 
+        </li>
+        <li>
+          The <em>Font Name</em> is what's used for the
+          <em>font-face</em> in the output. It's surrounded
+          by quotes. So, any valid character, including
+          spaces, can be used. 
+        </li>
+        <li>
+            You'll see the sizing take place with
+            the two lowercase <em>b</em> characters. 
+        </li>
+      </ul>
+    </details>
+    </div>
+
   </div>
+
 
 
 </bitty-4-0>
 
--->
+<div class="default-flow">
+[! include "_details/index.html" !]
+</div>
+
+<h2>The Data</h2>
+
+<p>
+  The pre-calculated data is available
+  in <a href="/data/font-size-adjustments.json">this JSON file</a>. It's licensed under
+  <a href="https://creativecommons.org/public-domain/cc0/">Creative Commons CC0</a>
+  for the Public Domain. There's no requirement
+  to credit me if you use it. But, if you
+  want to throw a link to my site (<a href="https://www.alanwsmith.com/">www.alanwsmith.com</a>)
+  that would be cool.
+</p>
+
+<p>
+  You can use these pages if you want to run 
+  the processes yourself:
+</p> 
+
+<ul>
+  <li><a href="/tools/calculate-google-fonts/">Google Fonts</a></li>
+  <li><a href="/tools/calculate-local-system-fonts/">Local System Fonts</a></li>
+</ul>
+
+<p>(Nerd Fonts require cloning the repo to put them back in place)</p>
+
+
+<h2>The Plug for Bitty</h2>
+
+<p>
+  This project was a rabbit-hole that started
+  when I was trying to 
+  find a good font to use to make demo
+  videos for <a href="https://bitty.alanwsmith.com/">bitty</a>.
+  Specifically, I wanted to make
+  <a href="/tools/nerd-font-comparison/">this page of comparisons</a>
+  with monospace fonts all set to the same height
+  to find the narrowest one. The demos I'm making 
+  show two files side by side so I need as much
+  space as I can get. 
+</p>
+<p>
+  Anyway, bitty is a small web component. When you 
+  wrap other elements with it, bitty 
+  uses signals to make them interactive.  
+  Check it out if you make stuff on the web:
+</p>
+<p>
+  <a href="https://bitty.alanwsmith.com/">bitty.alanwsmith.com</a>
+</p>
+
+<p>In the mean time, I hope you find this page useful.</p>
+
+<p>-alan</p>
 
 [!- endblock -!]
 

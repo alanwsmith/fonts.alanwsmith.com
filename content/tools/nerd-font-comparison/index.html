@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    [! include "_wrappers/_head.html" !]
+    [! include "styles/_main.html" !]
+  </head>
+  <body>
+      [! include "_wrappers/_noscript.html" !]
+    <div class="content-wrapper">
+      [! include "_wrappers/_header.html" !]
+      <main class="default-wrapper default-flow">
+        <hgroup>
+          <h1>Nerd Font Comparison</h1>
+        </hgroup>
+        [! for font in json.data["font-size-adjustments"].fonts !]
+          [! if font.category == "Nerd Fonts" !]
+        <style>
+@font-face { 
+  font-family: "font-[@ font.key @]";
+  src: url("/nerd-fonts/[@ font.name @]/[@ font.styles[0].path_string @]");
+  size-adjust: [@ font.styles[0].adjust @]%;
+}
+.font-[@font.key@] {
+  font-family: "font-[@ font.key @]";
+}
+        </style>
+            <pre class="font-[@font.key@]">[@ font.name @]
+the quick brown fox jumps over the lazy dog
+--- ----- ----- --- ----- ---- --- ---- ---</pre>
+          [! endif !]
+        [! endfor !]
+      </main>
+      [! include "_wrappers/_footer.html" !]
+    </div>
+    <script src="/components/bitty-4.0.0.min.js" type="module"></script>
+  </body>
+</html>
+

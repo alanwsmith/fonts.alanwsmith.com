@@ -1,0 +1,38 @@
+[!- extends "_wrappers/wrapper.html" -!]
+[!- block main -!]
+
+<bitty-4-0 
+  data-connect="/tools/calculate-local-system-fonts/calculate-local-system-fonts.on.js" 
+  data-send="rawFont"
+  class="default-flow"">
+
+  <p>
+    This page is for pulling data for local font files.
+  </p>
+  <p>
+    Data has currently been captured for macOS 15.x and Windows 10. 
+    You can open an issue <a href="https://github.com/alanwsmith/fonts.alanwsmith.com">on github</a>
+    if you'd like to contribute another operating system.
+  </p>
+
+  <div>
+    <pre data-receive="display complete">-</pre>
+  </div>
+
+  <div class="test-font-google">
+    <div>
+      <div class="trimmed" data-receive="rawFont">b</div>
+    </div>
+    <div>
+      <div class="trimmed" data-receive="checkSize">b</div>
+    </div>
+  </div>
+
+  <div>
+    <button data-send="copyData">Copy Data</button>
+  </div>
+
+</bitty-4-0>
+
+
+[!- endblock -!]

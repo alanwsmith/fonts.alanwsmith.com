@@ -1,0 +1,198 @@
+function pad(input) {
+  return Math.floor(input * 1000); 
+}
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+function setProp(key, value) {
+  document.documentElement.style.setProperty(key, value);
+}
+
+function trimNum(num) {
+  return Math.floor(num * 10000) / 10000;
+}
+
+function doCalc(num) {
+  const pct = 0.5 / num * 100;
+  return Math.floor(pct * 10000) / 10000;
+}
+
+export default class {
+  #fontName = "";
+  #fontURL = "";
+
+  #adjustment = 0.1;
+  #direction = "up";
+  #increment = 0.01;
+  #paddedTarget = null;
+
+  #copyTimeout = null;
+
+  #message = null;
+
+  bittyInit() {
+    setProp("--load-hider", "1");
+    this.resetVars();
+  }
+
+  calculate(_event, _el) {
+    if (this.#fontName !== "" && this.#fontURL !== "") {
+      this.api.forward(null, "rawFont");
+    } else {
+      this.api.forward(null, "newStyle");
+    }
+  }
+
+  async checkSize(_, el) {
+    const currentPadded = pad(el.getBoundingClientRect().height);
+    if (currentPadded < this.#paddedTarget) {
+      if (this.#direction === "down") {
+        this.#direction = "up";
+        this.#increment =  this.#increment / 10;
+      }
+      this.#adjustment += this.#increment;
+      console.log(`Update: ${this.#adjustment}`);
+      setProp("--adjust-value", this.#adjustment);
+      window.requestAnimationFrame((t) => { this.api.forward(null, "checkSize"); });
+    } else if (currentPadded > this.#paddedTarget) {
+      if (this.#direction === "up") {
+        this.#direction = "down";
+        this.#increment =  this.#increment / 10;
+      }
+      this.#adjustment -= this.#increment;
+      setProp("--adjust-value", this.#adjustment);
+      console.log(`Update: ${this.#adjustment}`);
+      window.requestAnimationFrame((t) => { this.api.forward(null, "checkSize"); });
+    } else {
+      console.log(`Finalized: ${this.#adjustment}`);
+      await sleep(800);
+      this.api.forward(null, "newStyle");
+    }
+  }
+
+  async copyNewStyle(event, el) {
+    try {
+      await navigator.clipboard.writeText(el.innerText);
+      event.target.innerHTML = "Copied";
+      if (this.#copyTimeout !== null) {
+        clearTimeout(this.#copyTimeout);
+      } 
+      this.#copyTimeout = setTimeout(() => {
+        event.target.innerHTML = "Copy";
+      }, 1500);
+    } catch (error) {
+      event.target.innerHTML = "Could not copy";
+      console.error(`Could not copy selection to clipboard: ${error}`)
+    }
+  }
+
+  // https://fonts.gstatic.com/s/abeezee/v23/esDT31xSG-6AGleN2tCklZUCGpG-GQ.ttf
+  // https://fonts.gstatic.com/s/vollkorn/v30/0ybuGDoxxrvAnPhYGxksckM2WMCpRjDj-DLvXWmZM7Xq34g9.ttf
+  async rawFont(_event, el) {
+    this.resetVars();
+    setProp("--adjust-value", this.#adjustment);
+    setProp("--hp-calculator-opacity", "1");
+    try {
+      await sleep(700);
+      const font = new FontFace(`font-to-calculate`, `url("${this.#fontURL}")`);
+      document.fonts.add(font);
+      await font.load();
+      await sleep(800);
+      this.#paddedTarget = pad(el.getBoundingClientRect().height);
+      console.log(this.#paddedTarget);
+      this.#message = null;
+      this.api.forward(null, "checkSize");
+    } catch (error) {
+      this.#message = `Could not load the font file.\n\nError Message:\n    ${error}\n\nThis probably means the URL is\nwrong or inaccessible.`;
+      this.api.forward(null, "newStyle");
+    }
+  }
+
+  fontName(event, _el) {
+    this.#fontName = event.target.value;
+  }
+
+  fontURL(event, _el) {
+    this.#fontURL = event.target.value;
+  }
+
+  // https://fonts.gstatic.com/s/abeezee/v23/esDT31xSG-6AGleN2tCklZUCGpG-GQ.ttf
+  // https://fonts.gstatic.com/s/vollkorn/v30/0ybuGDoxxrvAnPhYGxksckM2WMCpRjDj-DLvXWmZM7Xq34g9.ttf
+  newStyle(_event, el) {
+    setProp("--hp-calculator-opacity", "0");
+    if (this.#message !== null) {
+      el.innerHTML = this.#message;
+    } else if (this.#fontName !== "" && this.#fontURL !== "") {
+      el.innerHTML = `@font-face { 
+  font-family: "${this.#fontName}";
+  src: url("${this.#fontURL}");
+  /* aspect value: ${trimNum(this.#adjustment)} */
+  size-adjust: ${doCalc(this.#adjustment)}%;
+}`;
+    } else {
+      el.innerHTML = "Both Font Name and Font File URL\nmust be filled out.";
+    }
+  }
+
+  resetVars() {
+    this.#adjustment = 0.1;
+    this.#direction = "up";
+    this.#increment = 0.01;
+    this.#paddedTarget = null;
+  }
+
+
+  // async rawFont(_, el) {
+  //   this.#fontIndex += 1;
+  //   if (this.#fontIndex < fonts.length) {
+  //     this.resetVars();
+  //     setProp("--adjust-value", this.#adjustment)
+  //     const i = this.#fontIndex;
+  //     const details = fonts[i];
+  //     console.log(`Checking: ${details[0]}`);
+  //     const url = `/nerd-fonts/${details[0]}/${details[1]}`;
+  //     const font = new FontFace(`font-${details[0]}`, `url("${url}")`);
+  //     document.fonts.add(font);
+  //     await font.load();
+  //     setProp("--test-font", `font-${details[0]}`);
+  //     await sleep(200);
+  //     this.#paddedTarget = pad(el.getBoundingClientRect().height);
+  //     this.api.forward(null, "checkSize");
+  //   }
+  // }
+
+  // async checkSize(_, el) {
+  //   const currentPadded = pad(el.getBoundingClientRect().height);
+  //   console.log(this.#increment);
+  //   if (currentPadded < this.#paddedTarget) {
+  //     if (this.#direction === "down") {
+  //       this.#direction = "up";
+  //       this.#increment =  this.#increment / 10;
+  //     }
+  //     this.#adjustment += this.#increment;
+  //     console.log(`Update: ${this.#adjustment}`);
+  //     setProp("--adjust-value", this.#adjustment);
+  //     window.requestAnimationFrame((t) => { this.api.forward(null, "checkSize"); });
+  //   } else if (currentPadded > this.#paddedTarget) {
+  //     if (this.#direction === "up") {
+  //       this.#direction = "down";
+  //       this.#increment =  this.#increment / 10;
+  //     }
+  //     this.#adjustment -= this.#increment;
+  //     setProp("--adjust-value", this.#adjustment);
+  //     console.log(`Update: ${this.#adjustment}`);
+  //     window.requestAnimationFrame((t) => { this.api.forward(null, "checkSize"); });
+  //   } else {
+  //     this.#data[fonts[this.#fontIndex][0]] = trimNum(this.#adjustment);
+  //     this.api.forward(null, "display");
+  //     this.api.forward(null, "rawFont");
+  //   }
+  // }
+
+  // display(_, el) {
+  //   el.innerHTML = JSON.stringify(this.#data, null, 2);
+  // }
+
+}
