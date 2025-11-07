@@ -1947,10 +1947,13 @@ video {
 }
 
 .code-block {
-  background: var(--match-faded);
-  border-radius: var(--default-radius);
+  font-size: var(--small-font);
   margin: var(--default-margin);
   padding: var(--default-padding);
+}
+
+.hp-input {
+  width: 34ch;
 }
 
 hgroup {
@@ -2042,6 +2045,7 @@ hgroup {
 .two-column {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  gap: 1rem;
 }
 
 .search-area {
@@ -2066,6 +2070,7 @@ hgroup {
 .calculator-line {
   opacity: var(--hp-calculator-opacity);
   position: relative;
+  z-index: -2;
 }
 
 .calculator-wrapper {

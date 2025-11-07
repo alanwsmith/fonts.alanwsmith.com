@@ -122,7 +122,7 @@ export default class {
       el.innerHTML = `@font-face { 
   font-family: "${this.#fontName}";
   src: url("${this.#fontURL}");
-  /* aspect value: ${this.#adjustment} */
+  /* aspect value: ${trimNum(this.#adjustment)} */
   size-adjust: ${doCalc(this.#adjustment)}%;
 }`;
     } else {

@@ -1947,10 +1947,13 @@ video {
 }
 
 .code-block {
-  background: var(--match-faded);
-  border-radius: var(--default-radius);
+  font-size: var(--small-font);
   margin: var(--default-margin);
   padding: var(--default-padding);
+}
+
+.hp-input {
+  width: 34ch;
 }
 
 hgroup {
@@ -2042,6 +2045,7 @@ hgroup {
 .two-column {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  gap: 1rem;
 }
 
 .search-area {
@@ -2066,6 +2070,7 @@ hgroup {
 .calculator-line {
   opacity: var(--hp-calculator-opacity);
   position: relative;
+  z-index: -2;
 }
 
 .calculator-wrapper {
@@ -2135,31 +2140,34 @@ footer {
     <a href="https://links.alanwsmith.com/">other projects</a> ~
     <a href="https://www.alanwsmith.com/feeds/posts.xml">rss</a>
   </div>
-</header>      <main class="xxxlarge-wrapper default-flow">
+</header>      <main class="default-wrapper default-flow">
 <hgroup>
     <h1>Font Size Adjustments</h1>
   </hgroup>
 
 <bitty-4-0 
   data-connect="/scripts/home-page.on.js" 
-  class="load-hider default-flow"">
+  class="load-hider default-flow" >
 
   <p>
-    This page provides values to use for font face <code>size-adjust</code>
-    values to normalize sizes across fonts. See the <em>Details</em> section 
+    This page provides values to use for font face <em>size-adjust</em>
+    values to normalize sizes across fonts. See The Details section 
     below for more info. 
   </p>
 
-
   <h2>The Search</h2>
+  <p>
+    Pre-calculated <em>size-adjust</em> values 
+    for Google, Nerd, and Local System fonts.
+  </p>
 
   <div class="search-area">
     <div class="two-column">
       <div>
         <label>
-          <strong>Search Google Fonts and Nerd Fonts</strong> 
+          <strong>Search</strong> 
           <div>
-            <input type="search" data-send="search" />
+            <input class="hp-input" type="search" data-send="search" placeholder="e.g. Roboto" />
           </div>
         </label>
         <div data-receive="search"></div>
@@ -2233,6 +2241,14 @@ can serve them and update the <code>src: url()</code> value.</p>
 </bitty-4-0>
 
 
+<h2>The Calculator</h2>
+
+<p>
+  Fetch remote font files and calculate their
+  <em>size-adjust</em> values.
+</p>
+
+
 <bitty-4-0 
   data-connect="/scripts/home-page-calculator.on.js" 
   class="load-hider default-flow">
@@ -2242,7 +2258,7 @@ can serve them and update the <code>src: url()</code> value.</p>
     <div><span data-receive="checkSize" class="calculator-check trimmed calculator-b">b</span></div>
   </div>
 
-  <div class="calculator-wrapper default-wrapper">
+  <div class="calculator-wrapper large-wrapper">
     <div class="two-column">
       <div>
         <div>
@@ -2251,14 +2267,14 @@ can serve them and update the <code>src: url()</code> value.</p>
         <div>
           <label>Font Name
             <div>
-              <input type="input" data-send="fontName" />
+              <input class="hp-input" type="input" data-send="fontName" placeholder="e.g. Custom Name"/>
             </div>
           </label>
         </div>
         <div>
           <label>Remote Font File URL 
             <div>
-              <input type="input" data-send="fontURL" />
+              <input class="hp-input" type="input" data-send="fontURL" placeholder="e.g. https://example.com/font.ttf" />
             </div>
           </label>
         </div>
@@ -2278,163 +2294,7 @@ can serve them and update the <code>src: url()</code> value.</p>
 
 </bitty-4-0>
 
-
-<!--
-
-
-<bitty-4-0 
-  data-connect="/scripts/home-page.on.js" 
-  data-send="picker"
-  class="load-hider default-flow"">
-
-
-  <h2>Tools</h2>
-  <ul>
-    <li><a href="/tools/local-font-value-getter/">Local Font Value Getter</a></li>
-  </ul>
-
-
-  <p>
-    This page contains the 'aspect values' for 
-    fonts available from Google Fonts and Nerd Fonts.
-    The aspect values can be used with `font-size-adjust`.
-  </p>
-
-<style>
-  
-@font-face {
-  /* value: 0.4399*/
-  font-family: "Teachers";
-  src: url("https://fonts.gstatic.com/s/teachers/v6/H4c5BXKVncXVmUGsgTwx4E9oHx2xfjBr3powY55O4AS32A.ttf");
-  /*
-  size-adjust: 56%;
-*/
-  /*
-  font-display: block;
-  */
-}
-
-@font-face {
-  /* "value": 0.482 */
-  font-family: "Ruluko";
-  src: url("https://fonts.gstatic.com/s/ruluko/v22/xMQVuFNZVaODtm0pC6WzKX_QmA.ttf");
-  font-display: block;
-  /*
-  size-adjust: 52%
-  */
-  /*
-  size-adjust: 91%
-  */
-}
-
-@font-face {
-  /* value: 0.5542 */
-  font-family: "Tauri";
-  src: url("https://fonts.gstatic.com/s/tauri/v20/TwMA-IISS0AM3IpVWHU_TBqO.ttf");
-  font-display: block;
-  /*
-  size-adjust: 45%;
-  */
-
-  /*
-  size-adjust: 79%
-  */
-}
-
-@font-face {
-  /* value: 0.58 */
-  font-family: "Titan One";
-  src: url("https://fonts.gstatic.com/s/titanone/v17/mFTzWbsGxbbS_J5cQcjykzIn2Etikg.ttf");
-  font-display: block;
-  /*
-  size-adjust: 42%;
-  */
-
-  /*
-  size-adjust: 75.8%
-  */
-}
-
-.alfa {
-  display: inline-block;
-  font-family: "Teachers";
-  font-size: 4rem;
-}
-
-.bravo {
-  display: inline-block;
-  font-family: "Ruluko";
-  font-size: 4rem;
-}
-
-.charlie {
-  display: inline-block;
-  font-size: 4rem;
-  font-family: "Tauri";
-}
-
-.delta {
-  display: inline-block;
-  font-size: 4rem;
-  font-family: "Titan One";
-}
-
-
-.do-flex {
-  display: flex;
-}
-
-  </style>
-
-  <div>
-    <div class="bravo">xxx</div>
-    <div class="charlie">xxx</div>
-    <div class="delta">xxx</div>
-    <div class="alfa">xxx</div> 
-  </div>
-
-  <hr />
-
-  <div data-receive="picker">
-  </div>
-
-
-
-  <hr />
-
-  <p>Get a new aspect value for a web font:</p>
-
-  <div class="two-column">
-    <div>
-      <div>
-        <label>Font File URL<br />
-          <input type="text" data-send="fontURL" />
-        </label>
-      </div>
-    </div>
-
-    <div>
-      <div>
-        <button data-send="calculate">Calculate</button>
-      </div>
-      <div data-receive="status"></div>
-    </div>
-  </div>
-
-  <div class="test-wrapper">
-    <div class="test-font">
-      <div>
-        <div class="trimmed" data-receive="rawFont">b</div>
-      </div>
-      <div>
-        <div class="trimmed" data-receive="checkSize">b</div>
-      </div>
-    </div>
-  </div>
-
-</bitty-4-0>
--->
-
+<div class="default-flow">
 <h2>The Details</h2>
 
 <h3>Initial View</h3>
@@ -2449,7 +2309,7 @@ can serve them and update the <code>src: url()</code> value.</p>
 </p>
   
 <div class="example-wrapper default-flow">
-<pre>
+<pre class="code-block">
 <span class="line-marker"></span><span class="text html basic"><span class="meta tag style begin html"><span class="punctuation definition tag begin html">&lt;</span><span class="entity name tag style html">style</span></span><span class="meta tag style begin html"><span class="punctuation definition tag end html">&gt;</span></span>
 <span class="line-marker"></span><span class="source css embedded html"><span class="source css"><span class="meta at-rule font-face css">  <span class="keyword control at-rule font-face css"><span class="punctuation definition keyword css">@</span>font-face</span> <span class="meta property-list css"><span class="punctuation section property-list css">{</span>
 <span class="line-marker"></span>    <span class="meta property-name css"><span class="support type property-name css">font-family</span><span class="punctuation separator key-value css">:</span><span class="meta property-value css"> </span><span class="meta property-value css"><span class="string quoted double css"><span class="punctuation definition string begin css">&quot;</span>Tauri-base<span class="punctuation definition string end css">&quot;</span></span></span><span class="punctuation terminator rule css">;</span></span>
@@ -2501,7 +2361,7 @@ can serve them and update the <code>src: url()</code> value.</p>
 
 <div class="example-wrapper default-flow">
 <h4>Source</h4>
-<pre>
+<pre class="code-block">
 <span class="line-marker"></span><span class="text html basic"><span class="meta tag block any html"><span class="punctuation definition tag begin html">&lt;</span><span class="entity name tag block any html">p</span><span class="punctuation definition tag end html">&gt;</span></span>
 <span class="line-marker"></span>  <span class="meta tag inline any html"><span class="punctuation definition tag begin html">&lt;</span><span class="entity name tag inline any html">span</span> <span class="meta attribute-with-value class html"><span class="entity other attribute-name class html">class</span><span class="punctuation separator key-value html">=</span></span><span class="meta attribute-with-value class html"><span class="string quoted double html"><span class="punctuation definition string begin html">&quot;</span></span></span><span class="meta attribute-with-value class html"><span class="string quoted double html"><span class="meta class-name html">tauri-base</span><span class="punctuation definition string end html">&quot;</span></span></span><span class="punctuation definition tag end html">&gt;</span></span>xxxxx<span class="meta tag inline any html"><span class="punctuation definition tag begin html">&lt;/</span><span class="entity name tag inline any html">span</span><span class="punctuation definition tag end html">&gt;</span></span>
 <span class="line-marker"></span>  <span class="meta tag inline any html"><span class="punctuation definition tag begin html">&lt;</span><span class="entity name tag inline any html">span</span> <span class="meta attribute-with-value class html"><span class="entity other attribute-name class html">class</span><span class="punctuation separator key-value html">=</span></span><span class="meta attribute-with-value class html"><span class="string quoted double html"><span class="punctuation definition string begin html">&quot;</span></span></span><span class="meta attribute-with-value class html"><span class="string quoted double html"><span class="meta class-name html">teachers-base</span><span class="punctuation definition string end html">&quot;</span></span></span><span class="punctuation definition tag end html">&gt;</span></span>xxxxx<span class="meta tag inline any html"><span class="punctuation definition tag begin html">&lt;/</span><span class="entity name tag inline any html">span</span><span class="punctuation definition tag end html">&gt;</span></span>
@@ -2544,7 +2404,7 @@ can serve them and update the <code>src: url()</code> value.</p>
 </p>
 
 <div class="example-wrapper default-flow">
-<pre>
+<pre class="code-block">
 <span class="line-marker"></span><span class="text html basic"><span class="meta tag style begin html"><span class="punctuation definition tag begin html">&lt;</span><span class="entity name tag style html">style</span></span><span class="meta tag style begin html"><span class="punctuation definition tag end html">&gt;</span></span>
 <span class="line-marker"></span><span class="source css embedded html"><span class="source css"><span class="meta at-rule font-face css">  <span class="keyword control at-rule font-face css"><span class="punctuation definition keyword css">@</span>font-face</span> <span class="meta property-list css"><span class="punctuation section property-list css">{</span>
 <span class="line-marker"></span>    <span class="meta property-name css"><span class="support type property-name css">font-family</span><span class="punctuation separator key-value css">:</span><span class="meta property-value css"> </span><span class="meta property-value css"><span class="string quoted double css"><span class="punctuation definition string begin css">&quot;</span>Tauri-adjusted<span class="punctuation definition string end css">&quot;</span></span></span><span class="punctuation terminator rule css">;</span></span>
@@ -2601,7 +2461,7 @@ can serve them and update the <code>src: url()</code> value.</p>
 
 <div class="example-wrapper default-flow">
 <h4>Source</h4>
-<pre>
+<pre class="code-block">
 <span class="line-marker"></span><span class="text html basic"><span class="meta tag block any html"><span class="punctuation definition tag begin html">&lt;</span><span class="entity name tag block any html">p</span><span class="punctuation definition tag end html">&gt;</span></span>
 <span class="line-marker"></span>  <span class="meta tag inline any html"><span class="punctuation definition tag begin html">&lt;</span><span class="entity name tag inline any html">span</span> <span class="meta attribute-with-value class html"><span class="entity other attribute-name class html">class</span><span class="punctuation separator key-value html">=</span></span><span class="meta attribute-with-value class html"><span class="string quoted double html"><span class="punctuation definition string begin html">&quot;</span></span></span><span class="meta attribute-with-value class html"><span class="string quoted double html"><span class="meta class-name html">teachers-adjusted</span><span class="punctuation definition string end html">&quot;</span></span></span><span class="punctuation definition tag end html">&gt;</span></span>xxxx<span class="meta tag inline any html"><span class="punctuation definition tag begin html">&lt;/</span><span class="entity name tag inline any html">span</span><span class="punctuation definition tag end html">&gt;</span></span>
 <span class="line-marker"></span>  <span class="meta tag inline any html"><span class="punctuation definition tag begin html">&lt;</span><span class="entity name tag inline any html">span</span> <span class="meta attribute-with-value class html"><span class="entity other attribute-name class html">class</span><span class="punctuation separator key-value html">=</span></span><span class="meta attribute-with-value class html"><span class="string quoted double html"><span class="punctuation definition string begin html">&quot;</span></span></span><span class="meta attribute-with-value class html"><span class="string quoted double html"><span class="meta class-name html">tauri-adjusted</span><span class="punctuation definition string end html">&quot;</span></span></span><span class="punctuation definition tag end html">&gt;</span></span>xxxx<span class="meta tag inline any html"><span class="punctuation definition tag begin html">&lt;/</span><span class="entity name tag inline any html">span</span><span class="punctuation definition tag end html">&gt;</span></span>
@@ -2684,6 +2544,7 @@ can serve them and update the <code>src: url()</code> value.</p>
 
 
 
+</div>
 
 <h2>Check Out Bitty</h2>
 
@@ -2691,9 +2552,10 @@ can serve them and update the <code>src: url()</code> value.</p>
   This all started because I was trying to 
   find a good font to use to make demo
   videos for <a href="https://bitty.alanwsmith.com/">bitty</a>.
-  Specifically, I wanted to see the comparisons 
-  <a href="/nerd-font-comparison/">on this page</a>
-  to find a monospace font with the narrowest width.
+  Specifically, I wanted to make
+  <a href="/nerd-font-comparison/">this page of comparisons</a>
+  with monospace fonts all set to the same height
+  to find the narrowest one.
 </p>
 <p>
   Bitty's a small web component that adds interactivity

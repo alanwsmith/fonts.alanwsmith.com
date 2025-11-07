@@ -1947,10 +1947,13 @@ video {
 }
 
 .code-block {
-  background: var(--match-faded);
-  border-radius: var(--default-radius);
+  font-size: var(--small-font);
   margin: var(--default-margin);
   padding: var(--default-padding);
+}
+
+.hp-input {
+  width: 34ch;
 }
 
 hgroup {
@@ -2042,6 +2045,7 @@ hgroup {
 .two-column {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  gap: 1rem;
 }
 
 .search-area {
@@ -2066,6 +2070,7 @@ hgroup {
 .calculator-line {
   opacity: var(--hp-calculator-opacity);
   position: relative;
+  z-index: -2;
 }
 
 .calculator-wrapper {
@@ -2135,7 +2140,7 @@ footer {
     <a href="https://links.alanwsmith.com/">other projects</a> ~
     <a href="https://www.alanwsmith.com/feeds/posts.xml">rss</a>
   </div>
-</header>      <main class="xxxlarge-wrapper default-flow">
+</header>      <main class="default-wrapper default-flow">
 <bitty-4-0 
   data-connect="/tools/local-font-value-getter/local-getter.on.js" 
   data-send="rawFont"
