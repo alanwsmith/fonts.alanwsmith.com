@@ -1,4 +1,4 @@
-const fontObject = [@ json.data.googlefonts @]
+const fontObject = [@ json.data["aspect-values"]["google-fonts"] @];
 const fonts = [];
 
 Object.entries(fontObject).forEach((item) => {
