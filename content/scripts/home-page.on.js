@@ -47,6 +47,15 @@ const t = {
   */
 }`,
 
+  systemButton: `@font-face { 
+  font-family: "KEY-button";
+  src: local("NAME");
+  size-adjust: ADJUST%;
+}
+.font-KEY-button {
+  font-family: "KEY-button";
+}`,
+
   systemFont: `@font-face { 
   font-family: "KEY-regular";
   src: local("KEY");
@@ -86,6 +95,8 @@ export default class {
             styleToAdd = this.addGoogleFontString(font);
           } else if (font.category === "Nerd Fonts") {
             styleToAdd = this.addNerdFontString(font);
+          } else if (font.category === "System Fonts") {
+            styleToAdd = this.addSystemFontString(font);
           }
           const sheet = new CSSStyleSheet();
           sheet.replaceSync(styleToAdd);
@@ -116,7 +127,14 @@ export default class {
       .replaceAll("KEY", font.key)
       .replaceAll("URL", url)
       .replaceAll("ADJUST", style.adjust)
-    console.log(result);
+    return result;
+  }
+
+  addSystemFontString(font) {
+    const result = t.systemButton
+      .replaceAll("NAME", font.name)
+      .replaceAll("KEY", font.key)
+      .replaceAll("ADJUST", font.styles[0].adjust)
     return result;
   }
 
