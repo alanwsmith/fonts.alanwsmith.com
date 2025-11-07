@@ -2061,6 +2061,19 @@ hgroup {
   overflow-y: scroll;
   overflow-x: scroll;
 }
+
+.example-wrapper {
+  margin: var(--default-margin);
+  padding: var(--default-padding);
+  background-color: var(--accent-faded2);
+  border-radius: var(--default-radius);
+}
+
+footer {
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+}
+
 </style>  </head>
   <body>
 <noscript>
@@ -2072,6 +2085,7 @@ hgroup {
 </noscript>    <div class="content-wrapper">
 <header class="default-wrapper xlarge-bottom-margin">
   <div class="small-font">
+    <a href="/">fonts</a> ~
     from <a href="https://www.alanwsmith.com/">alan w smith</a> ~ <a href="https:&#x2f;&#x2f;github.com&#x2f;alanwsmith&#x2f;fonts.alanwsmith.com">source</a> ~ <a href="https://socials.alanwsmith.com/">socials</a> ~
     <a href="https://links.alanwsmith.com/">other projects</a> ~
     <a href="https://www.alanwsmith.com/feeds/posts.xml">rss</a>
@@ -2087,9 +2101,12 @@ hgroup {
 
   <p>
     This page provides values to use for font face <code>size-adjust</code>
-    values to normalize sizes across fonts. See the Details section 
+    values to normalize sizes across fonts. See the <em>Details</em> section 
     below for more info. 
   </p>
+
+
+  <h2>The Search</h2>
 
   <div class="search-area">
     <div class="two-column">
@@ -2109,6 +2126,7 @@ hgroup {
         </div>
       </div>
     </div>
+
     <div class="default-top-padding">
       <details class="default-flow"><summary>Search Details</summary>
 <ul>
@@ -2165,6 +2183,45 @@ can serve them and update the <code>src: url()</code> value.</p>
 </li>
 </ul>
       </details>
+    </div>
+  </div>
+</bitty-4-0>
+
+<bitty-4-0 
+  data-connect="/scripts/home-page-calculator.on.js" 
+  class="load-hider default-flow"">
+
+  <div class="search-area">
+    <div class="two-column">
+      <div>
+        <div>
+          <strong>Font File Calculator</strong> 
+        </div>
+        <div>
+          <label>Font Name
+            <div>
+              <input type="input" data-send="fontName" />
+            </div>
+          </label>
+        </div>
+        <div>
+          <label>Font File URL 
+            <div>
+              <input type="input" data-send="fontURL" />
+            </div>
+          </label>
+        </div>
+        <div>
+          <button data-send="calculate">Calculate</button>
+        </div>
+      </div>
+
+      <div>
+        <pre data-receive="newStyle copyNewStyle" class="style-results"></pre>
+        <div>
+          <button data-send="copyNewStyle">Copy</button>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -2324,137 +2381,271 @@ can serve them and update the <code>src: url()</code> value.</p>
     </div>
   </div>
 
-
 </bitty-4-0>
 -->
 
+<h2>The Details</h2>
 
+<h3>Initial View</h3>
 
-<h2>Details</h2>
-<p>Font vary in their base heights. For example, here's
-  the source code and output for five "x" characters from the font faces
-  <a href="https://fonts.google.com/specimen/Tauri">Tauri</a> and
-  <a href="https://fonts.google.com/specimen/Teachers">Teachers</a>.
+<p>Font vary in their base heights. For 
+  example, here's a stylesheet that loads 
+  two fonts 
+  (<a href="https://fonts.google.com/specimen/Tauri">Tauri</a> and
+  <a href="https://fonts.google.com/specimen/Teachers">Teachers</a>)
+  and defines classes for each set
+  at 4rem:
 </p>
-
-
-<h4>Source</h4>
+  
+<div class="example-wrapper default-flow">
 <pre>
 <span class="line-marker"></span><span class="text html basic"><span class="meta tag style begin html"><span class="punctuation definition tag begin html">&lt;</span><span class="entity name tag style html">style</span></span><span class="meta tag style begin html"><span class="punctuation definition tag end html">&gt;</span></span>
 <span class="line-marker"></span><span class="source css embedded html"><span class="source css"><span class="meta at-rule font-face css">  <span class="keyword control at-rule font-face css"><span class="punctuation definition keyword css">@</span>font-face</span> <span class="meta property-list css"><span class="punctuation section property-list css">{</span>
-<span class="line-marker"></span>    <span class="meta property-name css"><span class="support type property-name css">font-family</span><span class="punctuation separator key-value css">:</span><span class="meta property-value css"> </span><span class="meta property-value css"><span class="string quoted double css"><span class="punctuation definition string begin css">&quot;</span>Tauri-Example-base<span class="punctuation definition string end css">&quot;</span></span></span><span class="punctuation terminator rule css">;</span></span>
+<span class="line-marker"></span>    <span class="meta property-name css"><span class="support type property-name css">font-family</span><span class="punctuation separator key-value css">:</span><span class="meta property-value css"> </span><span class="meta property-value css"><span class="string quoted double css"><span class="punctuation definition string begin css">&quot;</span>Tauri-base<span class="punctuation definition string end css">&quot;</span></span></span><span class="punctuation terminator rule css">;</span></span>
 <span class="line-marker"></span>    <span class="meta property-name css"><span class="support type property-name css">src</span></span><span class="punctuation separator key-value css">:</span><span class="meta property-value css"> </span><span class="meta property-value css"><span class="meta function-call css"><span class="support function url css">url</span><span class="meta group css"><span class="punctuation definition group begin css">(</span><span class="string quoted double css"><span class="punctuation definition string begin css">&quot;</span>https://fonts.gstatic.com/s/tauri/v20/TwMA-IISS0AM3IpVWHU_TBqO.ttf<span class="punctuation definition string end css">&quot;</span></span></span><span class="meta group css"><span class="punctuation definition group end css">)</span></span></span></span><span class="punctuation terminator rule css">;</span>
 <span class="line-marker"></span></span>  <span class="punctuation section property-list css">}</span></span>
 <span class="line-marker"></span>
 <span class="line-marker"></span><span class="meta at-rule font-face css">  <span class="keyword control at-rule font-face css"><span class="punctuation definition keyword css">@</span>font-face</span> <span class="meta property-list css"><span class="punctuation section property-list css">{</span>
-<span class="line-marker"></span>    <span class="meta property-name css"><span class="support type property-name css">font-family</span><span class="punctuation separator key-value css">:</span><span class="meta property-value css"> </span><span class="meta property-value css"><span class="string quoted double css"><span class="punctuation definition string begin css">&quot;</span>Teachers-Example-base<span class="punctuation definition string end css">&quot;</span></span></span><span class="punctuation terminator rule css">;</span></span>
+<span class="line-marker"></span>    <span class="meta property-name css"><span class="support type property-name css">font-family</span><span class="punctuation separator key-value css">:</span><span class="meta property-value css"> </span><span class="meta property-value css"><span class="string quoted double css"><span class="punctuation definition string begin css">&quot;</span>Teachers-base<span class="punctuation definition string end css">&quot;</span></span></span><span class="punctuation terminator rule css">;</span></span>
 <span class="line-marker"></span>    <span class="meta property-name css"><span class="support type property-name css">src</span></span><span class="punctuation separator key-value css">:</span><span class="meta property-value css"> </span><span class="meta property-value css"><span class="meta function-call css"><span class="support function url css">url</span><span class="meta group css"><span class="punctuation definition group begin css">(</span><span class="string quoted double css"><span class="punctuation definition string begin css">&quot;</span>https://fonts.gstatic.com/s/teachers/v6/H4c5BXKVncXVmUGsgTwx4E9oHx2xfjBr3powY55O4AS32A.ttf<span class="punctuation definition string end css">&quot;</span></span></span><span class="meta group css"><span class="punctuation definition group end css">)</span></span></span></span><span class="punctuation terminator rule css">;</span>
 <span class="line-marker"></span></span>  <span class="punctuation section property-list css">}</span></span>
 <span class="line-marker"></span>
 <span class="line-marker"></span><span class="meta selector css">  <span class="entity other attribute-name class css"><span class="punctuation definition entity css">.</span>tauri-base</span> </span><span class="meta property-list css"><span class="punctuation section property-list css">{</span>
 <span class="line-marker"></span>    <span class="meta property-name css"><span class="support type property-name css">font-size</span></span><span class="punctuation separator key-value css">:</span><span class="meta property-value css"> </span><span class="meta property-value css"><span class="constant numeric css">4<span class="keyword other unit css">rem</span></span></span><span class="punctuation terminator rule css">;</span>
-<span class="line-marker"></span>    <span class="meta property-name css"><span class="support type property-name css">font-family</span><span class="punctuation separator key-value css">:</span><span class="meta property-value css"> </span><span class="meta property-value css"><span class="string quoted double css"><span class="punctuation definition string begin css">&quot;</span>Tauri-Example-base<span class="punctuation definition string end css">&quot;</span></span></span><span class="punctuation terminator rule css">;</span></span>
+<span class="line-marker"></span>    <span class="meta property-name css"><span class="support type property-name css">font-family</span><span class="punctuation separator key-value css">:</span><span class="meta property-value css"> </span><span class="meta property-value css"><span class="string quoted double css"><span class="punctuation definition string begin css">&quot;</span>Tauri-base<span class="punctuation definition string end css">&quot;</span></span></span><span class="punctuation terminator rule css">;</span></span>
 <span class="line-marker"></span></span>  <span class="punctuation section property-list css">}</span>
 <span class="line-marker"></span>
 <span class="line-marker"></span><span class="meta selector css">  <span class="entity other attribute-name class css"><span class="punctuation definition entity css">.</span>teachers-base</span> </span><span class="meta property-list css"><span class="punctuation section property-list css">{</span>
-<span class="line-marker"></span>    <span class="meta property-name css"><span class="support type property-name css">font-family</span><span class="punctuation separator key-value css">:</span><span class="meta property-value css"> </span><span class="meta property-value css"><span class="string quoted double css"><span class="punctuation definition string begin css">&quot;</span>Teachers-Example-base<span class="punctuation definition string end css">&quot;</span></span></span><span class="punctuation terminator rule css">;</span></span>
+<span class="line-marker"></span>    <span class="meta property-name css"><span class="support type property-name css">font-family</span><span class="punctuation separator key-value css">:</span><span class="meta property-value css"> </span><span class="meta property-value css"><span class="string quoted double css"><span class="punctuation definition string begin css">&quot;</span>Teachers-base<span class="punctuation definition string end css">&quot;</span></span></span><span class="punctuation terminator rule css">;</span></span>
 <span class="line-marker"></span>    <span class="meta property-name css"><span class="support type property-name css">font-size</span></span><span class="punctuation separator key-value css">:</span><span class="meta property-value css"> </span><span class="meta property-value css"><span class="constant numeric css">4<span class="keyword other unit css">rem</span></span></span><span class="punctuation terminator rule css">;</span>
 <span class="line-marker"></span></span>  <span class="punctuation section property-list css">}</span>
-<span class="line-marker"></span></span></span><span class="meta tag style end html"><span class="punctuation definition tag begin html">&lt;/</span><span class="entity name tag style html">style</span><span class="punctuation definition tag end html">&gt;</span></span>
-<span class="line-marker"></span>
-<span class="line-marker"></span><span class="meta tag block any html"><span class="punctuation definition tag begin html">&lt;</span><span class="entity name tag block any html">p</span><span class="punctuation definition tag end html">&gt;</span></span>
-<span class="line-marker"></span>  <span class="meta tag inline any html"><span class="punctuation definition tag begin html">&lt;</span><span class="entity name tag inline any html">span</span> <span class="meta attribute-with-value class html"><span class="entity other attribute-name class html">class</span><span class="punctuation separator key-value html">=</span></span><span class="meta attribute-with-value class html"><span class="string quoted double html"><span class="punctuation definition string begin html">&quot;</span></span></span><span class="meta attribute-with-value class html"><span class="string quoted double html"><span class="meta class-name html">tauri-base</span><span class="punctuation definition string end html">&quot;</span></span></span><span class="punctuation definition tag end html">&gt;</span></span>xxxxx<span class="meta tag inline any html"><span class="punctuation definition tag begin html">&lt;/</span><span class="entity name tag inline any html">span</span><span class="punctuation definition tag end html">&gt;</span></span>
-<span class="line-marker"></span>  <span class="meta tag inline any html"><span class="punctuation definition tag begin html">&lt;</span><span class="entity name tag inline any html">span</span> <span class="meta attribute-with-value class html"><span class="entity other attribute-name class html">class</span><span class="punctuation separator key-value html">=</span></span><span class="meta attribute-with-value class html"><span class="string quoted double html"><span class="punctuation definition string begin html">&quot;</span></span></span><span class="meta attribute-with-value class html"><span class="string quoted double html"><span class="meta class-name html">teachers-base</span><span class="punctuation definition string end html">&quot;</span></span></span><span class="punctuation definition tag end html">&gt;</span></span>xxxxx<span class="meta tag inline any html"><span class="punctuation definition tag begin html">&lt;/</span><span class="entity name tag inline any html">span</span><span class="punctuation definition tag end html">&gt;</span></span>
-<span class="line-marker"></span><span class="meta tag block any html"><span class="punctuation definition tag begin html">&lt;/</span><span class="entity name tag block any html">p</span><span class="punctuation definition tag end html">&gt;</span></span></span></pre>
-
-<h4>Output</h4>
+<span class="line-marker"></span></span></span><span class="meta tag style end html"><span class="punctuation definition tag begin html">&lt;/</span><span class="entity name tag style html">style</span><span class="punctuation definition tag end html">&gt;</span></span></span></pre>
 <style>
   @font-face {
-    font-family: "Tauri-Example-base";
+    font-family: "Tauri-base";
     src: url("https://fonts.gstatic.com/s/tauri/v20/TwMA-IISS0AM3IpVWHU_TBqO.ttf");
   }
 
   @font-face {
-    font-family: "Teachers-Example-base";
+    font-family: "Teachers-base";
     src: url("https://fonts.gstatic.com/s/teachers/v6/H4c5BXKVncXVmUGsgTwx4E9oHx2xfjBr3powY55O4AS32A.ttf");
   }
 
   .tauri-base {
     font-size: 4rem;
-    font-family: "Tauri-Example-base";
+    font-family: "Tauri-base";
   }
 
   .teachers-base {
-    font-family: "Teachers-Example-base";
+    font-family: "Teachers-base";
     font-size: 4rem;
   }
-</style>
+</style></div>
 
+
+<p>
+  Displaying five lowercase &quot;x&quot; characters for each font
+  face shows us the different heights:
+</p>
+
+<div class="example-wrapper default-flow">
+<h4>Source</h4>
+<pre>
+<span class="line-marker"></span><span class="text html basic"><span class="meta tag block any html"><span class="punctuation definition tag begin html">&lt;</span><span class="entity name tag block any html">p</span><span class="punctuation definition tag end html">&gt;</span></span>
+<span class="line-marker"></span>  <span class="meta tag inline any html"><span class="punctuation definition tag begin html">&lt;</span><span class="entity name tag inline any html">span</span> <span class="meta attribute-with-value class html"><span class="entity other attribute-name class html">class</span><span class="punctuation separator key-value html">=</span></span><span class="meta attribute-with-value class html"><span class="string quoted double html"><span class="punctuation definition string begin html">&quot;</span></span></span><span class="meta attribute-with-value class html"><span class="string quoted double html"><span class="meta class-name html">tauri-base</span><span class="punctuation definition string end html">&quot;</span></span></span><span class="punctuation definition tag end html">&gt;</span></span>xxxxx<span class="meta tag inline any html"><span class="punctuation definition tag begin html">&lt;/</span><span class="entity name tag inline any html">span</span><span class="punctuation definition tag end html">&gt;</span></span>
+<span class="line-marker"></span>  <span class="meta tag inline any html"><span class="punctuation definition tag begin html">&lt;</span><span class="entity name tag inline any html">span</span> <span class="meta attribute-with-value class html"><span class="entity other attribute-name class html">class</span><span class="punctuation separator key-value html">=</span></span><span class="meta attribute-with-value class html"><span class="string quoted double html"><span class="punctuation definition string begin html">&quot;</span></span></span><span class="meta attribute-with-value class html"><span class="string quoted double html"><span class="meta class-name html">teachers-base</span><span class="punctuation definition string end html">&quot;</span></span></span><span class="punctuation definition tag end html">&gt;</span></span>xxxxx<span class="meta tag inline any html"><span class="punctuation definition tag begin html">&lt;/</span><span class="entity name tag inline any html">span</span><span class="punctuation definition tag end html">&gt;</span></span>
+<span class="line-marker"></span><span class="meta tag block any html"><span class="punctuation definition tag begin html">&lt;/</span><span class="entity name tag block any html">p</span><span class="punctuation definition tag end html">&gt;</span></span></span></pre>
+</div>
+<div class="example-wrapper default-flow">
+<h4>Output</h4>
 <p>
   <span class="tauri-base">xxxxx</span>
   <span class="teachers-base">xxxxx</span>
-</p>
+</p></div>
 
 <p>
-  The difference in sizes doesn't matter if
-  you only use one font on a page. It's
-  always consistent with itself. Font
-  scales work without extra effort.
+  Even though the are both &quot;4rem;&quot; the 
+  set of x characters from the Tauri font is
+  significantly taller than the Teachers font. 
+  This makes working with type scales harder. 
+  If you don't take the height differences 
+  into account they won't be accurate 
+  across different fonts. 
 </p>
+
+
+<h3>Font Size Adjustments</h3>
 
 <p>
-  Things break down as soon as a second
-  font enters the mix. Consider a type
-  scale that sets base text to 1rem
-  and uses 2rem for headings. 
-</p>
-
-
-
-
+  The <code>size-adjust</code> descriptor
+  became available in major browsers as
+  part of Baseline 2023. It provides
+  a mechanism to normalize heights
+  across fonts. 
+</p> 
 
 <p>
-  Even though both fonts are set to `font-size: 4rem;`, 
-  the Tauri characters are significantly taller. This
-  is because the fonts have different Aspect Values<sup>1</sup>
+  The @font-face declarations provided
+  on this page include a `size-adjust` value. 
+  For example, Tauri's is 90.2201% and 
+  Teachers' is 113.6622%. We can 
+  a new set of styles with those values:
 </p>
 
+<div class="example-wrapper default-flow">
+<pre>
+<span class="line-marker"></span><span class="text html basic"><span class="meta tag style begin html"><span class="punctuation definition tag begin html">&lt;</span><span class="entity name tag style html">style</span></span><span class="meta tag style begin html"><span class="punctuation definition tag end html">&gt;</span></span>
+<span class="line-marker"></span><span class="source css embedded html"><span class="source css"><span class="meta at-rule font-face css">  <span class="keyword control at-rule font-face css"><span class="punctuation definition keyword css">@</span>font-face</span> <span class="meta property-list css"><span class="punctuation section property-list css">{</span>
+<span class="line-marker"></span>    <span class="meta property-name css"><span class="support type property-name css">font-family</span><span class="punctuation separator key-value css">:</span><span class="meta property-value css"> </span><span class="meta property-value css"><span class="string quoted double css"><span class="punctuation definition string begin css">&quot;</span>Tauri-adjusted<span class="punctuation definition string end css">&quot;</span></span></span><span class="punctuation terminator rule css">;</span></span>
+<span class="line-marker"></span>    <span class="meta property-name css"><span class="support type property-name css">src</span></span><span class="punctuation separator key-value css">:</span><span class="meta property-value css"> </span><span class="meta property-value css"><span class="meta function-call css"><span class="support function url css">url</span><span class="meta group css"><span class="punctuation definition group begin css">(</span><span class="string quoted double css"><span class="punctuation definition string begin css">&quot;</span>https://fonts.gstatic.com/s/tauri/v20/TwMA-IISS0AM3IpVWHU_TBqO.ttf<span class="punctuation definition string end css">&quot;</span></span></span><span class="meta group css"><span class="punctuation definition group end css">)</span></span></span></span><span class="punctuation terminator rule css">;</span>
+<span class="line-marker"></span>    <span class="meta property-name css"><span class="support type property-name css">size</span>-adjust</span><span class="punctuation separator key-value css">:</span><span class="meta property-value css"> </span><span class="meta property-value css"><span class="constant numeric css">90.2201<span class="keyword other unit css">%</span></span></span><span class="punctuation terminator rule css">;</span>
+<span class="line-marker"></span></span>  <span class="punctuation section property-list css">}</span></span>
+<span class="line-marker"></span>
+<span class="line-marker"></span><span class="meta at-rule font-face css">  <span class="keyword control at-rule font-face css"><span class="punctuation definition keyword css">@</span>font-face</span> <span class="meta property-list css"><span class="punctuation section property-list css">{</span>
+<span class="line-marker"></span>    <span class="meta property-name css"><span class="support type property-name css">font-family</span><span class="punctuation separator key-value css">:</span><span class="meta property-value css"> </span><span class="meta property-value css"><span class="string quoted double css"><span class="punctuation definition string begin css">&quot;</span>Teachers-adjusted<span class="punctuation definition string end css">&quot;</span></span></span><span class="punctuation terminator rule css">;</span></span>
+<span class="line-marker"></span>    <span class="meta property-name css"><span class="support type property-name css">src</span></span><span class="punctuation separator key-value css">:</span><span class="meta property-value css"> </span><span class="meta property-value css"><span class="meta function-call css"><span class="support function url css">url</span><span class="meta group css"><span class="punctuation definition group begin css">(</span><span class="string quoted double css"><span class="punctuation definition string begin css">&quot;</span>https://fonts.gstatic.com/s/teachers/v6/H4c5BXKVncXVmUGsgTwx4E9oHx2xfjBr3powY55O4AS32A.ttf<span class="punctuation definition string end css">&quot;</span></span></span><span class="meta group css"><span class="punctuation definition group end css">)</span></span></span></span><span class="punctuation terminator rule css">;</span>
+<span class="line-marker"></span>    <span class="meta property-name css"><span class="support type property-name css">size</span>-adjust</span><span class="punctuation separator key-value css">:</span><span class="meta property-value css"> </span><span class="meta property-value css"><span class="constant numeric css">113.6622<span class="keyword other unit css">%</span></span></span><span class="punctuation terminator rule css">;</span>
+<span class="line-marker"></span></span>  <span class="punctuation section property-list css">}</span></span>
+<span class="line-marker"></span>
+<span class="line-marker"></span><span class="meta selector css">  <span class="entity other attribute-name class css"><span class="punctuation definition entity css">.</span>tauri-adjusted</span> </span><span class="meta property-list css"><span class="punctuation section property-list css">{</span>
+<span class="line-marker"></span>    <span class="meta property-name css"><span class="support type property-name css">font-size</span></span><span class="punctuation separator key-value css">:</span><span class="meta property-value css"> </span><span class="meta property-value css"><span class="constant numeric css">4<span class="keyword other unit css">rem</span></span></span><span class="punctuation terminator rule css">;</span>
+<span class="line-marker"></span>    <span class="meta property-name css"><span class="support type property-name css">font-family</span><span class="punctuation separator key-value css">:</span><span class="meta property-value css"> </span><span class="meta property-value css"><span class="string quoted double css"><span class="punctuation definition string begin css">&quot;</span>Tauri-adjusted<span class="punctuation definition string end css">&quot;</span></span></span><span class="punctuation terminator rule css">;</span></span>
+<span class="line-marker"></span></span>  <span class="punctuation section property-list css">}</span>
+<span class="line-marker"></span>
+<span class="line-marker"></span><span class="meta selector css">  <span class="entity other attribute-name class css"><span class="punctuation definition entity css">.</span>teachers-adjusted</span> </span><span class="meta property-list css"><span class="punctuation section property-list css">{</span>
+<span class="line-marker"></span>    <span class="meta property-name css"><span class="support type property-name css">font-family</span><span class="punctuation separator key-value css">:</span><span class="meta property-value css"> </span><span class="meta property-value css"><span class="string quoted double css"><span class="punctuation definition string begin css">&quot;</span>Teachers-adjusted<span class="punctuation definition string end css">&quot;</span></span></span><span class="punctuation terminator rule css">;</span></span>
+<span class="line-marker"></span>    <span class="meta property-name css"><span class="support type property-name css">font-size</span></span><span class="punctuation separator key-value css">:</span><span class="meta property-value css"> </span><span class="meta property-value css"><span class="constant numeric css">4<span class="keyword other unit css">rem</span></span></span><span class="punctuation terminator rule css">;</span>
+<span class="line-marker"></span></span>  <span class="punctuation section property-list css">}</span>
+<span class="line-marker"></span></span></span><span class="meta tag style end html"><span class="punctuation definition tag begin html">&lt;/</span><span class="entity name tag style html">style</span><span class="punctuation definition tag end html">&gt;</span></span></span></pre>
 <style>
+  @font-face {
+    font-family: "Tauri-adjusted";
+    src: url("https://fonts.gstatic.com/s/tauri/v20/TwMA-IISS0AM3IpVWHU_TBqO.ttf");
+    size-adjust: 90.2201%;
+  }
 
-@font-face {
-  font-family: "Teachers-Example-adjusted";
-  src: url("https://fonts.gstatic.com/s/teachers/v6/H4c5BXKVncXVmUGsgTwx4E9oHx2xfjBr3powY55O4AS32A.ttf");
-  size-adjust: 113.6622%;
-}
+  @font-face {
+    font-family: "Teachers-adjusted";
+    src: url("https://fonts.gstatic.com/s/teachers/v6/H4c5BXKVncXVmUGsgTwx4E9oHx2xfjBr3powY55O4AS32A.ttf");
+    size-adjust: 113.6622%;
+  }
 
-@font-face {
-  font-family: "Tauri-Example-adjusted";
-  src: url("https://fonts.gstatic.com/s/tauri/v20/TwMA-IISS0AM3IpVWHU_TBqO.ttf");
-  size-adjust: 90.2201%;
-}
+  .tauri-adjusted {
+    font-size: 4rem;
+    font-family: "Tauri-adjusted";
+  }
 
-.teachers-adjusted {
-  font-family: "Teachers-Example-adjusted";
-  font-size: 4rem;
-}
-
-.tauri-adjusted {
-  font-size: 4rem;
-  font-family: "Tauri-Example-adjusted";
-}
-
+  .teachers-adjusted {
+    font-family: "Teachers-adjusted";
+    font-size: 4rem;
+  }
 </style>
+</div>
 
+<p>
+  Using them to output the x's again 
+  shows the height are the same:
+</p>
+
+
+<div class="example-wrapper default-flow">
+<h4>Source</h4>
+<pre>
+<span class="line-marker"></span><span class="text html basic"><span class="meta tag block any html"><span class="punctuation definition tag begin html">&lt;</span><span class="entity name tag block any html">p</span><span class="punctuation definition tag end html">&gt;</span></span>
+<span class="line-marker"></span>  <span class="meta tag inline any html"><span class="punctuation definition tag begin html">&lt;</span><span class="entity name tag inline any html">span</span> <span class="meta attribute-with-value class html"><span class="entity other attribute-name class html">class</span><span class="punctuation separator key-value html">=</span></span><span class="meta attribute-with-value class html"><span class="string quoted double html"><span class="punctuation definition string begin html">&quot;</span></span></span><span class="meta attribute-with-value class html"><span class="string quoted double html"><span class="meta class-name html">teachers-adjusted</span><span class="punctuation definition string end html">&quot;</span></span></span><span class="punctuation definition tag end html">&gt;</span></span>xxxx<span class="meta tag inline any html"><span class="punctuation definition tag begin html">&lt;/</span><span class="entity name tag inline any html">span</span><span class="punctuation definition tag end html">&gt;</span></span>
+<span class="line-marker"></span>  <span class="meta tag inline any html"><span class="punctuation definition tag begin html">&lt;</span><span class="entity name tag inline any html">span</span> <span class="meta attribute-with-value class html"><span class="entity other attribute-name class html">class</span><span class="punctuation separator key-value html">=</span></span><span class="meta attribute-with-value class html"><span class="string quoted double html"><span class="punctuation definition string begin html">&quot;</span></span></span><span class="meta attribute-with-value class html"><span class="string quoted double html"><span class="meta class-name html">tauri-adjusted</span><span class="punctuation definition string end html">&quot;</span></span></span><span class="punctuation definition tag end html">&gt;</span></span>xxxx<span class="meta tag inline any html"><span class="punctuation definition tag begin html">&lt;/</span><span class="entity name tag inline any html">span</span><span class="punctuation definition tag end html">&gt;</span></span>
+<span class="line-marker"></span><span class="meta tag block any html"><span class="punctuation definition tag begin html">&lt;/</span><span class="entity name tag block any html">p</span><span class="punctuation definition tag end html">&gt;</span></span></span></pre>
+</div>
+<div class="example-wrapper default-flow">
+<h4>Output</h4>
 <p>
   <span class="teachers-adjusted">xxxx</span>
   <span class="tauri-adjusted">xxxx</span>
 </p>
+</div>
+
+<h3>The Calculations</h3>
+
+<p>
+  The `size-adjust` values are based off
+  that `Aspect Value` of each font. You 
+  can learn more about it on the
+  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/font-size-adjust#determining_the_aspect_value_of_a_font">font-size-adjust page on MDN</a>.
+  It includes a section on
+  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/font-size-adjust#determining_the_aspect_value_of_a_font">Determining the aspect value of a font</a>.
+  I built a process that did the calculation for the Google, Nerd, and System fonts
+  available in the search. 
+</p>
+
+<p>
+  The resulting aspect values are values ranging from about 0.3 to about 0.8.
+  The `size-adjust` declaration needs a percentage. I defined 0.5 as
+  100%. The values for each font are based off it (e.g. Teachers'
+  aspect value is `0.4399` which translates into `113.6622%`. 
+  Values are carried out to 4 significant digits. That's probably
+  overkill, but I'd rather go to far than leave it short. 
+</p>
+
+<h3>Notes</h3>
+
+<ul>
+  <li>
+    The process I ran used a lowercase 'b' character to determine 
+    the aspect values. That character was chosen because it's
+  what was used in the MDN example. </li>
+<li>
+
+<p>Check out the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@font-face/size-adjust">size-adjust</a>
+      for more details. It includes two key notes:</p>
+    <blockquote>
+      The size-adjust descriptor behaves in a similar fashion to the font-size-adjust property. It calculates an adjustment per font by matching ex heights.
+    </blockquote>
+    <p>and</p>
+<blockquote>
+  All metrics associated with this font are scaled by the given percentage. 
+  This includes glyph advances, baseline tables, and overrides provided 
+  by @font-face descriptors.
+</blockquote>
+  </li>
+  <li>
+    There are lots of parameters for any given font which go
+    into sizing. For example, just because the lowercase 'x' characters 
+    of two fonts are the same, they might have very different
+    capital letter heights. 
+  </li>
+  <li>
+    There's over 1900 fonts in the data set. The process
+    that produced them was automated. Given the complexities
+    of font files, I wouldn't be surprised of find some
+    values result in unexpected sizes. <a href="https://github.com/alanwsmith/fonts.alanwsmith.com">Open an
+    issue</a> if you see something that's obviously
+    wrong and I'll take a look.
+  </li>
+</ul>
 
 
-<h2>Footnote</h2>
-<ol>
-  <li>TKTKKTK</li>
-</ol>      </main>
+
+
+
+<h2>Check Out Bitty</h2>
+
+<p>
+  This all started because I was trying to 
+  find a good font to use to make demo
+  videos for <a href="https://bitty.alanwsmith.com/">bitty</a>.
+  Specifically, I wanted to see the comparisons 
+  <a href="/nerd-font-comparison/">on this page</a>
+  to find a monospace font with the narrowest width.
+</p>
+<p>
+  Bitty's a small web component that adds interactivity
+  to pages. Check it out if you make stuff on the web:
+  <a href="https://bitty.alanwsmith.com/">bitty.alanwsmith.com</a>.
+</p>
+
+<p>In the mean time, I hope you find this page useful.</p>
+
+<p>-alan</p>      </main>
 <footer>
   <div class="small-font">
     <div data-receive="prodLink"></div>

@@ -2091,38 +2091,842 @@ footer {
     <a href="https://www.alanwsmith.com/feeds/posts.xml">rss</a>
   </div>
 </header>      <main class="default-wrapper default-flow">
-<bitty-4-0 
-  data-connect="/tools/local-font-value-getter/local-getter.on.js" 
-  data-send="rawFont"
-  class="default-flow"">
-
-  <p>
-    This page is for pulling data for local font files.
-  </p>
-  <p>
-    Data has currently been captured for macOS 15.x and Windows 10. 
-    You can open an issue <a href="https://github.com/alanwsmith/fonts.alanwsmith.com">on github</a>
-    if you'd like to contribute another operating system.
-  </p>
-
-  <div>
-    <pre data-receive="display">-</pre>
-  </div>
-
-  <div class="test-font-google">
-    <div>
-      <div class="trimmed" data-receive="rawFont">b</div>
-    </div>
-    <div>
-      <div class="trimmed" data-receive="checkSize">b</div>
-    </div>
-  </div>
-
-  <div>
-    <button data-send="copyData">Copy Data</button>
-  </div>
-
-</bitty-4-0>      </main>
+        <hgroup>
+          <h1>Nerd Font Comparison</h1>
+        </hgroup>
+        <style>
+@font-face { 
+  font-family: "font-3270";
+  src: url("/nerd-fonts/3270/3270NerdFontMono-Regular.ttf");
+  size-adjust: 105.042%;
+}
+.font-3270 {
+  font-family: "font-3270";
+}
+        </style>
+            <pre class="font-3270">3270
+the quick brown fox jumps over the lazy dog
+--- ----- ----- --- ----- ---- --- ---- ---</pre>
+        <style>
+@font-face { 
+  font-family: "font-AdwaitaMono";
+  src: url("/nerd-fonts/AdwaitaMono/AdwaitaMonoNerdFontMono-Regular.ttf");
+  size-adjust: 96.1723%;
+}
+.font-AdwaitaMono {
+  font-family: "font-AdwaitaMono";
+}
+        </style>
+            <pre class="font-AdwaitaMono">AdwaitaMono
+the quick brown fox jumps over the lazy dog
+--- ----- ----- --- ----- ---- --- ---- ---</pre>
+        <style>
+@font-face { 
+  font-family: "font-Agave";
+  src: url("/nerd-fonts/Agave/AgaveNerdFontMono-Regular.ttf");
+  size-adjust: 100.0%;
+}
+.font-Agave {
+  font-family: "font-Agave";
+}
+        </style>
+            <pre class="font-Agave">Agave
+the quick brown fox jumps over the lazy dog
+--- ----- ----- --- ----- ---- --- ---- ---</pre>
+        <style>
+@font-face { 
+  font-family: "font-AnonymousPro";
+  src: url("/nerd-fonts/AnonymousPro/AnonymiceProNerdFontMono-Regular.ttf");
+  size-adjust: 109.8901%;
+}
+.font-AnonymousPro {
+  font-family: "font-AnonymousPro";
+}
+        </style>
+            <pre class="font-AnonymousPro">AnonymousPro
+the quick brown fox jumps over the lazy dog
+--- ----- ----- --- ----- ---- --- ---- ---</pre>
+        <style>
+@font-face { 
+  font-family: "font-AtkinsonHyperlegibleMono";
+  src: url("/nerd-fonts/AtkinsonHyperlegibleMono/AtkynsonMonoNerdFontMono-Regular.otf");
+  size-adjust: 100.8065%;
+}
+.font-AtkinsonHyperlegibleMono {
+  font-family: "font-AtkinsonHyperlegibleMono";
+}
+        </style>
+            <pre class="font-AtkinsonHyperlegibleMono">AtkinsonHyperlegibleMono
+the quick brown fox jumps over the lazy dog
+--- ----- ----- --- ----- ---- --- ---- ---</pre>
+        <style>
+@font-face { 
+  font-family: "font-AurulentSansMono";
+  src: url("/nerd-fonts/AurulentSansMono/AurulentSansMNerdFontMono-Regular.otf");
+  size-adjust: 94.3574%;
+}
+.font-AurulentSansMono {
+  font-family: "font-AurulentSansMono";
+}
+        </style>
+            <pre class="font-AurulentSansMono">AurulentSansMono
+the quick brown fox jumps over the lazy dog
+--- ----- ----- --- ----- ---- --- ---- ---</pre>
+        <style>
+@font-face { 
+  font-family: "font-BigBlueTerminal";
+  src: url("/nerd-fonts/BigBlueTerminal/BigBlueTerm437NerdFontMono-Regular.ttf");
+  size-adjust: 100.0%;
+}
+.font-BigBlueTerminal {
+  font-family: "font-BigBlueTerminal";
+}
+        </style>
+            <pre class="font-BigBlueTerminal">BigBlueTerminal
+the quick brown fox jumps over the lazy dog
+--- ----- ----- --- ----- ---- --- ---- ---</pre>
+        <style>
+@font-face { 
+  font-family: "font-BitstreamVeraSansMono";
+  src: url("/nerd-fonts/BitstreamVeraSansMono/BitstromWeraNerdFontMono-Regular.ttf");
+  size-adjust: 91.4411%;
+}
+.font-BitstreamVeraSansMono {
+  font-family: "font-BitstreamVeraSansMono";
+}
+        </style>
+            <pre class="font-BitstreamVeraSansMono">BitstreamVeraSansMono
+the quick brown fox jumps over the lazy dog
+--- ----- ----- --- ----- ---- --- ---- ---</pre>
+        <style>
+@font-face { 
+  font-family: "font-CascadiaCode";
+  src: url("/nerd-fonts/CascadiaCode/CaskaydiaCoveNerdFontMono-Regular.ttf");
+  size-adjust: 96.6184%;
+}
+.font-CascadiaCode {
+  font-family: "font-CascadiaCode";
+}
+        </style>
+            <pre class="font-CascadiaCode">CascadiaCode
+the quick brown fox jumps over the lazy dog
+--- ----- ----- --- ----- ---- --- ---- ---</pre>
+        <style>
+@font-face { 
+  font-family: "font-CascadiaMono";
+  src: url("/nerd-fonts/CascadiaMono/CaskaydiaMonoNerdFontMono-Regular.ttf");
+  size-adjust: 96.6184%;
+}
+.font-CascadiaMono {
+  font-family: "font-CascadiaMono";
+}
+        </style>
+            <pre class="font-CascadiaMono">CascadiaMono
+the quick brown fox jumps over the lazy dog
+--- ----- ----- --- ----- ---- --- ---- ---</pre>
+        <style>
+@font-face { 
+  font-family: "font-ComicShannsMono";
+  src: url("/nerd-fonts/ComicShannsMono/ComicShannsMonoNerdFontMono-Regular.otf");
+  size-adjust: 105.4852%;
+}
+.font-ComicShannsMono {
+  font-family: "font-ComicShannsMono";
+}
+        </style>
+            <pre class="font-ComicShannsMono">ComicShannsMono
+the quick brown fox jumps over the lazy dog
+--- ----- ----- --- ----- ---- --- ---- ---</pre>
+        <style>
+@font-face { 
+  font-family: "font-CommitMono";
+  src: url("/nerd-fonts/CommitMono/CommitMonoNerdFontMono-Regular.otf");
+  size-adjust: 92.6097%;
+}
+.font-CommitMono {
+  font-family: "font-CommitMono";
+}
+        </style>
+            <pre class="font-CommitMono">CommitMono
+the quick brown fox jumps over the lazy dog
+--- ----- ----- --- ----- ---- --- ---- ---</pre>
+        <style>
+@font-face { 
+  font-family: "font-Cousine";
+  src: url("/nerd-fonts/Cousine/CousineNerdFontMono-Regular.ttf");
+  size-adjust: 94.6432%;
+}
+.font-Cousine {
+  font-family: "font-Cousine";
+}
+        </style>
+            <pre class="font-Cousine">Cousine
+the quick brown fox jumps over the lazy dog
+--- ----- ----- --- ----- ---- --- ---- ---</pre>
+        <style>
+@font-face { 
+  font-family: "font-D2Coding";
+  src: url("/nerd-fonts/D2Coding/D2CodingLigatureNerdFontMono-Regular.ttf");
+  size-adjust: 95.0751%;
+}
+.font-D2Coding {
+  font-family: "font-D2Coding";
+}
+        </style>
+            <pre class="font-D2Coding">D2Coding
+the quick brown fox jumps over the lazy dog
+--- ----- ----- --- ----- ---- --- ---- ---</pre>
+        <style>
+@font-face { 
+  font-family: "font-DaddyTimeMono";
+  src: url("/nerd-fonts/DaddyTimeMono/DaddyTimeMonoNerdFontMono-Regular.ttf");
+  size-adjust: 102.2495%;
+}
+.font-DaddyTimeMono {
+  font-family: "font-DaddyTimeMono";
+}
+        </style>
+            <pre class="font-DaddyTimeMono">DaddyTimeMono
+the quick brown fox jumps over the lazy dog
+--- ----- ----- --- ----- ---- --- ---- ---</pre>
+        <style>
+@font-face { 
+  font-family: "font-DejaVuSansMono";
+  src: url("/nerd-fonts/DejaVuSansMono/DejaVuSansMNerdFontMono-Regular.ttf");
+  size-adjust: 91.4411%;
+}
+.font-DejaVuSansMono {
+  font-family: "font-DejaVuSansMono";
+}
+        </style>
+            <pre class="font-DejaVuSansMono">DejaVuSansMono
+the quick brown fox jumps over the lazy dog
+--- ----- ----- --- ----- ---- --- ---- ---</pre>
+        <style>
+@font-face { 
+  font-family: "font-DepartureMono";
+  src: url("/nerd-fonts/DepartureMono/DepartureMonoNerdFontMono-Regular.otf");
+  size-adjust: 91.6758%;
+}
+.font-DepartureMono {
+  font-family: "font-DepartureMono";
+}
+        </style>
+            <pre class="font-DepartureMono">DepartureMono
+the quick brown fox jumps over the lazy dog
+--- ----- ----- --- ----- ---- --- ---- ---</pre>
+        <style>
+@font-face { 
+  font-family: "font-DroidSansMono";
+  src: url("/nerd-fonts/DroidSansMono/DroidSansMNerdFontMono-Regular.otf");
+  size-adjust: 93.2662%;
+}
+.font-DroidSansMono {
+  font-family: "font-DroidSansMono";
+}
+        </style>
+            <pre class="font-DroidSansMono">DroidSansMono
+the quick brown fox jumps over the lazy dog
+--- ----- ----- --- ----- ---- --- ---- ---</pre>
+        <style>
+@font-face { 
+  font-family: "font-EnvyCodeR";
+  src: url("/nerd-fonts/EnvyCodeR/EnvyCodeRNerdFontMono-Regular.ttf");
+  size-adjust: 92.5926%;
+}
+.font-EnvyCodeR {
+  font-family: "font-EnvyCodeR";
+}
+        </style>
+            <pre class="font-EnvyCodeR">EnvyCodeR
+the quick brown fox jumps over the lazy dog
+--- ----- ----- --- ----- ---- --- ---- ---</pre>
+        <style>
+@font-face { 
+  font-family: "font-FantasqueSansMono";
+  src: url("/nerd-fonts/FantasqueSansMono/FantasqueSansMNerdFontMono-Regular.ttf");
+  size-adjust: 96.5251%;
+}
+.font-FantasqueSansMono {
+  font-family: "font-FantasqueSansMono";
+}
+        </style>
+            <pre class="font-FantasqueSansMono">FantasqueSansMono
+the quick brown fox jumps over the lazy dog
+--- ----- ----- --- ----- ---- --- ---- ---</pre>
+        <style>
+@font-face { 
+  font-family: "font-FiraCode";
+  src: url("/nerd-fonts/FiraCode/FiraCodeNerdFontMono-Regular.ttf");
+  size-adjust: 92.6097%;
+}
+.font-FiraCode {
+  font-family: "font-FiraCode";
+}
+        </style>
+            <pre class="font-FiraCode">FiraCode
+the quick brown fox jumps over the lazy dog
+--- ----- ----- --- ----- ---- --- ---- ---</pre>
+        <style>
+@font-face { 
+  font-family: "font-FiraMono";
+  src: url("/nerd-fonts/FiraMono/FiraMonoNerdFontMono-Regular.otf");
+  size-adjust: 94.8947%;
+}
+.font-FiraMono {
+  font-family: "font-FiraMono";
+}
+        </style>
+            <pre class="font-FiraMono">FiraMono
+the quick brown fox jumps over the lazy dog
+--- ----- ----- --- ----- ---- --- ---- ---</pre>
+        <style>
+@font-face { 
+  font-family: "font-GeistMono";
+  src: url("/nerd-fonts/GeistMono/GeistMonoNerdFontMono-Regular.otf");
+  size-adjust: 94.3574%;
+}
+.font-GeistMono {
+  font-family: "font-GeistMono";
+}
+        </style>
+            <pre class="font-GeistMono">GeistMono
+the quick brown fox jumps over the lazy dog
+--- ----- ----- --- ----- ---- --- ---- ---</pre>
+        <style>
+@font-face { 
+  font-family: "font-Go-Mono";
+  src: url("/nerd-fonts/Go-Mono/GoMonoNerdFontMono-Regular.ttf");
+  size-adjust: 94.304%;
+}
+.font-Go-Mono {
+  font-family: "font-Go-Mono";
+}
+        </style>
+            <pre class="font-Go-Mono">Go-Mono
+the quick brown fox jumps over the lazy dog
+--- ----- ----- --- ----- ---- --- ---- ---</pre>
+        <style>
+@font-face { 
+  font-family: "font-Gohu";
+  src: url("/nerd-fonts/Gohu/GohuFont11NerdFontMono-Regular.ttf");
+  size-adjust: 109.7695%;
+}
+.font-Gohu {
+  font-family: "font-Gohu";
+}
+        </style>
+            <pre class="font-Gohu">Gohu
+the quick brown fox jumps over the lazy dog
+--- ----- ----- --- ----- ---- --- ---- ---</pre>
+        <style>
+@font-face { 
+  font-family: "font-Hack";
+  src: url("/nerd-fonts/Hack/HackNerdFontMono-Regular.ttf");
+  size-adjust: 91.4411%;
+}
+.font-Hack {
+  font-family: "font-Hack";
+}
+        </style>
+            <pre class="font-Hack">Hack
+the quick brown fox jumps over the lazy dog
+--- ----- ----- --- ----- ---- --- ---- ---</pre>
+        <style>
+@font-face { 
+  font-family: "font-Hasklig";
+  src: url("/nerd-fonts/Hasklig/HasklugNerdFontMono-Regular.otf");
+  size-adjust: 102.8807%;
+}
+.font-Hasklig {
+  font-family: "font-Hasklig";
+}
+        </style>
+            <pre class="font-Hasklig">Hasklig
+the quick brown fox jumps over the lazy dog
+--- ----- ----- --- ----- ---- --- ---- ---</pre>
+        <style>
+@font-face { 
+  font-family: "font-HeavyData";
+  src: url("/nerd-fonts/HeavyData/HeavyDataNerdFont-Regular.ttf");
+  size-adjust: 84.7027%;
+}
+.font-HeavyData {
+  font-family: "font-HeavyData";
+}
+        </style>
+            <pre class="font-HeavyData">HeavyData
+the quick brown fox jumps over the lazy dog
+--- ----- ----- --- ----- ---- --- ---- ---</pre>
+        <style>
+@font-face { 
+  font-family: "font-Hermit";
+  src: url("/nerd-fonts/Hermit/HurmitNerdFontMono-Regular.otf");
+  size-adjust: 100.0%;
+}
+.font-Hermit {
+  font-family: "font-Hermit";
+}
+        </style>
+            <pre class="font-Hermit">Hermit
+the quick brown fox jumps over the lazy dog
+--- ----- ----- --- ----- ---- --- ---- ---</pre>
+        <style>
+@font-face { 
+  font-family: "font-iA-Writer";
+  src: url("/nerd-fonts/iA-Writer/iMWritingMonoNerdFontMono-Regular.ttf");
+  size-adjust: 96.918%;
+}
+.font-iA-Writer {
+  font-family: "font-iA-Writer";
+}
+        </style>
+            <pre class="font-iA-Writer">iA-Writer
+the quick brown fox jumps over the lazy dog
+--- ----- ----- --- ----- ---- --- ---- ---</pre>
+        <style>
+@font-face { 
+  font-family: "font-IBMPlexMono";
+  src: url("/nerd-fonts/IBMPlexMono/BlexMonoNerdFontMono-Regular.ttf");
+  size-adjust: 96.918%;
+}
+.font-IBMPlexMono {
+  font-family: "font-IBMPlexMono";
+}
+        </style>
+            <pre class="font-IBMPlexMono">IBMPlexMono
+the quick brown fox jumps over the lazy dog
+--- ----- ----- --- ----- ---- --- ---- ---</pre>
+        <style>
+@font-face { 
+  font-family: "font-Inconsolata";
+  src: url("/nerd-fonts/Inconsolata/InconsolataNerdFontMono-Regular.ttf");
+  size-adjust: 109.4092%;
+}
+.font-Inconsolata {
+  font-family: "font-Inconsolata";
+}
+        </style>
+            <pre class="font-Inconsolata">Inconsolata
+the quick brown fox jumps over the lazy dog
+--- ----- ----- --- ----- ---- --- ---- ---</pre>
+        <style>
+@font-face { 
+  font-family: "font-InconsolataGo";
+  src: url("/nerd-fonts/InconsolataGo/InconsolataGoNerdFontMono-Regular.ttf");
+  size-adjust: 109.4092%;
+}
+.font-InconsolataGo {
+  font-family: "font-InconsolataGo";
+}
+        </style>
+            <pre class="font-InconsolataGo">InconsolataGo
+the quick brown fox jumps over the lazy dog
+--- ----- ----- --- ----- ---- --- ---- ---</pre>
+        <style>
+@font-face { 
+  font-family: "font-InconsolataLGC";
+  src: url("/nerd-fonts/InconsolataLGC/InconsolataLGCNerdFontMono-Regular.ttf");
+  size-adjust: 94.304%;
+}
+.font-InconsolataLGC {
+  font-family: "font-InconsolataLGC";
+}
+        </style>
+            <pre class="font-InconsolataLGC">InconsolataLGC
+the quick brown fox jumps over the lazy dog
+--- ----- ----- --- ----- ---- --- ---- ---</pre>
+        <style>
+@font-face { 
+  font-family: "font-IntelOneMono";
+  src: url("/nerd-fonts/IntelOneMono/IntoneMonoNerdFontMono-Regular.ttf");
+  size-adjust: 107.5269%;
+}
+.font-IntelOneMono {
+  font-family: "font-IntelOneMono";
+}
+        </style>
+            <pre class="font-IntelOneMono">IntelOneMono
+the quick brown fox jumps over the lazy dog
+--- ----- ----- --- ----- ---- --- ---- ---</pre>
+        <style>
+@font-face { 
+  font-family: "font-Iosevka";
+  src: url("/nerd-fonts/Iosevka/IosevkaNerdFontMono-Regular.ttf");
+  size-adjust: 96.1723%;
+}
+.font-Iosevka {
+  font-family: "font-Iosevka";
+}
+        </style>
+            <pre class="font-Iosevka">Iosevka
+the quick brown fox jumps over the lazy dog
+--- ----- ----- --- ----- ---- --- ---- ---</pre>
+        <style>
+@font-face { 
+  font-family: "font-IosevkaTerm";
+  src: url("/nerd-fonts/IosevkaTerm/IosevkaTermNerdFontMono-Regular.ttf");
+  size-adjust: 96.1723%;
+}
+.font-IosevkaTerm {
+  font-family: "font-IosevkaTerm";
+}
+        </style>
+            <pre class="font-IosevkaTerm">IosevkaTerm
+the quick brown fox jumps over the lazy dog
+--- ----- ----- --- ----- ---- --- ---- ---</pre>
+        <style>
+@font-face { 
+  font-family: "font-IosevkaTermSlab";
+  src: url("/nerd-fonts/IosevkaTermSlab/IosevkaTermSlabNerdFontMono-Regular.ttf");
+  size-adjust: 96.1723%;
+}
+.font-IosevkaTermSlab {
+  font-family: "font-IosevkaTermSlab";
+}
+        </style>
+            <pre class="font-IosevkaTermSlab">IosevkaTermSlab
+the quick brown fox jumps over the lazy dog
+--- ----- ----- --- ----- ---- --- ---- ---</pre>
+        <style>
+@font-face { 
+  font-family: "font-JetBrainsMono";
+  src: url("/nerd-fonts/JetBrainsMono/JetBrainsMonoNerdFontMono-Regular.ttf");
+  size-adjust: 90.9256%;
+}
+.font-JetBrainsMono {
+  font-family: "font-JetBrainsMono";
+}
+        </style>
+            <pre class="font-JetBrainsMono">JetBrainsMono
+the quick brown fox jumps over the lazy dog
+--- ----- ----- --- ----- ---- --- ---- ---</pre>
+        <style>
+@font-face { 
+  font-family: "font-Lekton";
+  src: url("/nerd-fonts/Lekton/LektonNerdFontMono-Regular.ttf");
+  size-adjust: 105.2632%;
+}
+.font-Lekton {
+  font-family: "font-Lekton";
+}
+        </style>
+            <pre class="font-Lekton">Lekton
+the quick brown fox jumps over the lazy dog
+--- ----- ----- --- ----- ---- --- ---- ---</pre>
+        <style>
+@font-face { 
+  font-family: "font-LiberationMono";
+  src: url("/nerd-fonts/LiberationMono/LiterationMonoNerdFontMono-Regular.ttf");
+  size-adjust: 94.6432%;
+}
+.font-LiberationMono {
+  font-family: "font-LiberationMono";
+}
+        </style>
+            <pre class="font-LiberationMono">LiberationMono
+the quick brown fox jumps over the lazy dog
+--- ----- ----- --- ----- ---- --- ---- ---</pre>
+        <style>
+@font-face { 
+  font-family: "font-Lilex";
+  src: url("/nerd-fonts/Lilex/LilexNerdFontMono-Regular.ttf");
+  size-adjust: 96.918%;
+}
+.font-Lilex {
+  font-family: "font-Lilex";
+}
+        </style>
+            <pre class="font-Lilex">Lilex
+the quick brown fox jumps over the lazy dog
+--- ----- ----- --- ----- ---- --- ---- ---</pre>
+        <style>
+@font-face { 
+  font-family: "font-MPlus";
+  src: url("/nerd-fonts/MPlus/MCodeLat60NerdFontMono-Regular.ttf");
+  size-adjust: 96.1723%;
+}
+.font-MPlus {
+  font-family: "font-MPlus";
+}
+        </style>
+            <pre class="font-MPlus">MPlus
+the quick brown fox jumps over the lazy dog
+--- ----- ----- --- ----- ---- --- ---- ---</pre>
+        <style>
+@font-face { 
+  font-family: "font-MartianMono";
+  src: url("/nerd-fonts/MartianMono/MartianMonoNerdFontMono-Regular.ttf");
+  size-adjust: 83.3333%;
+}
+.font-MartianMono {
+  font-family: "font-MartianMono";
+}
+        </style>
+            <pre class="font-MartianMono">MartianMono
+the quick brown fox jumps over the lazy dog
+--- ----- ----- --- ----- ---- --- ---- ---</pre>
+        <style>
+@font-face { 
+  font-family: "font-Meslo";
+  src: url("/nerd-fonts/Meslo/MesloLGSNerdFontMono-Regular.ttf");
+  size-adjust: 91.4411%;
+}
+.font-Meslo {
+  font-family: "font-Meslo";
+}
+        </style>
+            <pre class="font-Meslo">Meslo
+the quick brown fox jumps over the lazy dog
+--- ----- ----- --- ----- ---- --- ---- ---</pre>
+        <style>
+@font-face { 
+  font-family: "font-Monaspace";
+  src: url("/nerd-fonts/Monaspace/MonaspiceRnNerdFontMono-Regular.otf");
+  size-adjust: 93.1272%;
+}
+.font-Monaspace {
+  font-family: "font-Monaspace";
+}
+        </style>
+            <pre class="font-Monaspace">Monaspace
+the quick brown fox jumps over the lazy dog
+--- ----- ----- --- ----- ---- --- ---- ---</pre>
+        <style>
+@font-face { 
+  font-family: "font-Monofur";
+  src: url("/nerd-fonts/Monofur/MonofurNerdFontMono-Regular.ttf");
+  size-adjust: 114.1813%;
+}
+.font-Monofur {
+  font-family: "font-Monofur";
+}
+        </style>
+            <pre class="font-Monofur">Monofur
+the quick brown fox jumps over the lazy dog
+--- ----- ----- --- ----- ---- --- ---- ---</pre>
+        <style>
+@font-face { 
+  font-family: "font-Monoid";
+  src: url("/nerd-fonts/Monoid/MonoidNerdFontMono-Regular.ttf");
+  size-adjust: 75.0075%;
+}
+.font-Monoid {
+  font-family: "font-Monoid";
+}
+        </style>
+            <pre class="font-Monoid">Monoid
+the quick brown fox jumps over the lazy dog
+--- ----- ----- --- ----- ---- --- ---- ---</pre>
+        <style>
+@font-face { 
+  font-family: "font-Mononoki";
+  src: url("/nerd-fonts/Mononoki/MononokiNerdFontMono-Regular.ttf");
+  size-adjust: 102.417%;
+}
+.font-Mononoki {
+  font-family: "font-Mononoki";
+}
+        </style>
+            <pre class="font-Mononoki">Mononoki
+the quick brown fox jumps over the lazy dog
+--- ----- ----- --- ----- ---- --- ---- ---</pre>
+        <style>
+@font-face { 
+  font-family: "font-Noto";
+  src: url("/nerd-fonts/Noto/NotoSansMNerdFontMono-Regular.ttf");
+  size-adjust: 93.301%;
+}
+.font-Noto {
+  font-family: "font-Noto";
+}
+        </style>
+            <pre class="font-Noto">Noto
+the quick brown fox jumps over the lazy dog
+--- ----- ----- --- ----- ---- --- ---- ---</pre>
+        <style>
+@font-face { 
+  font-family: "font-Overpass";
+  src: url("/nerd-fonts/Overpass/OverpassMNerdFontMono-Regular.otf");
+  size-adjust: 97.8665%;
+}
+.font-Overpass {
+  font-family: "font-Overpass";
+}
+        </style>
+            <pre class="font-Overpass">Overpass
+the quick brown fox jumps over the lazy dog
+--- ----- ----- --- ----- ---- --- ---- ---</pre>
+        <style>
+@font-face { 
+  font-family: "font-ProFont";
+  src: url("/nerd-fonts/ProFont/ProFontWindowsNerdFontMono-Regular.ttf");
+  size-adjust: 120.0192%;
+}
+.font-ProFont {
+  font-family: "font-ProFont";
+}
+        </style>
+            <pre class="font-ProFont">ProFont
+the quick brown fox jumps over the lazy dog
+--- ----- ----- --- ----- ---- --- ---- ---</pre>
+        <style>
+@font-face { 
+  font-family: "font-ProggyClean";
+  src: url("/nerd-fonts/ProggyClean/ProggyCleanSZNerdFontMono-Regular.ttf");
+  size-adjust: 133.3333%;
+}
+.font-ProggyClean {
+  font-family: "font-ProggyClean";
+}
+        </style>
+            <pre class="font-ProggyClean">ProggyClean
+the quick brown fox jumps over the lazy dog
+--- ----- ----- --- ----- ---- --- ---- ---</pre>
+        <style>
+@font-face { 
+  font-family: "font-Recursive";
+  src: url("/nerd-fonts/Recursive/RecMonoLinearNerdFontMono-Regular.ttf");
+  size-adjust: 94.0026%;
+}
+.font-Recursive {
+  font-family: "font-Recursive";
+}
+        </style>
+            <pre class="font-Recursive">Recursive
+the quick brown fox jumps over the lazy dog
+--- ----- ----- --- ----- ---- --- ---- ---</pre>
+        <style>
+@font-face { 
+  font-family: "font-RobotoMono";
+  src: url("/nerd-fonts/RobotoMono/RobotoMonoNerdFontMono-Regular.ttf");
+  size-adjust: 94.6432%;
+}
+.font-RobotoMono {
+  font-family: "font-RobotoMono";
+}
+        </style>
+            <pre class="font-RobotoMono">RobotoMono
+the quick brown fox jumps over the lazy dog
+--- ----- ----- --- ----- ---- --- ---- ---</pre>
+        <style>
+@font-face { 
+  font-family: "font-ShareTechMono";
+  src: url("/nerd-fonts/ShareTechMono/ShureTechMonoNerdFontMono-Regular.ttf");
+  size-adjust: 100.0%;
+}
+.font-ShareTechMono {
+  font-family: "font-ShareTechMono";
+}
+        </style>
+            <pre class="font-ShareTechMono">ShareTechMono
+the quick brown fox jumps over the lazy dog
+--- ----- ----- --- ----- ---- --- ---- ---</pre>
+        <style>
+@font-face { 
+  font-family: "font-SourceCodePro";
+  src: url("/nerd-fonts/SourceCodePro/SauceCodeProNerdFontMono-Regular.ttf");
+  size-adjust: 102.8807%;
+}
+.font-SourceCodePro {
+  font-family: "font-SourceCodePro";
+}
+        </style>
+            <pre class="font-SourceCodePro">SourceCodePro
+the quick brown fox jumps over the lazy dog
+--- ----- ----- --- ----- ---- --- ---- ---</pre>
+        <style>
+@font-face { 
+  font-family: "font-SpaceMono";
+  src: url("/nerd-fonts/SpaceMono/SpaceMonoNerdFontMono-Regular.ttf");
+  size-adjust: 100.8065%;
+}
+.font-SpaceMono {
+  font-family: "font-SpaceMono";
+}
+        </style>
+            <pre class="font-SpaceMono">SpaceMono
+the quick brown fox jumps over the lazy dog
+--- ----- ----- --- ----- ---- --- ---- ---</pre>
+        <style>
+@font-face { 
+  font-family: "font-Terminus";
+  src: url("/nerd-fonts/Terminus/TerminessNerdFontMono-Regular.ttf");
+  size-adjust: 109.1703%;
+}
+.font-Terminus {
+  font-family: "font-Terminus";
+}
+        </style>
+            <pre class="font-Terminus">Terminus
+the quick brown fox jumps over the lazy dog
+--- ----- ----- --- ----- ---- --- ---- ---</pre>
+        <style>
+@font-face { 
+  font-family: "font-UbuntuMono";
+  src: url("/nerd-fonts/UbuntuMono/UbuntuMonoNerdFontMono-Regular.ttf");
+  size-adjust: 107.7586%;
+}
+.font-UbuntuMono {
+  font-family: "font-UbuntuMono";
+}
+        </style>
+            <pre class="font-UbuntuMono">UbuntuMono
+the quick brown fox jumps over the lazy dog
+--- ----- ----- --- ----- ---- --- ---- ---</pre>
+        <style>
+@font-face { 
+  font-family: "font-UbuntuSans";
+  src: url("/nerd-fonts/UbuntuSans/UbuntuSansMonoNerdFontMono-Regular.ttf");
+  size-adjust: 96.5437%;
+}
+.font-UbuntuSans {
+  font-family: "font-UbuntuSans";
+}
+        </style>
+            <pre class="font-UbuntuSans">UbuntuSans
+the quick brown fox jumps over the lazy dog
+--- ----- ----- --- ----- ---- --- ---- ---</pre>
+        <style>
+@font-face { 
+  font-family: "font-VictorMono";
+  src: url("/nerd-fonts/VictorMono/VictorMonoNerdFontMono-Regular.ttf");
+  size-adjust: 88.9996%;
+}
+.font-VictorMono {
+  font-family: "font-VictorMono";
+}
+        </style>
+            <pre class="font-VictorMono">VictorMono
+the quick brown fox jumps over the lazy dog
+--- ----- ----- --- ----- ---- --- ---- ---</pre>
+        <style>
+@font-face { 
+  font-family: "font-ZedMono";
+  src: url("/nerd-fonts/ZedMono/ZedMonoNerdFontMono-Regular.ttf");
+  size-adjust: 96.1723%;
+}
+.font-ZedMono {
+  font-family: "font-ZedMono";
+}
+        </style>
+            <pre class="font-ZedMono">ZedMono
+the quick brown fox jumps over the lazy dog
+--- ----- ----- --- ----- ---- --- ---- ---</pre>
+        <style>
+@font-face { 
+  font-family: "font-0xProto";
+  src: url("/nerd-fonts/0xProto/0xProtoNerdFontMono-Regular.ttf");
+  size-adjust: 90.9256%;
+}
+.font-0xProto {
+  font-family: "font-0xProto";
+}
+        </style>
+            <pre class="font-0xProto">0xProto
+the quick brown fox jumps over the lazy dog
+--- ----- ----- --- ----- ---- --- ---- ---</pre>
+      </main>
 <footer>
   <div class="small-font">
     <div data-receive="prodLink"></div>

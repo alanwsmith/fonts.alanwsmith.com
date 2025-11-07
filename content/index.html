@@ -11,9 +11,12 @@
 
   <p>
     This page provides values to use for font face <code>size-adjust</code>
-    values to normalize sizes across fonts. See the Details section 
+    values to normalize sizes across fonts. See the <em>Details</em> section 
     below for more info. 
   </p>
+
+
+  <h2>The Search</h2>
 
   <div class="search-area">
     <div class="two-column">
@@ -33,6 +36,7 @@
         </div>
       </div>
     </div>
+
     <div class="default-top-padding">
       <details class="default-flow"><summary>Search Details</summary>
 [! filter markdown|safe !]
@@ -81,19 +85,48 @@
   You'll need to get a copy of any font
   files you want to use set up in a place that
   can serve them and update the `src: url()` value. 
-  
-
-
-
-
-
-
-
-
-
 
 [! endfilter !]
       </details>
+    </div>
+  </div>
+</bitty-4-0>
+
+<bitty-4-0 
+  data-connect="/scripts/home-page-calculator.on.js" 
+  class="load-hider default-flow"">
+
+  <div class="search-area">
+    <div class="two-column">
+      <div>
+        <div>
+          <strong>Font File Calculator</strong> 
+        </div>
+        <div>
+          <label>Font Name
+            <div>
+              <input type="input" data-send="fontName" />
+            </div>
+          </label>
+        </div>
+        <div>
+          <label>Font File URL 
+            <div>
+              <input type="input" data-send="fontURL" />
+            </div>
+          </label>
+        </div>
+        <div>
+          <button data-send="calculate">Calculate</button>
+        </div>
+      </div>
+
+      <div>
+        <pre data-receive="newStyle copyNewStyle" class="style-results"></pre>
+        <div>
+          <button data-send="copyNewStyle">Copy</button>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -253,90 +286,30 @@
     </div>
   </div>
 
-
 </bitty-4-0>
 -->
 
+[! include "_details/index.html" !]
 
-
-<h2>Details</h2>
-<p>Font vary in their base heights. For example, here's
-  the source code and output for five "x" characters from the font faces
-  <a href="https://fonts.google.com/specimen/Tauri">Tauri</a> and
-  <a href="https://fonts.google.com/specimen/Teachers">Teachers</a>.
-</p>
-
-
-<h4>Source</h4>
-<pre>
-[! filter highlight_html|safe !]
-[! include "_includes/example-1.html" !]
-[! endfilter !]
-</pre>
-
-<h4>Output</h4>
-[! include "_includes/example-1.html" !]
+<h2>Check Out Bitty</h2>
 
 <p>
-  The difference in sizes doesn't matter if
-  you only use one font on a page. It's
-  always consistent with itself. Font
-  scales work without extra effort.
+  This all started because I was trying to 
+  find a good font to use to make demo
+  videos for <a href="https://bitty.alanwsmith.com/">bitty</a>.
+  Specifically, I wanted to see the comparisons 
+  <a href="/nerd-font-comparison/">on this page</a>
+  to find a monospace font with the narrowest width.
 </p>
-
 <p>
-  Things break down as soon as a second
-  font enters the mix. Consider a type
-  scale that sets base text to 1rem
-  and uses 2rem for headings. 
+  Bitty's a small web component that adds interactivity
+  to pages. Check it out if you make stuff on the web:
+  <a href="https://bitty.alanwsmith.com/">bitty.alanwsmith.com</a>.
 </p>
 
+<p>In the mean time, I hope you find this page useful.</p>
 
-
-
-
-<p>
-  Even though both fonts are set to `font-size: 4rem;`, 
-  the Tauri characters are significantly taller. This
-  is because the fonts have different Aspect Values<sup>1</sup>
-</p>
-
-<style>
-
-@font-face {
-  font-family: "Teachers-Example-adjusted";
-  src: url("https://fonts.gstatic.com/s/teachers/v6/H4c5BXKVncXVmUGsgTwx4E9oHx2xfjBr3powY55O4AS32A.ttf");
-  size-adjust: 113.6622%;
-}
-
-@font-face {
-  font-family: "Tauri-Example-adjusted";
-  src: url("https://fonts.gstatic.com/s/tauri/v20/TwMA-IISS0AM3IpVWHU_TBqO.ttf");
-  size-adjust: 90.2201%;
-}
-
-.teachers-adjusted {
-  font-family: "Teachers-Example-adjusted";
-  font-size: 4rem;
-}
-
-.tauri-adjusted {
-  font-size: 4rem;
-  font-family: "Tauri-Example-adjusted";
-}
-
-</style>
-
-<p>
-  <span class="teachers-adjusted">xxxx</span>
-  <span class="tauri-adjusted">xxxx</span>
-</p>
-
-
-<h2>Footnote</h2>
-<ol>
-  <li>TKTKKTK</li>
-</ol>
+<p>-alan</p>
 
 [!- endblock -!]
 

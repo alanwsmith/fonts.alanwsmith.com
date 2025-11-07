@@ -1,0 +1,161 @@
+<h2>The Details</h2>
+
+<h3>Initial View</h3>
+
+<p>Font vary in their base heights. For 
+  example, here's a stylesheet that loads 
+  two fonts 
+  (<a href="https://fonts.google.com/specimen/Tauri">Tauri</a> and
+  <a href="https://fonts.google.com/specimen/Teachers">Teachers</a>)
+  and defines classes for each set
+  at 4rem:
+</p>
+  
+<div class="example-wrapper default-flow">
+<pre>
+[! filter highlight_html|safe !]
+[! include "_includes/example-0010.html" !]
+[! endfilter !]
+</pre>
+[! include "_includes/example-0010.html" !]
+</div>
+
+
+<p>
+  Displaying five lowercase &quot;x&quot; characters for each font
+  face shows us the different heights:
+</p>
+
+<div class="example-wrapper default-flow">
+<h4>Source</h4>
+<pre>
+[! filter highlight_html|safe !]
+[! include "_includes/example-0015.html" !]
+[! endfilter !]
+</pre>
+</div>
+<div class="example-wrapper default-flow">
+<h4>Output</h4>
+[! include "_includes/example-0015.html" !]
+</div>
+
+<p>
+  Even though the are both &quot;4rem;&quot; the 
+  set of x characters from the Tauri font is
+  significantly taller than the Teachers font. 
+  This makes working with type scales harder. 
+  If you don't take the height differences 
+  into account they won't be accurate 
+  across different fonts. 
+</p>
+
+
+<h3>Font Size Adjustments</h3>
+
+<p>
+  The <code>size-adjust</code> descriptor
+  became available in major browsers as
+  part of Baseline 2023. It provides
+  a mechanism to normalize heights
+  across fonts. 
+</p> 
+
+<p>
+  The @font-face declarations provided
+  on this page include a `size-adjust` value. 
+  For example, Tauri's is 90.2201% and 
+  Teachers' is 113.6622%. We can 
+  a new set of styles with those values:
+</p>
+
+<div class="example-wrapper default-flow">
+<pre>
+[! filter highlight_html|safe !]
+[! include "_includes/example-0030.html" !]
+[! endfilter !]
+</pre>
+[! include "_includes/example-0030.html" !]
+</div>
+
+<p>
+  Using them to output the x's again 
+  shows the height are the same:
+</p>
+
+
+<div class="example-wrapper default-flow">
+<h4>Source</h4>
+<pre>
+[! filter highlight_html|safe !]
+[! include "_includes/example-0040.html" !]
+[! endfilter !]
+</pre>
+</div>
+<div class="example-wrapper default-flow">
+<h4>Output</h4>
+[! include "_includes/example-0040.html" !]
+</div>
+
+<h3>The Calculations</h3>
+
+<p>
+  The `size-adjust` values are based off
+  that `Aspect Value` of each font. You 
+  can learn more about it on the
+  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/font-size-adjust#determining_the_aspect_value_of_a_font">font-size-adjust page on MDN</a>.
+  It includes a section on
+  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/font-size-adjust#determining_the_aspect_value_of_a_font">Determining the aspect value of a font</a>.
+  I built a process that did the calculation for the Google, Nerd, and System fonts
+  available in the search. 
+</p>
+
+<p>
+  The resulting aspect values are values ranging from about 0.3 to about 0.8.
+  The `size-adjust` declaration needs a percentage. I defined 0.5 as
+  100%. The values for each font are based off it (e.g. Teachers'
+  aspect value is `0.4399` which translates into `113.6622%`. 
+  Values are carried out to 4 significant digits. That's probably
+  overkill, but I'd rather go to far than leave it short. 
+</p>
+
+<h3>Notes</h3>
+
+<ul>
+  <li>
+    The process I ran used a lowercase 'b' character to determine 
+    the aspect values. That character was chosen because it's
+  what was used in the MDN example. </li>
+<li>
+
+<p>Check out the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@font-face/size-adjust">size-adjust</a>
+      for more details. It includes two key notes:</p>
+    <blockquote>
+      The size-adjust descriptor behaves in a similar fashion to the font-size-adjust property. It calculates an adjustment per font by matching ex heights.
+    </blockquote>
+    <p>and</p>
+<blockquote>
+  All metrics associated with this font are scaled by the given percentage. 
+  This includes glyph advances, baseline tables, and overrides provided 
+  by @font-face descriptors.
+</blockquote>
+  </li>
+  <li>
+    There are lots of parameters for any given font which go
+    into sizing. For example, just because the lowercase 'x' characters 
+    of two fonts are the same, they might have very different
+    capital letter heights. 
+  </li>
+  <li>
+    There's over 1900 fonts in the data set. The process
+    that produced them was automated. Given the complexities
+    of font files, I wouldn't be surprised of find some
+    values result in unexpected sizes. <a href="https://github.com/alanwsmith/fonts.alanwsmith.com">Open an
+    issue</a> if you see something that's obviously
+    wrong and I'll take a look.
+  </li>
+</ul>
+
+
+
+
+

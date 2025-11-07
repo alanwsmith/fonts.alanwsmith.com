@@ -126,3 +126,16 @@ hgroup {
   overflow-y: scroll;
   overflow-x: scroll;
 }
+
+.example-wrapper {
+  margin: var(--default-margin);
+  padding: var(--default-padding);
+  background-color: var(--accent-faded2);
+  border-radius: var(--default-radius);
+}
+
+footer {
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+}
+

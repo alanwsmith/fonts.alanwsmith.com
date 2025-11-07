@@ -60,6 +60,11 @@ class Maker:
             results.append(obj)
         return results
 
+    def get_nerd_font_file(self, font_name):
+        for font in self.nerd_font_list["fonts"]:
+            if font[0] == font_name:
+                return font[1]
+
     def get_nerd_values(self):
         results = []
         for font_name in self.input["nerd_fonts"]:
@@ -76,7 +81,7 @@ class Maker:
                             "aspect": self.input["nerd_fonts"][font_name],
                             "style": "default",
                             "path_type": "download",
-                            "path_string": "https://www.nerdfonts.com/font-downloads",
+                            "path_string": self.get_nerd_font_file(font_name),
                             }
                         ]
                     }
@@ -111,6 +116,10 @@ class Maker:
         with open(path) as _in:
             self.input[key] = json.load(_in) 
 
+    def load_nerd_font_files(self, path):
+        with open(path) as _in:
+            self.nerd_font_list = json.load(_in) 
+
     def local_fonts(self): 
         results = []
         tmp_windows_fonts = self.get_windows_10()
@@ -135,7 +144,6 @@ class Maker:
         fonts.extend(self.get_google_values())
         fonts.extend(self.get_nerd_values())
         fonts.extend(self.local_fonts())
-
         return {
                 "fonts": fonts 
         }
@@ -146,6 +154,7 @@ if __name__ == "__main__":
     m.load_data("nerd_fonts", "../../content/data/aspect-values/nerd-fonts.json")
     m.load_data("macos_15", "../../content/data/aspect-values/macos-15.json")
     m.load_data("windows_10", "../../content/data/aspect-values/windows-10.json")
+    m.load_nerd_font_files("../../content/data/lists/nerd-fonts-initial-list.json")
 
     output_path = "../../content/data/font-size-adjustments.json"
     with open(output_path, "w") as _out:

@@ -22,9 +22,7 @@ export default class {
   #increment = null;
   #paddedTarget = null;
   #fontIndex = -1;
-
   #data = {};
-
 
   bittyInit() {
     setProp("--load-hider", "1");
