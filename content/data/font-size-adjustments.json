@@ -67740,21 +67740,6 @@
         },
         {
             "category": "Nerd Fonts",
-            "fontid": "3a47a1fc-f626-4e15-92a5-c0db1d734e03",
-            "key": "HeavyData",
-            "name": "HeavyData",
-            "styles": [
-                {
-                    "adjust": 84.7027,
-                    "aspect": 0.5903,
-                    "path_string": "HeavyDataNerdFont-Regular.ttf",
-                    "path_type": "download",
-                    "style": "default"
-                }
-            ]
-        },
-        {
-            "category": "Nerd Fonts",
             "fontid": "228f1332-93c4-46c2-ae58-34cb8ab0af08",
             "key": "Hermit",
             "name": "Hermit",
