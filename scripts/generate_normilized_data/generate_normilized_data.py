@@ -145,6 +145,7 @@ class Maker:
         fonts.extend(self.get_nerd_values())
         fonts.extend(self.local_fonts())
         return {
+                "_license": "This JSON data file is licensed under Creative Commons 0 (CCO - https://creativecommons.org/public-domain/cc0/) - No Rights Reserved. (If you use it and want to throw a link to my site crediting me at https://www.alanwsmith.com/ that would be cool.)",
                 "fonts": fonts 
         }
 

@@ -145,7 +145,34 @@
         </div>
       </div>
     </div>
+
+    <div class="default-top-padding">
+    <details class="default-flow">
+      <summary>Calculator Details</summary>
+      <ul>
+        <li>
+          The calculator pulls in an external font
+          file and does the math to determine the
+          aspect value and corresponding <em>size-adjust</em>
+          value for a font. 
+        </li>
+        <li>
+          The <em>Font Name</em> is what's used for the
+          <em>font-face</em> in the output. It's surrounded
+          by quotes. So, any valid character, including
+          spaces, can be used. 
+        </li>
+        <li>
+            You'll see the sizing take place with
+            the two lowercase <em>b</em> characters. 
+        </li>
+      </ul>
+    </details>
+    </div>
+
   </div>
+
+
 
 </bitty-4-0>
 
@@ -153,21 +180,41 @@
 [! include "_details/index.html" !]
 </div>
 
-<h2>Check Out Bitty</h2>
+<h2>The Data</h2>
 
 <p>
-  This all started because I was trying to 
+  The pre-calculated data is available
+  in <a href="/data/font-size-adjustments.json">this JSON file</a>. It's licensed under
+  <a href="https://creativecommons.org/public-domain/cc0/">Creative Commons CC0</a>
+  for the Public Domain. There's no requirement
+  to credit me if you use it. But, if you
+  want to throw a link to my site (<a href="https://www.alanwsmith.com/">www.alanwsmith.com</a>)
+  that would be cool.
+</p>
+
+
+<h2>The Plug for Bitty</h2>
+
+<p>
+  This project was a rabbit-hole that started
+  when I was trying to 
   find a good font to use to make demo
   videos for <a href="https://bitty.alanwsmith.com/">bitty</a>.
   Specifically, I wanted to make
   <a href="/nerd-font-comparison/">this page of comparisons</a>
   with monospace fonts all set to the same height
-  to find the narrowest one.
+  to find the narrowest one. The demos I'm making 
+  show two files side by side so I need as much
+  space as I can get. 
 </p>
 <p>
-  Bitty's a small web component that adds interactivity
-  to pages. Check it out if you make stuff on the web:
-  <a href="https://bitty.alanwsmith.com/">bitty.alanwsmith.com</a>.
+  Anyway, bitty is a small web component. When you 
+  wrap other elements with it, bitty 
+  uses signals to make them interactive.  
+  Check it out if you make stuff on the web:
+</p>
+<p>
+  <a href="https://bitty.alanwsmith.com/">bitty.alanwsmith.com</a>
 </p>
 
 <p>In the mean time, I hope you find this page useful.</p>

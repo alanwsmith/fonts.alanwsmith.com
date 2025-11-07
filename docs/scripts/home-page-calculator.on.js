@@ -30,6 +30,8 @@ export default class {
 
   #copyTimeout = null;
 
+  #message = null;
+
   bittyInit() {
     setProp("--load-hider", "1");
     this.resetVars();
@@ -100,9 +102,11 @@ export default class {
       await sleep(800);
       this.#paddedTarget = pad(el.getBoundingClientRect().height);
       console.log(this.#paddedTarget);
+      this.#message = null;
       this.api.forward(null, "checkSize");
     } catch (error) {
-      console.log(error);
+      this.#message = `Could not load the font file.\n\nError Message:\n    ${error}\n\nThis probably means the URL is\nwrong or inaccessible.`;
+      this.api.forward(null, "newStyle");
     }
   }
 
@@ -118,7 +122,9 @@ export default class {
   // https://fonts.gstatic.com/s/vollkorn/v30/0ybuGDoxxrvAnPhYGxksckM2WMCpRjDj-DLvXWmZM7Xq34g9.ttf
   newStyle(_event, el) {
     setProp("--hp-calculator-opacity", "0");
-    if (this.#fontName !== "" && this.#fontURL !== "") {
+    if (this.#message !== null) {
+      el.innerHTML = this.#message;
+    } else if (this.#fontName !== "" && this.#fontURL !== "") {
       el.innerHTML = `@font-face { 
   font-family: "${this.#fontName}";
   src: url("${this.#fontURL}");
@@ -126,7 +132,7 @@ export default class {
   size-adjust: ${doCalc(this.#adjustment)}%;
 }`;
     } else {
-      el.innerHTML = "Both Font Name and\nFont File URL\nmust be filled out";
+      el.innerHTML = "Both Font Name and Font File URL\nmust be filled out.";
     }
   }
 
