@@ -14,6 +14,11 @@ function trimNum(num) {
   return Math.floor(num * 10000) / 10000;
 }
 
+function doCalc(num) {
+  const pct = 0.5 / num * 100;
+  return Math.floor(pct * 10000) / 10000;
+}
+
 export default class {
   #fontName = "";
   #fontURL = "";
@@ -22,6 +27,8 @@ export default class {
   #direction = "up";
   #increment = 0.01;
   #paddedTarget = null;
+
+  #copyTimeout = null;
 
   bittyInit() {
     setProp("--load-hider", "1");
@@ -59,13 +66,23 @@ export default class {
     } else {
       console.log(`Finalized: ${this.#adjustment}`);
       await sleep(800);
+      this.api.forward(null, "newStyle");
+    }
+  }
 
-      setProp("--hp-calculator-opacity", "0");
-
-
-      // this.#data[fonts[this.#fontIndex][0]] = trimNum(this.#adjustment);
-      //this.api.forward(null, "display");
-      // this.api.forward(null, "rawFont");
+  async copyNewStyle(event, el) {
+    try {
+      await navigator.clipboard.writeText(el.innerText);
+      event.target.innerHTML = "Copied";
+      if (this.#copyTimeout !== null) {
+        clearTimeout(this.#copyTimeout);
+      } 
+      this.#copyTimeout = setTimeout(() => {
+        event.target.innerHTML = "Copy";
+      }, 1500);
+    } catch (error) {
+      event.target.innerHTML = "Could not copy";
+      console.error(`Could not copy selection to clipboard: ${error}`)
     }
   }
 
@@ -97,9 +114,17 @@ export default class {
     this.#fontURL = event.target.value;
   }
 
+  // https://fonts.gstatic.com/s/abeezee/v23/esDT31xSG-6AGleN2tCklZUCGpG-GQ.ttf
+  // https://fonts.gstatic.com/s/vollkorn/v30/0ybuGDoxxrvAnPhYGxksckM2WMCpRjDj-DLvXWmZM7Xq34g9.ttf
   newStyle(_event, el) {
+    setProp("--hp-calculator-opacity", "0");
     if (this.#fontName !== "" && this.#fontURL !== "") {
-      el.innerHTML = "new style";
+      el.innerHTML = `@font-face { 
+  font-family: "${this.#fontName}";
+  src: url("${this.#fontURL}");
+  /* aspect value: ${this.#adjustment} */
+  size-adjust: ${doCalc(this.#adjustment)}%;
+}`;
     } else {
       el.innerHTML = "Both Font Name and\nFont File URL\nmust be filled out";
     }
