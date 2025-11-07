@@ -111,7 +111,7 @@ export default class {
   #paddedTarget = null;
   #fontIndex = -1;
   #data = {};
-  #localStorageName = "localFontsV1";
+  #localStorageName = "localFontsV2";
 
   bittyInit() {
     const savedData = localStorage.getItem(this.#localStorageName);
