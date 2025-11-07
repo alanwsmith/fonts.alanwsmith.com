@@ -5,6 +5,8 @@
     <h1>Font Size Adjustments</h1>
   </hgroup>
 
+
+
 <bitty-4-0 
   data-connect="/scripts/home-page.on.js" 
   class="load-hider default-flow" >
@@ -14,6 +16,30 @@
     values to normalize sizes across fonts. See The Details section 
     below for more info. 
   </p>
+
+  <details class="default-flow">
+    <summary>TL;DR</summary>
+    <p>
+      This page provides <em>@font-face</em> styles that normalize
+      font heights. When you use them you can set two fonts
+      to the same rem value and you'll get this:
+    </p>
+    <div class="accent-background-faded2 default-radius default-left-padding">
+      <span class="tauri-adjusted">xxxxx</span>
+      <span class="teachers-adjusted">xxxxx</span>
+    </div>
+    <p>Instead of this, where the first set of x characters
+      is taller than the second:
+    </p>
+
+    <div class="accent-background-faded2 default-radius default-left-padding">
+      <span class="tauri-base">xxxxx</span>
+      <span class="teachers-base">xxxxx</span>
+    </div>
+
+  </details>
+
+
 
   <h2>The Search</h2>
   <p>
@@ -201,6 +227,8 @@
   <li><a href="/tools/calculate-google-fonts/">Google Fonts</a></li>
   <li><a href="/tools/calculate-local-system-fonts/">Local System Fonts</a></li>
 </ul>
+
+<p>(Nerd Fonts require cloning the repo to put them back in place)</p>
 
 
 <h2>The Plug for Bitty</h2>
