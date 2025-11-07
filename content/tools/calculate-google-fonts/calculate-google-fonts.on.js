@@ -24,7 +24,7 @@ function trimNum(num) {
 }
 
 export default class {
-  #adjustment = null;
+  #adjustment = 0;
   #direction = null;
   #increment = null;
   #paddedTarget = null;
@@ -52,6 +52,7 @@ export default class {
       if (!this.#data[details.name]) {
         this.#data[details.name] = {};
       }
+
       if (!this.#data[details.name][details.key]) {
         const font = new FontFace(details.name, `url("${details.url}")`);
         document.fonts.add(font);
@@ -61,6 +62,7 @@ export default class {
         this.#paddedTarget = pad(el.getBoundingClientRect().height);
         this.api.forward(null, "checkSize");
       } else {
+        await sleep(5); // Necessary for restarting to prevent ascyn from stacking up and exceding statck
         this.api.forward(null, "rawFont");
       }
     }
@@ -93,6 +95,7 @@ export default class {
           value: trimNum(this.#adjustment)
         };
       localStorage.setItem(this.#localStorageName, JSON.stringify(this.#data));
+      await sleep(300); // purely for seeing the overlap manually
       this.api.forward(null, "display");
       this.api.forward(null, "rawFont");
     }
@@ -111,7 +114,7 @@ export default class {
     this.#paddedTarget = null;
   }
 
-  async showData(_, el) {
+  async copyData(_event, _el) {
     const jsonString =  JSON.stringify(this.#data, null, 2);
     try {
       await navigator.clipboard.writeText(
@@ -120,7 +123,7 @@ export default class {
     } catch (err) {
       console.error("Could not copy to clipboard")
     }
-    el.innerHTML = "copied to clipboard";
+    //el.innerHTML = "copied to clipboard";
   }
 
 }
