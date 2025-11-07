@@ -2026,20 +2026,24 @@ hgroup {
 }
 
 .test-font {
-  postion: absolute;
   display: grid;
   gap: 1rem;
   grid-template-columns: 1fr 1fr;
   font-family: var(--test-font);
 }
 
+.test-font-family {
+  font-family: var(--test-font-family);
+}
+
 .test-font-google {
-  postion: absolute;
+  position: relative;
   display: grid;
   gap: 1rem;
   grid-template-columns: 1fr 1fr;
   font-family: var(--test-font);
   padding-top: 4rem;
+  height: 52rem;
 }
 
 .two-column {
@@ -2124,6 +2128,17 @@ footer {
   padding-bottom: 2rem;
 }
 
+.test-google-font-target {
+  position: absolute;
+  top: 4rem;
+  left: 0;
+}
+
+.test-google-font-active {
+  position: absolute;
+  top: 4rem;
+  left: 0;
+}
 </style>  </head>
   <body>
 <noscript>

@@ -2026,20 +2026,24 @@ hgroup {
 }
 
 .test-font {
-  postion: absolute;
   display: grid;
   gap: 1rem;
   grid-template-columns: 1fr 1fr;
   font-family: var(--test-font);
 }
 
+.test-font-family {
+  font-family: var(--test-font-family);
+}
+
 .test-font-google {
-  postion: absolute;
+  position: relative;
   display: grid;
   gap: 1rem;
   grid-template-columns: 1fr 1fr;
   font-family: var(--test-font);
   padding-top: 4rem;
+  height: 52rem;
 }
 
 .two-column {
@@ -2124,6 +2128,17 @@ footer {
   padding-bottom: 2rem;
 }
 
+.test-google-font-target {
+  position: absolute;
+  top: 4rem;
+  left: 0;
+}
+
+.test-google-font-active {
+  position: absolute;
+  top: 4rem;
+  left: 0;
+}
 </style>  </head>
   <body>
 <noscript>
@@ -2141,7 +2156,7 @@ footer {
     <a href="https://www.alanwsmith.com/feeds/posts.xml">rss</a>
   </div>
 </header>      <main class="default-wrapper default-flow">
-<bitty-4-0 data-connect="/scripts/calculate-google-fonts.on.js" 
+<bitty-4-0 data-connect="/tools/calculate-google-fonts/calculate-google-fonts.on.js" 
   data-send="rawFont"
   class="load-hider">
 
@@ -2150,21 +2165,18 @@ footer {
   </div>
 
   <div class="test-font-google">
-    <div>
-      <div class="trimmed" data-receive="rawFont">b</div>
+    <div class="test-google-font-target">
+      <div class="trimmed test-font-family" data-receive="rawFont">b</div>
     </div>
-    <div>
-      <div class="trimmed" data-receive="checkSize">b</div>
+    <div class="test-google-font-active">
+      <div class="trimmed test-font-family" data-receive="checkSize">b</div>
     </div>
   </div>
-  <!--
-
   <div>
     <button data-send="showData">Show Data</button>
   </div>
 
   <pre data-receive="showData"></pre>
--->
 
 </bitty-4-0>      </main>
 <footer>

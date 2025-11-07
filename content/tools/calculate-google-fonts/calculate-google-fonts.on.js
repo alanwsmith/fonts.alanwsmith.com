@@ -1,4 +1,4 @@
-const fontObject = [@ json.data["aspect-values"]["google-fonts"] @];
+const fontObject = [@ json.data["lists"]["google-fonts-edited"] @];
 const fonts = [];
 
 Object.entries(fontObject).forEach((item) => {
@@ -6,7 +6,6 @@ Object.entries(fontObject).forEach((item) => {
     fonts.push({ name: item[0], key: data[0], url: data[1]});
   });
 });
-
 
 function pad(input) {
   return Math.floor(input * 1000); 
@@ -57,7 +56,7 @@ export default class {
         const font = new FontFace(details.name, `url("${details.url}")`);
         document.fonts.add(font);
         await font.load();
-        setProp("--test-font", details.name);
+        setProp("--test-font-family", details.name);
         await sleep(200);
         this.#paddedTarget = pad(el.getBoundingClientRect().height);
         this.api.forward(null, "checkSize");

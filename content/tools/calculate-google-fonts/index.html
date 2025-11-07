@@ -2,7 +2,8 @@
 [!- block main -!]
 
 
-<bitty-4-0 data-connect="/scripts/calculate-google-fonts.on.js" 
+
+<bitty-4-0 data-connect="/tools/calculate-google-fonts/calculate-google-fonts.on.js" 
   data-send="rawFont"
   class="load-hider">
 
@@ -11,24 +12,20 @@
   </div>
 
   <div class="test-font-google">
-    <div>
-      <div class="trimmed" data-receive="rawFont">b</div>
+    <div class="test-google-font-target">
+      <div class="trimmed test-font-family" data-receive="rawFont">b</div>
     </div>
-    <div>
-      <div class="trimmed" data-receive="checkSize">b</div>
+    <div class="test-google-font-active">
+      <div class="trimmed test-font-family" data-receive="checkSize">b</div>
     </div>
   </div>
-  <!--
-
   <div>
     <button data-send="showData">Show Data</button>
   </div>
 
   <pre data-receive="showData"></pre>
--->
 
 </bitty-4-0>
-
 
 [!- endblock -!]
 

@@ -10,5 +10,5 @@
 A MiniJinja error occurred
 
 Could not render template:
-undefined value (in scripts/calculate-nerd-fonts.on.js:1)</p>
+undefined value (in tools/calculate-nerd-fonts/calculate-nerd-fonts.on.js:1)</p>
 </pre></body></html>
