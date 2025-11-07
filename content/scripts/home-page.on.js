@@ -1,11 +1,13 @@
 import {matchSorter} from '/scripts/match-sorter.js'
 
-const fonts = [@ json.data["font-size-adjustments"] @].fonts
+const fonts = [@ json.data["font-size-adjustments"] @].fonts;
+
+const nerdFonts = [@ json.data.lists["nerd-fonts-initial-list"] @].fonts;
 
 const t = {
   font: `<div>
   <button 
-    class="KEY-button"
+    class="font-KEY-button"
     data-send="pick" 
     data-fontid="FONTID">NAME (CATEGORY)</button>
 </div>`,
@@ -17,8 +19,7 @@ const t = {
   src: url("URL");
   size-adjust: ADJUST%;
 }
-
-.KEY-button {
+.font-KEY-button {
   font-family: "KEY-button";
 }`,
 
@@ -26,6 +27,15 @@ const t = {
   font-family: "KEY-STYLE";
   src: url("URL");
   size-adjust: ADJUST%;
+}`,
+
+  nerdButton: `@font-face { 
+  font-family: "KEY-button";
+  src: url("URL");
+  size-adjust: ADJUST%;
+}
+.font-KEY-button {
+  font-family: "KEY-button";
 }`,
 
   nerdFont: `@font-face { 
@@ -74,6 +84,8 @@ export default class {
           let styleToAdd = "";
           if (font.category === "Google Fonts") {
             styleToAdd = this.addGoogleFontString(font);
+          } else if (font.category === "Nerd Fonts") {
+            styleToAdd = this.addNerdFontString(font);
           }
           const sheet = new CSSStyleSheet();
           sheet.replaceSync(styleToAdd);
@@ -89,6 +101,20 @@ export default class {
     const result = t.googleButton
       .replaceAll("KEY", font.key)
       .replaceAll("URL", style.path_string)
+      .replaceAll("ADJUST", style.adjust)
+    return result;
+  }
+
+  addNerdFontString(font) {
+    const style = font.styles.find((style) => style.style === "default");
+    const details = nerdFonts.find((check) => {
+        return check[0] === font.name
+      }
+    );
+    const url = `/nerd-fonts/${font.name}/${details[1]}`;
+    const result = t.nerdButton
+      .replaceAll("KEY", font.key)
+      .replaceAll("URL", url)
       .replaceAll("ADJUST", style.adjust)
     console.log(result);
     return result;
