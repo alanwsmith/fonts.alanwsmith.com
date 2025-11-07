@@ -9,6 +9,12 @@
   data-connect="/scripts/home-page.on.js" 
   class="load-hider default-flow"">
 
+  <p>
+    This page provides values to use for font face <code>size-adjust</code>
+    values to normalize sizes across fonts. See the Details section 
+    below for more info. 
+  </p>
+
   <div class="search-area">
     <div class="two-column">
       <div>
@@ -28,7 +34,65 @@
       </div>
     </div>
     <div class="default-top-padding">
-      <details><summary>Search Details</summary>
+      <details class="default-flow"><summary>Search Details</summary>
+[! filter markdown|safe !]
+- The search includes fonts from [Google Fonts](https://fonts.google.com/), 
+        [Nerd Fonts](https://www.nerdfonts.com/), and the fonts
+        that are on my Mac (using macOS 15.x) and Windows 10 machines
+        that match those listed on [Modern Font Stacks](https://modernfontstacks.com/).
+
+- [Pull requests are welcome](https://github.com/alanwsmith/fonts.alanwsmith.com)
+        for the other fonts listed on Modern Font Stacks. 
+
+- All the `@font-face` name include a name and a style modifier 
+    (i.e. `NAME-STYLE`).
+    For example, `Roboto-regular` is the regular version
+    of `Roboto` and `Roboto-900italic` is the boldest italic
+    version of the font. 
+
+    You can use them like:
+
+        .my-style {
+          font-family: "Roboto-900italic";
+        }
+
+- System and Nerf Fonts only include a single file. Their
+    style modifier is always `-default`. Google Fonts 
+    are often split to multiple files. Their individual 
+    style modifiers match the keys that come from
+    the Google feed. 
+
+    You can remove any variations you don't need
+    after copying the `@font-face` styles. 
+
+- The Google Font `@font-face` styles call live font files. 
+  They can be copy/pasted directly if you want 
+  to use Google directly. You can also download and host
+  fonts yourself by changing the URLs to point to
+  your sources. 
+
+- The `font-family` names for the System Fonts is the 
+  font's name followed by `-regular`. The source
+  is the local version of the file from the name. 
+  The `-regular` name is necessary to avoid
+  collisions with the name from the system. 
+
+- The Nerd Font styles are commented out by default. 
+  You'll need to get a copy of any font
+  files you want to use set up in a place that
+  can serve them and update the `src: url()` value. 
+  
+
+
+
+
+
+
+
+
+
+
+[! endfilter !]
       </details>
     </div>
   </div>
@@ -194,25 +258,86 @@
 -->
 
 
-[! filter markdown|safe !]
-## Notes
 
-- The "System Fonts" include those
-across different operating systems. They
-might not all be available. The source
-list came from [Modern Font Stacks](https://modernfontstacks.com/)
-which I then ran through my Mac (macOS 15.x) and Windows 10
-machines to pull the aspect values. 
-Fonts outside of those aren't captured
-here. [Pull requests are welcome for those](https://github.com/alanwsmith/fonts.alanwsmith.com).
+<h2>Details</h2>
+<p>Font vary in their base heights. For example, here's
+  the source code and output for five "x" characters from the font faces
+  <a href="https://fonts.google.com/specimen/Tauri">Tauri</a> and
+  <a href="https://fonts.google.com/specimen/Teachers">Teachers</a>.
+</p>
 
 
-
-
-
-
-
+<h4>Source</h4>
+<pre>
+[! filter highlight_html|safe !]
+[! include "_includes/example-1.html" !]
 [! endfilter !]
+</pre>
+
+<h4>Output</h4>
+[! include "_includes/example-1.html" !]
+
+<p>
+  The difference in sizes doesn't matter if
+  you only use one font on a page. It's
+  always consistent with itself. Font
+  scales work without extra effort.
+</p>
+
+<p>
+  Things break down as soon as a second
+  font enters the mix. Consider a type
+  scale that sets base text to 1rem
+  and uses 2rem for headings. 
+</p>
+
+
+
+
+
+<p>
+  Even though both fonts are set to `font-size: 4rem;`, 
+  the Tauri characters are significantly taller. This
+  is because the fonts have different Aspect Values<sup>1</sup>
+</p>
+
+<style>
+
+@font-face {
+  font-family: "Teachers-Example-adjusted";
+  src: url("https://fonts.gstatic.com/s/teachers/v6/H4c5BXKVncXVmUGsgTwx4E9oHx2xfjBr3powY55O4AS32A.ttf");
+  size-adjust: 113.6622%;
+}
+
+@font-face {
+  font-family: "Tauri-Example-adjusted";
+  src: url("https://fonts.gstatic.com/s/tauri/v20/TwMA-IISS0AM3IpVWHU_TBqO.ttf");
+  size-adjust: 90.2201%;
+}
+
+.teachers-adjusted {
+  font-family: "Teachers-Example-adjusted";
+  font-size: 4rem;
+}
+
+.tauri-adjusted {
+  font-size: 4rem;
+  font-family: "Tauri-Example-adjusted";
+}
+
+</style>
+
+<p>
+  <span class="teachers-adjusted">xxxx</span>
+  <span class="tauri-adjusted">xxxx</span>
+</p>
+
+
+<h2>Footnote</h2>
+<ol>
+  <li>TKTKKTK</li>
+</ol>
+
 [!- endblock -!]
 
 

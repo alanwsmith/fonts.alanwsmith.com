@@ -163,7 +163,7 @@ export default class {
         .replace("STYLE", style.style)
         .replace("URL", style.path_string)
         ;
-    }).join("\n");
+    }).join("\n\n");
   }
 
   getNerdFont(font) {
@@ -175,7 +175,7 @@ export default class {
         .replaceAll("STYLE", style.style)
         .replaceAll("LINK", style.path_string)
         ;
-    }).join("\n");
+    }).join("\n\n");
   }
 
   getSystemFont(font) {
@@ -185,7 +185,7 @@ export default class {
         .replace("NAME", font.name)
         .replaceAll("ADJUST", style.adjust)
         ;
-    }).join("\n");
+    }).join("\n\n");
   }
 
   pick(event, el) {
