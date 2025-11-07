@@ -92,15 +92,21 @@
   </div>
 </bitty-4-0>
 
+
 <bitty-4-0 
   data-connect="/scripts/home-page-calculator.on.js" 
-  class="load-hider default-flow"">
+  class="load-hider default-flow">
 
-  <div class="search-area">
+  <div class="calculator-line">
+    <div><span data-receive="rawFont" class="calculator-target trimmed calculator-b">b</span></div>
+    <div><span data-receive="checkSize" class="calculator-check trimmed calculator-b">b</span></div>
+  </div>
+
+  <div class="calculator-wrapper default-wrapper">
     <div class="two-column">
       <div>
         <div>
-          <strong>Font File Calculator</strong> 
+          <strong>Remote Font File Calculator</strong> 
         </div>
         <div>
           <label>Font Name
@@ -110,7 +116,7 @@
           </label>
         </div>
         <div>
-          <label>Font File URL 
+          <label>Remote Font File URL 
             <div>
               <input type="input" data-send="fontURL" />
             </div>

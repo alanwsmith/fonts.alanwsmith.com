@@ -1991,7 +1991,6 @@ hgroup {
 }
 
 .trimmed {
-  background-color: blue;
   display: inline-block;
   padding: 0;
   margin: 0;
@@ -2051,6 +2050,49 @@ hgroup {
   min-height: 16rem;
 }
 
+.calculator-area {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 1200px;
+  gap: 1rem;
+  font-family: "font-to-calculate";
+}
+
+.calculator-line {
+  position: relative;
+}
+
+.calculator-wrapper {
+  position: relative;
+  border: var(--accent-border-faded);
+  border-radius: var(--default-radius);
+  font-size: var(--small-font);
+  padding: var(--default-padding);
+  min-height: 16rem;
+}
+
+.calculator-target {
+  font-size: var(--test-font-size);
+  background-color: blue;
+  font-family: "font-to-calculate";
+}
+
+.calculator-check {
+  font-size: var(--test-font-size);
+  font-size-adjust: var(--adjust-value);
+  background-color: red;
+  font-family: "font-to-calculate";
+}
+
+.calculator-b {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 .style-results {
   background-color: var(--accent-faded2);
   padding: var(--small-padding);
@@ -2090,7 +2132,7 @@ footer {
     <a href="https://links.alanwsmith.com/">other projects</a> ~
     <a href="https://www.alanwsmith.com/feeds/posts.xml">rss</a>
   </div>
-</header>      <main class="default-wrapper default-flow">
+</header>      <main class="xxxlarge-wrapper default-flow">
 <hgroup>
     <h1>Font Size Adjustments</h1>
   </hgroup>
@@ -2187,15 +2229,21 @@ can serve them and update the <code>src: url()</code> value.</p>
   </div>
 </bitty-4-0>
 
+
 <bitty-4-0 
   data-connect="/scripts/home-page-calculator.on.js" 
-  class="load-hider default-flow"">
+  class="load-hider default-flow">
 
-  <div class="search-area">
+  <div class="calculator-line">
+    <div><span data-receive="rawFont" class="calculator-target trimmed calculator-b">b</span></div>
+    <div><span data-receive="checkSize" class="calculator-check trimmed calculator-b">b</span></div>
+  </div>
+
+  <div class="calculator-wrapper default-wrapper">
     <div class="two-column">
       <div>
         <div>
-          <strong>Font File Calculator</strong> 
+          <strong>Remote Font File Calculator</strong> 
         </div>
         <div>
           <label>Font Name
@@ -2205,7 +2253,7 @@ can serve them and update the <code>src: url()</code> value.</p>
           </label>
         </div>
         <div>
-          <label>Font File URL 
+          <label>Remote Font File URL 
             <div>
               <input type="input" data-send="fontURL" />
             </div>
@@ -2606,6 +2654,13 @@ can serve them and update the <code>src: url()</code> value.</p>
   This includes glyph advances, baseline tables, and overrides provided 
   by @font-face descriptors.
 </blockquote>
+  </li>
+  <li>
+    The calculations are doing with &quot;floating-point&quot; math.
+    That means that sometimes things like `0.57 - 0.01 = 0.559999999999999`. 
+    There are ways to fix that, but they add complexity. 
+    Given that the values go to four significant digits 
+    the minor variations shouldn't have any practical effect.
   </li>
   <li>
     There are lots of parameters for any given font which go

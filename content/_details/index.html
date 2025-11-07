@@ -140,6 +140,13 @@
 </blockquote>
   </li>
   <li>
+    The calculations are doing with &quot;floating-point&quot; math.
+    That means that sometimes things like `0.57 - 0.01 = 0.559999999999999`. 
+    There are ways to fix that, but they add complexity. 
+    Given that the values go to four significant digits 
+    the minor variations shouldn't have any practical effect.
+  </li>
+  <li>
     There are lots of parameters for any given font which go
     into sizing. For example, just because the lowercase 'x' characters 
     of two fonts are the same, they might have very different

@@ -1991,7 +1991,6 @@ hgroup {
 }
 
 .trimmed {
-  background-color: blue;
   display: inline-block;
   padding: 0;
   margin: 0;
@@ -2049,6 +2048,49 @@ hgroup {
   font-size: var(--small-font);
   padding: var(--default-padding);
   min-height: 16rem;
+}
+
+.calculator-area {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 1200px;
+  gap: 1rem;
+  font-family: "font-to-calculate";
+}
+
+.calculator-line {
+  position: relative;
+}
+
+.calculator-wrapper {
+  position: relative;
+  border: var(--accent-border-faded);
+  border-radius: var(--default-radius);
+  font-size: var(--small-font);
+  padding: var(--default-padding);
+  min-height: 16rem;
+}
+
+.calculator-target {
+  font-size: var(--test-font-size);
+  background-color: blue;
+  font-family: "font-to-calculate";
+}
+
+.calculator-check {
+  font-size: var(--test-font-size);
+  font-size-adjust: var(--adjust-value);
+  background-color: red;
+  font-family: "font-to-calculate";
+}
+
+.calculator-b {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .style-results {
