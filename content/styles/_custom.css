@@ -1,3 +1,9 @@
+:root {
+  --test-font-size: 50rem;
+  --adjust-value: 0.1;
+  --hp-calculator-opacity: 0;
+}
+
 .content-wrapper {
   display: grid;
   grid-template-rows: auto 1fr auto;
@@ -63,10 +69,6 @@ hgroup {
   text-box-edge: cap alphabetic;
 }
 
-:root {
-  --test-font-size: 50rem;
-  --adjust-value: 0.1;
-}
 
 [data-receive=rawFont] {
   font-size: var(--test-font-size);
@@ -127,6 +129,7 @@ hgroup {
 }
 
 .calculator-line {
+  opacity: var(--hp-calculator-opacity);
   position: relative;
 }
 

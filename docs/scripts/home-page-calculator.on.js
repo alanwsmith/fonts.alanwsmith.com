@@ -22,10 +22,10 @@ export default class {
   #direction = "up";
   #increment = 0.01;
   #paddedTarget = null;
-  #data = {};
 
   bittyInit() {
     setProp("--load-hider", "1");
+    this.resetVars();
   }
 
   calculate(_event, _el) {
@@ -37,11 +37,7 @@ export default class {
   }
 
   async checkSize(_, el) {
-    console.log("here1");
     const currentPadded = pad(el.getBoundingClientRect().height);
-    console.log(this.#increment);
-    console.log(currentPadded);
-    console.log(this.#paddedTarget);
     if (currentPadded < this.#paddedTarget) {
       if (this.#direction === "down") {
         this.#direction = "up";
@@ -62,6 +58,9 @@ export default class {
       window.requestAnimationFrame((t) => { this.api.forward(null, "checkSize"); });
     } else {
       console.log(`Finalized: ${this.#adjustment}`);
+      await sleep(800);
+
+      setProp("--hp-calculator-opacity", "0");
 
 
       // this.#data[fonts[this.#fontIndex][0]] = trimNum(this.#adjustment);
@@ -71,14 +70,17 @@ export default class {
   }
 
   // https://fonts.gstatic.com/s/abeezee/v23/esDT31xSG-6AGleN2tCklZUCGpG-GQ.ttf
+  // https://fonts.gstatic.com/s/vollkorn/v30/0ybuGDoxxrvAnPhYGxksckM2WMCpRjDj-DLvXWmZM7Xq34g9.ttf
   async rawFont(_event, el) {
+    this.resetVars();
     setProp("--adjust-value", this.#adjustment);
+    setProp("--hp-calculator-opacity", "1");
     try {
-      await sleep(400);
+      await sleep(700);
       const font = new FontFace(`font-to-calculate`, `url("${this.#fontURL}")`);
       document.fonts.add(font);
       await font.load();
-      await sleep(400);
+      await sleep(800);
       this.#paddedTarget = pad(el.getBoundingClientRect().height);
       console.log(this.#paddedTarget);
       this.api.forward(null, "checkSize");
@@ -101,6 +103,13 @@ export default class {
     } else {
       el.innerHTML = "Both Font Name and\nFont File URL\nmust be filled out";
     }
+  }
+
+  resetVars() {
+    this.#adjustment = 0.1;
+    this.#direction = "up";
+    this.#increment = 0.01;
+    this.#paddedTarget = null;
   }
 
 
