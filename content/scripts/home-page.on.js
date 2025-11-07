@@ -5,7 +5,7 @@ const fonts = [@ json.data["font-size-adjustments"] @].fonts
 const t = {
   font: `<div>
   <button 
-    class="NAME-button"
+    class="KEY-button"
     data-send="pick" 
     data-fontid="FONTID">NAME (CATEGORY)</button>
 </div>`,
@@ -13,17 +13,17 @@ const t = {
   noMatches: `<div>No Matches</div>`,
 
   googleButton: `@font-face { 
-  font-family: "NAME-button";
+  font-family: "KEY-button";
   src: url("URL");
   size-adjust: ADJUST%;
 }
 
-.NAME-button {
-  font-family: "NAME-button";
+.KEY-button {
+  font-family: "KEY-button";
 }`,
 
   googleFont: `@font-face { 
-  font-family: "NAME-STYLE";
+  font-family: "KEY-STYLE";
   src: url("URL");
   size-adjust: ADJUST%;
 }`,
@@ -87,7 +87,7 @@ export default class {
   addGoogleFontString(font) {
     const style = font.styles.find((style) => style.style === "regular");
     const result = t.googleButton
-      .replaceAll("NAME", font.name)
+      .replaceAll("KEY", font.key)
       .replaceAll("URL", style.path_string)
       .replaceAll("ADJUST", style.adjust)
     console.log(result);
@@ -113,6 +113,7 @@ export default class {
   getGoogleFont(font) {
     return font.styles.map((style) => {
       return t.googleFont
+        .replace("KEY", font.key)
         .replace("NAME", font.name)
         .replace("ADJUST", style.adjust)
         .replace("STYLE", style.style)
@@ -124,7 +125,8 @@ export default class {
   getNerdFont(font) {
     return font.styles.map((style) => {
       return t.nerdFont
-        .replaceAll("NAME", font.name)
+        .replaceAll("KEY", font.key)
+        .replace("NAME", font.name)
         .replaceAll("ADJUST", style.adjust)
         .replaceAll("STYLE", style.style)
         .replaceAll("LINK", style.path_string)
@@ -135,7 +137,8 @@ export default class {
   getSystemFont(font) {
     return font.styles.map((style) => {
       return t.systemFont
-        .replaceAll("NAME", font.name)
+        .replaceAll("KEY", font.key)
+        .replace("NAME", font.name)
         .replaceAll("ADJUST", style.adjust)
         ;
     }).join("\n");
@@ -164,6 +167,7 @@ export default class {
             this.#currentMatch = result.fontid;
           }
           const subs = [
+            ["KEY", result.key],
             ["NAME", result.name],
             ["CATEGORY", result.category],
             ["FONTID", result.fontid],
