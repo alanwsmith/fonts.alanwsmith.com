@@ -153,6 +153,10 @@ export default class {
     }
   }
 
+  complete(_event, el) {
+    el.innerHTML = "Process comeplete";
+  }
+
   async copyData(_, el) {
     const jsonString =  JSON.stringify(this.#data, null, 2);
     try {
@@ -162,7 +166,7 @@ export default class {
     } catch (err) {
       console.error("Could not copy to clipboard")
     }
-    el.innerHTML = "copied to clipboard";
+    // el.innerHTML = "copied to clipboard";
   }
 
   async rawFont(_, el) {
@@ -183,6 +187,9 @@ export default class {
         this.api.forward(null, "rawFont");
       }
     }
+    else {
+      this.api.forward(null, "complete");
+    }
   }
 
 
@@ -194,3 +201,5 @@ export default class {
   }
 
 }
+
+
