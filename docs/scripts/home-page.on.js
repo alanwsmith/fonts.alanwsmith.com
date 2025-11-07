@@ -39,8 +39,7 @@ const t = {
 }`,
 
   nerdFont: `@font-face { 
-  /* download from: 
-  LINK 
+  /* download from: https://www.nerdfonts.com/font-downloads
   font-family: "KEY-STYLE";
   src: url("/YOUR_PATH");
   size-adjust: ADJUST%;
